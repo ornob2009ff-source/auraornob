@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>AURA ORNOB</title>
 
@@ -18,535 +18,738 @@ html{
 }
 
 body{
-  font-family:Arial,"Noto Sans Bengali",sans-serif;
   background:
-    radial-gradient(circle at 50% 0%,#0a2c5e 0%,#030a16 38%,#01040a 100%);
-  color:#fff;
+    radial-gradient(circle at top,#10264a 0%,#050a14 38%,#02050a 100%);
+  color:#dce9f7;
+  font-family:Arial,Helvetica,sans-serif;
   min-height:100vh;
 }
 
 .container{
-  width:92%;
-  max-width:720px;
+  width:min(920px,94%);
   margin:auto;
-  padding:18px 0 50px;
+  padding:22px 0 70px;
 }
 
-.header{
-  text-align:center;
-  padding:20px 5px 12px;
+.top{
+  position:sticky;
+  top:0;
+  z-index:10;
+  background:rgba(3,8,17,.92);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(0,140,255,.18);
+  padding:14px 0;
+}
+
+.top-inner{
+  width:min(920px,94%);
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
 
 .logo{
-  font-size:31px;
-  font-weight:900;
-  letter-spacing:3px;
-  color:#40b5ff;
-  text-shadow:0 0 25px rgba(30,150,255,.8);
-}
-
-.sub{
-  margin-top:8px;
-  font-size:12px;
-  letter-spacing:2px;
-  color:#8fa9c7;
-}
-
-.card{
-  margin-top:16px;
-  padding:18px;
-  border-radius:20px;
-  background:rgba(3,12,27,.94);
-  border:1px solid rgba(55,163,255,.27);
-  box-shadow:
-    0 0 35px rgba(0,102,255,.12),
-    inset 0 0 25px rgba(0,120,255,.025);
-}
-
-.pageTop{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  font-size:14px;
+  color:#35aaff;
+  font-size:21px;
   font-weight:800;
+  letter-spacing:1px;
 }
 
-.pageNumber{
-  color:#43b7ff;
+.page{
+  font-size:13px;
+  color:#9eb8d3;
 }
 
-.progress{
+.progress-box{
+  margin-top:18px;
   width:100%;
   height:7px;
-  margin-top:13px;
-  border-radius:50px;
-  background:#111c2e;
+  background:#101b2a;
+  border-radius:20px;
   overflow:hidden;
 }
 
-.progressBar{
+.progress{
   height:100%;
   width:16.66%;
-  border-radius:50px;
-  background:linear-gradient(90deg,#087cff,#56c9ff);
-  box-shadow:0 0 15px #168dff;
-  transition:.5s;
+  background:linear-gradient(90deg,#087cff,#35c5ff);
+  border-radius:20px;
+  transition:.4s;
 }
 
 .search{
-  margin-top:15px;
+  margin-top:20px;
 }
 
 .search input{
   width:100%;
-  padding:14px 15px;
-  border-radius:13px;
-  border:1px solid #173a63;
+  padding:14px 17px;
+  border-radius:12px;
+  border:1px solid #193858;
   outline:none;
-  background:#050d1a;
+  background:#07111f;
   color:white;
-  font-size:14px;
+  font-size:15px;
 }
 
-.search input::placeholder{
-  color:#6f87a3;
+.search input:focus{
+  border-color:#168dff;
+  box-shadow:0 0 18px rgba(0,136,255,.12);
+}
+
+.card{
+  margin-top:22px;
+  background:rgba(5,13,25,.76);
+  border:1px solid rgba(48,139,216,.20);
+  border-radius:18px;
+  padding:24px;
+  box-shadow:0 20px 70px rgba(0,0,0,.28);
+}
+
+.card-title{
+  color:#4ab8ff;
+  font-size:19px;
+  margin-bottom:12px;
 }
 
 .story{
-  margin-top:20px;
-
-  /*
-    ইচ্ছা করে অনেক বড় রাখা হয়েছে।
-    লেখা কম হলেও এই অংশ ছোট হবে না।
-  */
-  min-height:2600px;
-
-  color:#dce9f7;
+  min-height:7000px;
   font-size:15px;
   line-height:2.05;
-  letter-spacing:.05px;
-}
-
-.storyTitle{
-  color:#48baff;
-  font-size:23px;
-  font-weight:900;
-  line-height:1.4;
-  margin-bottom:24px;
+  letter-spacing:.08px;
 }
 
 .story p{
-  margin-bottom:28px;
+  margin-bottom:30px;
 }
 
-/* হালকা ২ লাইনের মতো ফাঁকা */
 .space{
-  height:42px;
+  height:60px;
 }
 
 .bigSpace{
-  height:65px;
+  height:110px;
 }
 
-.bottomPage{
-  text-align:center;
-  padding:20px;
-  color:#9db4cc;
-  font-size:14px;
-}
-
-.bottomPage strong{
-  color:#43b7ff;
-}
-
-.timerBox{
-  text-align:center;
-}
-
-.timerText{
-  color:#93aac4;
-  font-size:14px;
-  line-height:1.7;
-}
-
-.timer{
-  margin:10px 0;
-  font-size:38px;
-  font-weight:900;
-  color:#45baff;
-  text-shadow:0 0 18px rgba(40,165,255,.45);
-}
-
-button{
-  width:100%;
-  padding:16px;
-  border:0;
-  border-radius:14px;
-  background:#0b64dc;
-  color:white;
-  font-size:16px;
-  font-weight:900;
-  cursor:pointer;
-}
-
-button:disabled{
-  background:#243348;
-  color:#718197;
-  cursor:not-allowed;
+.highlight{
+  padding:18px;
+  margin:35px 0;
+  border-left:3px solid #168dff;
+  background:rgba(15,55,95,.20);
+  border-radius:8px;
+  color:#b9d9f5;
 }
 
 .owner{
-  margin-top:15px;
-  padding:15px;
+  margin-top:25px;
+  padding:18px;
   border-radius:14px;
-  background:#050d19;
-  border:1px solid #17385d;
-  color:#8ea7c2;
+  background:#071321;
+  border:1px solid #153554;
+  text-align:center;
   line-height:1.9;
-  font-size:13px;
 }
 
-.owner b{
-  color:#45baff;
+.owner strong{
+  color:#36adff;
+}
+
+.bottom{
+  margin-top:35px;
+  text-align:center;
+}
+
+.timer{
+  color:#91aac4;
+  font-size:14px;
+  margin-bottom:12px;
+}
+
+.continue{
+  width:100%;
+  padding:15px;
+  border:none;
+  border-radius:12px;
+  background:linear-gradient(90deg,#087cff,#27b9ff);
+  color:white;
+  font-size:16px;
+  font-weight:700;
+  cursor:pointer;
+  opacity:.45;
+}
+
+.continue.enabled{
+  opacity:1;
+}
+
+.continue:disabled{
+  cursor:not-allowed;
 }
 
 .final{
   display:none;
+  margin-top:30px;
+  padding:25px;
   text-align:center;
+  border-radius:16px;
+  background:#061323;
+  border:1px solid #155b91;
 }
 
-.final h2{
-  color:#45baff;
-  margin-bottom:12px;
-}
-
-.final p{
-  color:#8ea7c2;
-  margin-bottom:17px;
-}
-
-.final a{
-  display:block;
-  padding:17px;
-  border-radius:14px;
-  text-decoration:none;
+.get-btn{
+  display:inline-block;
+  margin-top:18px;
+  padding:14px 30px;
+  border-radius:12px;
+  background:#0789ff;
   color:white;
-  font-weight:900;
-  background:#0b69e8;
-  box-shadow:0 0 20px rgba(20,120,255,.2);
+  text-decoration:none;
+  font-weight:700;
 }
 
+.footer{
+  margin-top:45px;
+  text-align:center;
+  color:#607b96;
+  font-size:12px;
+}
+
+@media(max-width:600px){
+  .card{
+    padding:18px;
+  }
+
+  .story{
+    font-size:14px;
+    line-height:2;
+  }
+
+  .logo{
+    font-size:18px;
+  }
+}
 </style>
 </head>
 
 <body>
 
+<header class="top">
+  <div class="top-inner">
+    <div class="logo">AURA ORNOB</div>
+    <div class="page" id="pageTop">PAGE 1 / 6</div>
+  </div>
+</header>
+
 <div class="container">
 
-  <div class="header">
-    <div class="logo">AURA ORNOB</div>
-    <div class="sub">PREMIUM ACCESS GATE</div>
+  <div class="progress-box">
+    <div class="progress" id="progress"></div>
   </div>
 
+  <div class="search">
+    <input
+      type="text"
+      id="search"
+      placeholder="Search inside the story..."
+    >
+  </div>
 
   <div class="card">
 
-    <div class="pageTop">
-      <span>STORY ACCESS</span>
-      <span class="pageNumber" id="topPage">
-        PAGE 1 / 6
-      </span>
+    <div class="card-title">
+      The Beginning of Something New
     </div>
-
-    <div class="progress">
-      <div class="progressBar" id="progressBar"></div>
-    </div>
-
-    <div class="search">
-      <input
-        id="search"
-        type="text"
-        placeholder="গল্পের মধ্যে খুঁজুন..."
-      >
-    </div>
-
 
     <div class="story" id="story">
 
-      <div class="storyTitle">
-        AURA ORNOB — THE JOURNEY
+      <p>
+        It was already very late at night. The entire neighborhood was almost silent.
+        A few distant street lights were glowing through the darkness, creating small
+        islands of light along the empty road. A young man was sitting beside his
+        window, thinking about his future.
+      </p>
+
+      <p>
+        In front of him was a computer. On the screen there was nothing complicated,
+        only a simple empty web page. To someone else it might have looked ordinary
+        and meaningless. But to him, that blank page looked like a door leading toward
+        something much bigger.
+      </p>
+
+      <p>
+        He did not know where the next few years would take him. He did not know
+        whether his ideas would become successful or disappear quietly. He only knew
+        one thing. He wanted to create something with his own hands.
+      </p>
+
+      <p>
+        He wanted to build something that other people could use. Something they
+        could see on their phones, open on their computers, and remember after they
+        had closed the browser.
+      </p>
+
+      <div class="space"></div>
+
+      <p>
+        The first days were not easy. He wrote a small piece of code and opened it
+        in his browser. Nothing happened. He changed the code and tried again.
+        Sometimes the page was completely empty. Sometimes the design broke.
+        Sometimes a button appeared but refused to work.
+      </p>
+
+      <p>
+        There were moments when he became frustrated. He wondered why something so
+        simple could become so difficult. He watched tutorials, read examples,
+        changed one line, saved the file, refreshed the browser, and waited.
+      </p>
+
+      <p>
+        Again and again, the result was different from what he expected.
+        But he did not stop.
+      </p>
+
+      <p>
+        Every mistake taught him something new. Slowly he began to understand that
+        code was not simply a collection of strange symbols. Every line had a
+        purpose. Every element had a position. A tiny mistake could change the
+        behavior of an entire page.
+      </p>
+
+      <div class="highlight">
+        A small mistake in code can become a big lesson in the journey.
       </div>
 
       <p>
-        রাত তখন অনেক গভীর। চারপাশ প্রায় নীরব। দূরের রাস্তার
-        কয়েকটি আলো অন্ধকারের মধ্যে জ্বলছিল। একজন তরুণ জানালার
-        পাশে বসে নিজের ভবিষ্যৎ নিয়ে ভাবছিল। তার সামনে একটি
-        কম্পিউটার, আর স্ক্রিনে খোলা ছিল একটি খালি ওয়েব পেজ।
-        পেজটি দেখতে সাধারণ ছিল, কিন্তু তার চোখে সেটি ছিল
-        একটি বিশাল সম্ভাবনার দরজা।
+        With time, a routine began to form. In the morning he would learn something
+        new. During the day he would test it. At night he would look at his mistakes
+        and try to understand why they happened.
       </p>
 
       <p>
-        সে জানত না আগামী কয়েক বছর তাকে কোথায় নিয়ে যাবে।
-        সে শুধু জানত, নিজের হাতে কিছু তৈরি করতে চায়।
-        এমন কিছু যা একদিন অন্য মানুষ ব্যবহার করবে, দেখবে,
-        এবং তার কাজের কথা মনে রাখবে।
-      </p>
-
-      <div class="space"></div>
-
-      <p>
-        প্রথম দিনগুলো সহজ ছিল না। একটি ছোট কোড লিখে সে
-        বারবার ব্রাউজারে পরীক্ষা করত। কখনো কিছুই দেখাত না,
-        কখনো ডিজাইন ভেঙে যেত, আবার কখনো একটি বাটন কাজ করত না।
-        সে বিরক্ত হতো, কিন্তু কাজ ছেড়ে দিত না।
+        Things that once looked impossible slowly became familiar. HTML became
+        easier. CSS started making sense. JavaScript stopped looking like a wall of
+        confusing words and started becoming a tool that could bring ideas to life.
       </p>
 
       <p>
-        প্রতিটি ভুল তাকে নতুন কিছু শেখাত। সে বুঝতে শুরু করল,
-        কোড শুধু কিছু লেখা নয়। প্রতিটি লাইনের নিজের একটি কাজ আছে।
-        একটি ছোট ভুল পুরো পেজের আচরণ বদলে দিতে পারে।
-      </p>
-
-      <p>
-        ধীরে ধীরে তার অভ্যাস তৈরি হলো। সকালে নতুন কিছু শেখা,
-        দিনে সেটি পরীক্ষা করা, আর রাতে নিজের ভুলগুলো ঠিক করা।
-        সময়ের সঙ্গে সঙ্গে যে বিষয়গুলো একসময় কঠিন মনে হতো,
-        সেগুলোই তার কাছে সহজ হয়ে উঠতে লাগল।
+        He discovered that creating a website was not only about writing code.
+        It was also about patience, design, organization, testing, and understanding
+        the people who would eventually use the website.
       </p>
 
       <div class="bigSpace"></div>
 
       <p>
-        একদিন সে সিদ্ধান্ত নিল, এবার নিজের একটি ব্র্যান্ড তৈরি করবে।
-        অনেক চিন্তা করার পর একটি নাম তার মনে স্থির হলো—
-        AURA ORNOB। নামটির মধ্যে সে নিজের পরিচয়,
-        নিজের স্বপ্ন এবং ভবিষ্যতের পরিকল্পনা দেখতে পেল।
+        One evening he made an important decision. He wanted to create his own
+        identity. Not just another random website, but something that could represent
+        his ideas.
       </p>
 
       <p>
-        নতুন ব্র্যান্ডের জন্য সে একটি ডার্ক ডিজাইন বেছে নিল।
-        কালো ও নেভি ব্যাকগ্রাউন্ডের মধ্যে নীল আলো,
-        পরিষ্কার লেখা এবং সুন্দর কার্ড।
-        তার কাছে ডিজাইন শুধু সুন্দর হলেই হবে না,
-        ব্যবহারকারীর জন্য সহজও হতে হবে।
+        He thought about different names for a long time. Some sounded too simple.
+        Others were difficult to remember. Eventually one name stayed in his mind:
+        AURA ORNOB.
       </p>
 
       <p>
-        সে মোবাইল স্ক্রিনে নিজের কাজ পরীক্ষা করল।
-        আবার কম্পিউটারে খুলল। ছোট স্ক্রিনে কোথাও লেখা বড়,
-        কোথাও বাটন ছোট, কোথাও আবার স্পেসিং ঠিক ছিল না।
-        প্রতিটি সমস্যা সে একে একে ঠিক করতে লাগল।
+        The name felt different to him. It represented his identity, his dreams,
+        his creativity, and the future he wanted to build.
+      </p>
+
+      <p>
+        He opened a new project and started designing it. He chose a dark theme,
+        deep navy backgrounds, bright blue highlights, clean typography, and simple
+        cards.
+      </p>
+
+      <p>
+        He did not want the design to look complicated. He wanted it to feel modern,
+        clean, fast, and comfortable to use.
+      </p>
+
+      <p>
+        He tested the website on a phone. Then he opened it on a computer.
+        On the smaller screen some text looked too large. A button was too small.
+        Some spacing was uncomfortable. Another section looked perfect on desktop
+        but strange on mobile.
+      </p>
+
+      <p>
+        He fixed each problem one by one. He changed the spacing, adjusted the font,
+        resized the buttons, and tested everything again.
       </p>
 
       <div class="space"></div>
 
       <p>
-        কয়েকদিন পর প্রথমবার সে নিজের কাজ দেখে সন্তুষ্ট হলো।
-        এটি হয়তো পৃথিবীর সবচেয়ে বড় ওয়েবসাইট ছিল না,
-        কিন্তু সেটি ছিল তার নিজের তৈরি।
-        এই অনুভূতিই তাকে আরও বড় কিছু করার সাহস দিল।
+        Several days later, he opened the website again. This time he smiled.
+        It was not the biggest website in the world. It was not used by thousands
+        of people. It did not have a huge company behind it.
       </p>
 
       <p>
-        তারপর শুরু হলো নতুন অধ্যায়। প্রতিদিন নতুন পরিকল্পনা,
-        নতুন ডিজাইন এবং নতুন পরীক্ষা। কোনো দিন কাজ ভালো হতো,
-        কোনো দিন পুরো পরিকল্পনাই ব্যর্থ হয়ে যেত।
-        কিন্তু ব্যর্থ দিনগুলোতেও সে কিছু না কিছু শিখত।
+        But it was his.
       </p>
 
       <p>
-        সে বুঝে গেল, সফলতার রাস্তা সবসময় সোজা হয় না।
-        মাঝে মাঝে রাস্তা বন্ধ হয়। তখন নতুন রাস্তা খুঁজতে হয়।
-        মাঝে মাঝে সময় বেশি লাগে। তখন অপেক্ষা করতে হয়।
-        আর মাঝে মাঝে নিজের ওপর বিশ্বাস হারিয়ে যায়।
-        তখন নিজের পুরোনো অর্জনগুলো মনে করতে হয়।
+        Every line had been written, tested, changed, and improved by him.
+        That feeling was enough to give him the courage to continue.
+      </p>
+
+      <p>
+        Then a new chapter began. Every day brought another idea. Sometimes he
+        wanted to improve the design. Sometimes he wanted to add a new feature.
+        Sometimes he wanted to completely rebuild a section because the first
+        version did not feel right.
+      </p>
+
+      <p>
+        Some days were successful. Other days were full of broken layouts,
+        unexpected errors, and plans that simply did not work.
+      </p>
+
+      <p>
+        But even on the worst days, he learned something.
       </p>
 
       <div class="bigSpace"></div>
 
       <p>
-        এক রাতে সে পুরোনো ফাইলগুলো খুলে দেখছিল।
-        প্রথম ওয়েবসাইটের কোড দেখে তার নিজেরই হাসি পেল।
-        কোড ছিল অগোছালো, ডিজাইন ছিল সাধারণ,
-        কিন্তু সেই কাজটিই ছিল তার যাত্রার শুরু।
+        He slowly understood that success does not always follow a straight road.
+        Sometimes the road is blocked. Then a new path must be found.
       </p>
 
       <p>
-        সে বুঝল, আজকের দক্ষতা গতকালের ছোট ছোট ভুলের ফল।
-        তাই কোনো পুরোনো ভুলকে সে আর ঘৃণা করল না।
-        বরং প্রতিটি ভুলকে নিজের শিক্ষার অংশ হিসেবে গ্রহণ করল।
+        Sometimes progress takes longer than expected. Then patience becomes more
+        important than speed.
       </p>
 
       <p>
-        সময় এগিয়ে গেল। AURA ORNOB-এর ডিজাইন আরও উন্নত হলো।
-        নতুন ফিচার যোগ হলো। পেজ দ্রুত হলো।
-        মোবাইল ব্যবহারকারীদের জন্য সবকিছু আরও সুন্দর করা হলো।
+        Sometimes confidence disappears. During those moments, it helps to remember
+        how far you have already come.
+      </p>
+
+      <p>
+        He started keeping his old projects instead of deleting them. Months later,
+        he opened one of his first files and laughed.
+      </p>
+
+      <p>
+        The code was messy. The design was simple. The spacing was strange.
+        Some of the buttons did not even work correctly.
+      </p>
+
+      <p>
+        Yet that old project was special.
+      </p>
+
+      <p>
+        It was the beginning.
+      </p>
+
+      <p>
+        Without that first imperfect project, there would have been no reason to
+        create the second one. Without the second one, there would have been no
+        third. Every imperfect attempt had become a step toward something better.
+      </p>
+
+      <div class="highlight">
+        Progress is not about making everything perfect on the first attempt.
+        Progress is about making the next attempt better.
+      </div>
+
+      <p>
+        As the months passed, his ideas became larger. He started thinking beyond
+        a single page. He imagined complete systems, useful tools, creative apps,
+        gaming projects, online platforms, and digital products.
+      </p>
+
+      <p>
+        Sometimes the ideas were too ambitious for his current skills. Instead of
+        giving up, he wrote them down.
+      </p>
+
+      <p>
+        He believed that an idea did not have to be possible today to be worth
+        remembering.
+      </p>
+
+      <p>
+        Maybe he could build it next year. Maybe after learning a new language.
+        Maybe after understanding a new technology. Maybe after working with other
+        people.
+      </p>
+
+      <p>
+        The important thing was to keep the idea alive.
       </p>
 
       <div class="space"></div>
 
       <p>
-        কিন্তু তার স্বপ্ন শুধু একটি ওয়েবসাইটে শেষ ছিল না।
-        সে আরও বড় কিছু করতে চেয়েছিল।
-        এমন একটি জায়গা যেখানে তার তৈরি কাজগুলো
-        একসঙ্গে থাকবে এবং মানুষ সহজে ব্যবহার করতে পারবে।
+        One night, while looking at the dark screen, he realized something important.
+        The biggest difference between his first day and now was not the amount of
+        code he knew.
       </p>
 
       <p>
-        সে জানত এই পথ দীর্ঘ। তাই সে তাড়াহুড়ো না করে
-        প্রতিদিন একটি করে ধাপ এগিয়ে যাওয়ার সিদ্ধান্ত নিল।
-        আজ একটি ফিচার, কাল একটি ডিজাইন,
-        পরদিন একটি নতুন ধারণা—এভাবেই কাজ চলতে লাগল।
+        It was his mindset.
       </p>
 
       <p>
-        একসময় সে বুঝতে পারল, তার সবচেয়ে বড় শক্তি তার ধৈর্য।
-        অনেক মানুষ শুরু করে কিন্তু মাঝপথে থেমে যায়।
-        সে থামতে চাইলেও নিজেকে মনে করিয়ে দিত,
-        শুরু করার সময় যে স্বপ্ন ছিল সেটি এখনও একই আছে।
+        In the beginning, every error looked like a reason to stop. Later, an error
+        became a question.
+      </p>
+
+      <p>
+        What caused it?
+      </p>
+
+      <p>
+        Which line created the problem?
+      </p>
+
+      <p>
+        What can be changed?
+      </p>
+
+      <p>
+        How can the same mistake be avoided next time?
+      </p>
+
+      <p>
+        That change made learning completely different.
+      </p>
+
+      <p>
+        He stopped expecting everything to work immediately. Instead, he became
+        comfortable with testing, failing, fixing, and trying again.
+      </p>
+
+      <p>
+        He learned that real progress often happens quietly. There may be no
+        applause. No one may know how many times a person failed before something
+        finally worked.
       </p>
 
       <div class="bigSpace"></div>
 
       <p>
-        ভোর হয়ে আসছিল। জানালার বাইরে আকাশ ধীরে ধীরে পরিষ্কার।
-        সে কম্পিউটারের স্ক্রিনের দিকে তাকাল।
-        আজকের কাজ শেষ হয়নি, কিন্তু আজকের অগ্রগতি হয়েছে।
-        তার কাছে সেটিই সবচেয়ে গুরুত্বপূর্ণ ছিল।
+        A year from now, he knew he might look back at this version of AURA ORNOB
+        and find many things he would want to improve.
       </p>
 
       <p>
-        সে নিজের নোটবুকে লিখল—
-        “ছোট অগ্রগতি কখনো ছোট নয়।
-        কারণ প্রতিটি বড় ফলাফলের পেছনে থাকে
-        অসংখ্য ছোট অগ্রগতি।”
+        He might change the colors. He might rebuild the layout. He might create
+        completely different projects. He might even laugh at the code he was
+        writing today.
       </p>
 
       <p>
-        সেই দিন থেকে এই কথাটি তার নিজের নিয়ম হয়ে গেল।
-        প্রতিদিন কিছু একটা করতে হবে।
-        খুব বেশি না হলেও চলবে,
-        কিন্তু একেবারে থেমে থাকা যাবে না।
+        And that would be okay.
+      </p>
+
+      <p>
+        Because learning means changing.
+      </p>
+
+      <p>
+        The goal was never to create something perfect forever. The goal was to
+        create something better than yesterday.
+      </p>
+
+      <p>
+        Outside the window, the night was still quiet. The distant lights were
+        still shining. The city had not changed much.
+      </p>
+
+      <p>
+        But inside that small room, something had changed.
+      </p>
+
+      <p>
+        A blank page was no longer just a blank page.
+      </p>
+
+      <p>
+        It was an opportunity.
+      </p>
+
+      <p>
+        An empty file was no longer empty.
+      </p>
+
+      <p>
+        It was the beginning of a project.
+      </p>
+
+      <p>
+        And a small idea was no longer just an idea.
+      </p>
+
+      <p>
+        It had become the first step toward a much bigger dream.
       </p>
 
       <div class="space"></div>
 
       <p>
-        মাসের পর মাস কেটে গেল। নতুন কাজ তৈরি হলো।
-        নতুন মানুষ কাজগুলো দেখতে শুরু করল।
-        কেউ প্রশংসা করল, কেউ পরামর্শ দিল,
-        আবার কেউ ভুল দেখিয়ে দিল।
-        সবকিছু থেকেই সে শেখার চেষ্টা করল।
+        He saved the project one final time and looked at the screen.
+        The clock was moving toward morning.
       </p>
 
       <p>
-        সে বুঝল, একজন মানুষ যত বেশি শেখে,
-        তত বেশি বুঝতে পারে যে এখনও অনেক কিছু শেখা বাকি।
-        তাই সে নিজের শেখার দরজা কখনো বন্ধ করল না।
+        He knew there would be more problems tomorrow. There would be more bugs,
+        more designs to fix, more things to learn, and probably more moments when
+        he would feel like giving up.
       </p>
 
       <p>
-        AURA ORNOB তখন শুধু একটি নাম নয়,
-        বরং একটি চলমান যাত্রা।
-        প্রতিটি নতুন কাজ ছিল সেই যাত্রার নতুন একটি অধ্যায়।
+        But he also knew something else.
+      </p>
+
+      <p>
+        He had already started.
+      </p>
+
+      <p>
+        And sometimes starting is the hardest part.
+      </p>
+
+      <p>
+        So he closed the editor, looked once more at the name AURA ORNOB, and smiled.
+      </p>
+
+      <p>
+        Tomorrow would be another day.
+      </p>
+
+      <p>
+        Another idea.
+      </p>
+
+      <p>
+        Another project.
+      </p>
+
+      <p>
+        Another opportunity to become better.
+      </p>
+
+      <p>
+        The journey had only just begun.
       </p>
 
       <div class="bigSpace"></div>
 
       <p>
-        ভবিষ্যতে কী হবে সে জানত না।
-        কিন্তু সে জানত কী করতে হবে—
-        সামনে এগিয়ে যেতে হবে।
-        নতুন কিছু শিখতে হবে।
-        নিজের কাজকে আগের দিনের চেয়ে একটু ভালো করতে হবে।
+        Years later, perhaps people would see only the finished products. They would
+        see polished interfaces, smooth buttons, beautiful animations, and systems
+        that appeared to work effortlessly.
       </p>
 
       <p>
-        কারণ বড় স্বপ্নের সবচেয়ে কঠিন অংশ স্বপ্ন দেখা নয়।
-        সবচেয়ে কঠিন অংশ হলো প্রতিদিন সেই স্বপ্নের জন্য কাজ করা।
-        আর সে সেই কাজ চালিয়ে যাওয়ার সিদ্ধান্ত নিয়েছিল।
+        They would not see the late nights. They would not see the broken versions.
+        They would not see the hundreds of refreshes, the forgotten passwords,
+        the wrong file paths, the missing brackets, or the endless moments spent
+        wondering why something refused to work.
       </p>
 
       <p>
-        রাত শেষ হলো। নতুন সকাল শুরু হলো।
-        নতুন দিনের সঙ্গে নতুন পরিকল্পনাও শুরু হলো।
-        AURA ORNOB-এর গল্পও চলতে থাকল।
-      </p>
-
-      <div class="space"></div>
-
-      <p>
-        এই গল্পের শেষ এখনো লেখা হয়নি।
-        কারণ যে মানুষ নিজের স্বপ্নের জন্য কাজ করে,
-        তার গল্পের শেষ একটি নির্দিষ্ট জায়গায় হয় না।
-        প্রতিটি অর্জনের পর নতুন লক্ষ্য তৈরি হয়,
-        আর প্রতিটি লক্ষ্য নতুন একটি যাত্রার শুরু করে।
+        They would only see the result.
       </p>
 
       <p>
-        তাই আজকের ছোট কাজটিকে অবহেলা করো না।
-        হয়তো আজকের একটি ছোট সিদ্ধান্তই
-        আগামী দিনের সবচেয়ে বড় পরিবর্তনের কারণ হবে।
+        But the creator would remember the journey.
       </p>
 
       <p>
-        সামনে পথ যত দীর্ঘই হোক,
-        ধীরে ধীরে এগিয়ে গেলে একদিন গন্তব্যে পৌঁছানো সম্ভব।
-        শুধু একটি বিষয় মনে রাখতে হবে—
-        থেমে যাওয়া যাবে না।
+        He would remember that every successful project had once been nothing more
+        than a thought inside his head.
+      </p>
+
+      <p>
+        And that thought had become real because he decided to begin.
+      </p>
+
+      <div class="highlight">
+        Every great project begins with a simple decision:
+        “I will try.”
+      </div>
+
+      <p>
+        The story of AURA ORNOB was therefore not only a story about a website.
+        It was a story about learning, patience, mistakes, ambition, creativity,
+        and the courage to continue.
+      </p>
+
+      <p>
+        The screen was dark now.
+      </p>
+
+      <p>
+        The room was quiet.
+      </p>
+
+      <p>
+        The night was almost over.
+      </p>
+
+      <p>
+        But the dream was still awake.
       </p>
 
     </div>
-
-  </div>
-
-
-  <div class="card bottomPage">
-    <strong id="bottomPage">
-      PAGE 1 / 6
-    </strong>
-  </div>
-
-
-  <div class="card timerBox">
-
-    <div class="timerText">
-      নিচ পর্যন্ত স্ক্রল করুন এবং অপেক্ষা করুন
-    </div>
-
-    <div class="timer" id="timer">
-      20
-    </div>
-
-    <button id="continueBtn" disabled>
-      CONTINUE
-    </button>
 
     <div class="owner">
-      <b>OWNER : AURA ORNOB</b><br>
-      <b>ADMIN : AURA RAZU YT</b>
+      <strong>OWNER : AURA ORNOB</strong><br>
+      <strong>ADMIN : AURA RAZU YT</strong>
+    </div>
+
+    <div class="bottom">
+
+      <div class="timer" id="timer">
+        Scroll to the bottom to start the 20-second timer.
+      </div>
+
+      <button
+        class="continue"
+        id="continueBtn"
+        disabled
+      >
+        Continue
+      </button>
+
+    </div>
+
+    <div class="final" id="finalBox">
+
+      <h2>Access Unlocked</h2>
+
+      <p style="margin-top:10px;color:#9eb8d3;">
+        You have completed all 6 pages.
+      </p>
+
+      <!-- Replace this URL with your real KEY / FILE URL -->
+      <a
+        class="get-btn"
+        href="https://example.com"
+        target="_blank"
+        rel="noopener"
+      >
+        GET KEY / FILE
+      </a>
+
     </div>
 
   </div>
 
-
-  <div class="card final" id="final">
-
-    <h2>ACCESS UNLOCKED</h2>
-
-    <p>
-      আপনার Key / File এখন প্রস্তুত।
-    </p>
-
-    <a href="https://example.com" target="_blank">
-      GET KEY / FILE
-    </a>
-
+  <div class="footer">
+    AURA ORNOB © 2026
   </div>
 
 </div>
-
 
 <script>
 
@@ -554,112 +757,84 @@ const TOTAL_PAGES = 6;
 const WAIT_SECONDS = 20;
 
 let page = 1;
+let timeLeft = WAIT_SECONDS;
 let timerStarted = false;
 let countdown = null;
 
-const topPage =
-document.getElementById("topPage");
-
-const bottomPage =
-document.getElementById("bottomPage");
-
-const progressBar =
-document.getElementById("progressBar");
-
-const timer =
-document.getElementById("timer");
-
-const continueBtn =
-document.getElementById("continueBtn");
-
-const final =
-document.getElementById("final");
-
-const search =
-document.getElementById("search");
-
+const pageTop = document.getElementById("pageTop");
+const progress = document.getElementById("progress");
+const timer = document.getElementById("timer");
+const continueBtn = document.getElementById("continueBtn");
+const finalBox = document.getElementById("finalBox");
+const search = document.getElementById("search");
+const story = document.getElementById("story");
 
 function updatePage(){
 
-  topPage.textContent =
-  "PAGE " + page + " / " + TOTAL_PAGES;
+  pageTop.textContent = `PAGE ${page} / ${TOTAL_PAGES}`;
 
-  bottomPage.textContent =
-  "PAGE " + page + " / " + TOTAL_PAGES;
+  progress.style.width =
+    `${(page / TOTAL_PAGES) * 100}%`;
 
-  progressBar.style.width =
-  ((page / TOTAL_PAGES) * 100) + "%";
+  timeLeft = WAIT_SECONDS;
+  timerStarted = false;
 
   clearInterval(countdown);
 
-  timerStarted = false;
+  continueBtn.disabled = true;
+  continueBtn.classList.remove("enabled");
 
   timer.textContent =
-  WAIT_SECONDS;
-
-  continueBtn.disabled = true;
-
+    "Scroll to the bottom to start the 20-second timer.";
 }
-
 
 function startTimer(){
 
-  if(timerStarted){
-    return;
-  }
+  if(timerStarted) return;
 
   timerStarted = true;
+  timeLeft = WAIT_SECONDS;
 
-  let seconds =
-  WAIT_SECONDS;
+  timer.textContent =
+    `Please wait ${timeLeft} seconds...`;
 
-  countdown =
-  setInterval(function(){
+  countdown = setInterval(function(){
 
-    seconds--;
+    timeLeft--;
 
-    timer.textContent =
-    seconds;
+    if(timeLeft > 0){
 
-    if(seconds <= 0){
+      timer.textContent =
+        `Please wait ${timeLeft} seconds...`;
+
+    }else{
 
       clearInterval(countdown);
 
       timer.textContent =
-      "✓";
+        "Ready. You can continue.";
 
-      continueBtn.disabled =
-      false;
-
+      continueBtn.disabled = false;
+      continueBtn.classList.add("enabled");
     }
 
   },1000);
-
 }
-
 
 window.addEventListener("scroll",function(){
 
-  const currentScroll =
-  window.scrollY;
-
-  const screenHeight =
-  window.innerHeight;
-
-  const fullHeight =
-  document.documentElement.scrollHeight;
+  const currentScroll = window.scrollY;
+  const screenHeight = window.innerHeight;
+  const fullHeight = document.documentElement.scrollHeight;
 
   if(
     currentScroll + screenHeight
     >= fullHeight - 120
   ){
-
     startTimer();
-
   }
 
 });
-
 
 continueBtn.addEventListener("click",function(){
 
@@ -676,10 +851,9 @@ continueBtn.addEventListener("click",function(){
 
   }else{
 
-    final.style.display =
-    "block";
+    finalBox.style.display = "block";
 
-    final.scrollIntoView({
+    finalBox.scrollIntoView({
       behavior:"smooth"
     });
 
@@ -687,32 +861,26 @@ continueBtn.addEventListener("click",function(){
 
 });
 
-
 search.addEventListener("input",function(){
 
-  const value =
-  search.value.toLowerCase().trim();
+  const query =
+    search.value.toLowerCase().trim();
 
   const paragraphs =
-  document.querySelectorAll(".story p");
+    story.querySelectorAll("p");
 
   paragraphs.forEach(function(p){
 
     const text =
-    p.textContent.toLowerCase();
+      p.textContent.toLowerCase();
 
-    if(
-      value === "" ||
-      text.includes(value)
-    ){
+    if(!query || text.includes(query)){
 
-      p.style.display =
-      "block";
+      p.style.display = "";
 
     }else{
 
-      p.style.display =
-      "none";
+      p.style.display = "none";
 
     }
 
@@ -720,10 +888,9 @@ search.addEventListener("input",function(){
 
 });
 
-
 updatePage();
 
 </script>
 
 </body>
-      </html>
+        </html>
