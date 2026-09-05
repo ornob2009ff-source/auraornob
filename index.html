@@ -7,6 +7,7 @@
 <title>AURA ORNOB</title>
 
 <style>
+
 *{
   box-sizing:border-box;
   margin:0;
@@ -25,58 +26,104 @@ body{
   min-height:100vh;
 }
 
-.container{
-  width:min(920px,94%);
-  margin:auto;
-  padding:22px 0 70px;
-}
+/* =========================
+   TOP BRAND
+========================= */
 
-.top{
-  position:sticky;
-  top:0;
-  z-index:10;
-  background:rgba(3,8,17,.92);
-  backdrop-filter:blur(12px);
-  border-bottom:1px solid rgba(0,140,255,.18);
-  padding:14px 0;
-}
-
-.top-inner{
-  width:min(920px,94%);
-  margin:auto;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+.header{
+  width:100%;
+  text-align:center;
+  padding:22px 15px 12px;
 }
 
 .logo{
-  color:#35aaff;
-  font-size:21px;
-  font-weight:800;
-  letter-spacing:1px;
+  display:inline-block;
+  color:#39b5ff;
+  font-size:25px;
+  font-weight:900;
+  letter-spacing:1.5px;
+  text-shadow:0 0 18px rgba(35,170,255,.35);
 }
 
-.page{
-  font-size:13px;
-  color:#9eb8d3;
+/* =========================
+   PAGE INDICATOR
+========================= */
+
+.page-box{
+  width:min(920px,94%);
+  margin:8px auto 0;
+  padding:12px 18px;
+  text-align:center;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(10,41,75,.95),
+      rgba(5,19,35,.95)
+    );
+
+  border:1px solid rgba(48,166,255,.45);
+  border-radius:12px;
+
+  box-shadow:
+    0 0 22px rgba(0,132,255,.12),
+    inset 0 0 18px rgba(0,132,255,.04);
 }
+
+.page-number{
+  color:#ffffff;
+  font-size:14px;
+  font-weight:800;
+  letter-spacing:1.2px;
+}
+
+.page-number span{
+  color:#38b5ff;
+}
+
+/* =========================
+   MAIN
+========================= */
+
+.container{
+  width:min(920px,94%);
+  margin:auto;
+  padding:18px 0 70px;
+}
+
+/* =========================
+   PROGRESS
+========================= */
 
 .progress-box{
-  margin-top:18px;
   width:100%;
   height:7px;
+
   background:#101b2a;
   border-radius:20px;
+
   overflow:hidden;
 }
 
 .progress{
   height:100%;
   width:16.66%;
-  background:linear-gradient(90deg,#087cff,#35c5ff);
+
+  background:
+    linear-gradient(
+      90deg,
+      #087cff,
+      #35c5ff
+    );
+
   border-radius:20px;
+
   transition:.4s;
 }
+
+/* =========================
+   SEARCH
+========================= */
 
 .search{
   margin-top:20px;
@@ -84,39 +131,66 @@ body{
 
 .search input{
   width:100%;
+
   padding:14px 17px;
+
   border-radius:12px;
   border:1px solid #193858;
+
   outline:none;
+
   background:#07111f;
   color:white;
+
   font-size:15px;
 }
 
 .search input:focus{
   border-color:#168dff;
-  box-shadow:0 0 18px rgba(0,136,255,.12);
+
+  box-shadow:
+    0 0 18px rgba(0,136,255,.12);
 }
+
+/* =========================
+   STORY CARD
+========================= */
 
 .card{
   margin-top:22px;
+
   background:rgba(5,13,25,.76);
+
   border:1px solid rgba(48,139,216,.20);
+
   border-radius:18px;
+
   padding:24px;
-  box-shadow:0 20px 70px rgba(0,0,0,.28);
+
+  box-shadow:
+    0 20px 70px rgba(0,0,0,.28);
 }
 
 .card-title{
   color:#4ab8ff;
   font-size:19px;
-  margin-bottom:12px;
+
+  margin-bottom:16px;
+
+  text-align:center;
 }
+
+/* =========================
+   STORY
+========================= */
 
 .story{
   min-height:7000px;
+
   font-size:15px;
+
   line-height:2.05;
+
   letter-spacing:.08px;
 }
 
@@ -134,88 +208,199 @@ body{
 
 .highlight{
   padding:18px;
+
   margin:35px 0;
+
   border-left:3px solid #168dff;
+
   background:rgba(15,55,95,.20);
+
   border-radius:8px;
+
   color:#b9d9f5;
 }
 
-.owner{
-  margin-top:25px;
-  padding:18px;
-  border-radius:14px;
-  background:#071321;
-  border:1px solid #153554;
-  text-align:center;
-  line-height:1.9;
-}
-
-.owner strong{
-  color:#36adff;
-}
+/* =========================
+   BOTTOM AREA
+========================= */
 
 .bottom{
   margin-top:35px;
+
   text-align:center;
 }
 
 .timer{
   color:#91aac4;
+
   font-size:14px;
+
   margin-bottom:12px;
 }
 
 .continue{
   width:100%;
+
   padding:15px;
+
   border:none;
+
   border-radius:12px;
-  background:linear-gradient(90deg,#087cff,#27b9ff);
+
+  background:
+    linear-gradient(
+      90deg,
+      #087cff,
+      #27b9ff
+    );
+
   color:white;
+
   font-size:16px;
+
   font-weight:700;
+
   cursor:pointer;
+
   opacity:.45;
+
+  transition:.25s;
 }
 
 .continue.enabled{
   opacity:1;
+
+  box-shadow:
+    0 0 20px rgba(20,151,255,.25);
 }
 
 .continue:disabled{
   cursor:not-allowed;
 }
 
+/* =========================
+   OWNER ADMIN
+========================= */
+
+.owner-admin{
+  margin-top:18px;
+
+  padding:18px;
+
+  border-radius:14px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #071321,
+      #081827
+    );
+
+  border:1px solid #163b5d;
+
+  text-align:center;
+
+  box-shadow:
+    0 8px 30px rgba(0,0,0,.22);
+}
+
+.owner-admin .title{
+  color:#6d91ae;
+
+  font-size:11px;
+
+  letter-spacing:1.5px;
+
+  margin-bottom:10px;
+}
+
+.owner{
+  color:#ffffff;
+
+  font-size:14px;
+
+  margin-bottom:6px;
+}
+
+.admin{
+  color:#ffffff;
+
+  font-size:14px;
+}
+
+.owner span,
+.admin span{
+  color:#36adff;
+
+  font-weight:800;
+}
+
+/* =========================
+   FINAL
+========================= */
+
 .final{
   display:none;
+
   margin-top:30px;
+
   padding:25px;
+
   text-align:center;
+
   border-radius:16px;
+
   background:#061323;
+
   border:1px solid #155b91;
 }
 
 .get-btn{
   display:inline-block;
+
   margin-top:18px;
+
   padding:14px 30px;
+
   border-radius:12px;
+
   background:#0789ff;
+
   color:white;
+
   text-decoration:none;
+
   font-weight:700;
 }
 
+/* =========================
+   FOOTER
+========================= */
+
 .footer{
   margin-top:45px;
+
   text-align:center;
+
   color:#607b96;
+
   font-size:12px;
 }
 
+/* =========================
+   MOBILE
+========================= */
+
 @media(max-width:600px){
+
+  .header{
+    padding-top:20px;
+  }
+
+  .logo{
+    font-size:23px;
+  }
+
   .card{
     padding:18px;
   }
@@ -225,533 +410,715 @@ body{
     line-height:2;
   }
 
-  .logo{
-    font-size:18px;
+  .page-box{
+    padding:11px;
   }
+
 }
+
 </style>
 </head>
 
+
 <body>
 
-<header class="top">
-  <div class="top-inner">
-    <div class="logo">AURA ORNOB</div>
-    <div class="page" id="pageTop">PAGE 1 / 6</div>
+
+<!-- =========================
+     AURA ORNOB
+========================= -->
+
+<header class="header">
+
+  <div class="logo">
+    AURA ORNOB
   </div>
+
 </header>
 
-<div class="container">
 
-  <div class="progress-box">
-    <div class="progress" id="progress"></div>
-  </div>
+<!-- =========================
+     PAGE NUMBER
+========================= -->
 
-  <div class="search">
-    <input
-      type="text"
-      id="search"
-      placeholder="Search inside the story..."
-    >
-  </div>
+<div class="page-box">
 
-  <div class="card">
-
-    <div class="card-title">
-      The Beginning of Something New
-    </div>
-
-    <div class="story" id="story">
-
-      <p>
-        It was already very late at night. The entire neighborhood was almost silent.
-        A few distant street lights were glowing through the darkness, creating small
-        islands of light along the empty road. A young man was sitting beside his
-        window, thinking about his future.
-      </p>
-
-      <p>
-        In front of him was a computer. On the screen there was nothing complicated,
-        only a simple empty web page. To someone else it might have looked ordinary
-        and meaningless. But to him, that blank page looked like a door leading toward
-        something much bigger.
-      </p>
-
-      <p>
-        He did not know where the next few years would take him. He did not know
-        whether his ideas would become successful or disappear quietly. He only knew
-        one thing. He wanted to create something with his own hands.
-      </p>
-
-      <p>
-        He wanted to build something that other people could use. Something they
-        could see on their phones, open on their computers, and remember after they
-        had closed the browser.
-      </p>
-
-      <div class="space"></div>
-
-      <p>
-        The first days were not easy. He wrote a small piece of code and opened it
-        in his browser. Nothing happened. He changed the code and tried again.
-        Sometimes the page was completely empty. Sometimes the design broke.
-        Sometimes a button appeared but refused to work.
-      </p>
-
-      <p>
-        There were moments when he became frustrated. He wondered why something so
-        simple could become so difficult. He watched tutorials, read examples,
-        changed one line, saved the file, refreshed the browser, and waited.
-      </p>
-
-      <p>
-        Again and again, the result was different from what he expected.
-        But he did not stop.
-      </p>
-
-      <p>
-        Every mistake taught him something new. Slowly he began to understand that
-        code was not simply a collection of strange symbols. Every line had a
-        purpose. Every element had a position. A tiny mistake could change the
-        behavior of an entire page.
-      </p>
-
-      <div class="highlight">
-        A small mistake in code can become a big lesson in the journey.
-      </div>
-
-      <p>
-        With time, a routine began to form. In the morning he would learn something
-        new. During the day he would test it. At night he would look at his mistakes
-        and try to understand why they happened.
-      </p>
-
-      <p>
-        Things that once looked impossible slowly became familiar. HTML became
-        easier. CSS started making sense. JavaScript stopped looking like a wall of
-        confusing words and started becoming a tool that could bring ideas to life.
-      </p>
-
-      <p>
-        He discovered that creating a website was not only about writing code.
-        It was also about patience, design, organization, testing, and understanding
-        the people who would eventually use the website.
-      </p>
-
-      <div class="bigSpace"></div>
-
-      <p>
-        One evening he made an important decision. He wanted to create his own
-        identity. Not just another random website, but something that could represent
-        his ideas.
-      </p>
-
-      <p>
-        He thought about different names for a long time. Some sounded too simple.
-        Others were difficult to remember. Eventually one name stayed in his mind:
-        AURA ORNOB.
-      </p>
-
-      <p>
-        The name felt different to him. It represented his identity, his dreams,
-        his creativity, and the future he wanted to build.
-      </p>
-
-      <p>
-        He opened a new project and started designing it. He chose a dark theme,
-        deep navy backgrounds, bright blue highlights, clean typography, and simple
-        cards.
-      </p>
-
-      <p>
-        He did not want the design to look complicated. He wanted it to feel modern,
-        clean, fast, and comfortable to use.
-      </p>
-
-      <p>
-        He tested the website on a phone. Then he opened it on a computer.
-        On the smaller screen some text looked too large. A button was too small.
-        Some spacing was uncomfortable. Another section looked perfect on desktop
-        but strange on mobile.
-      </p>
-
-      <p>
-        He fixed each problem one by one. He changed the spacing, adjusted the font,
-        resized the buttons, and tested everything again.
-      </p>
-
-      <div class="space"></div>
-
-      <p>
-        Several days later, he opened the website again. This time he smiled.
-        It was not the biggest website in the world. It was not used by thousands
-        of people. It did not have a huge company behind it.
-      </p>
-
-      <p>
-        But it was his.
-      </p>
-
-      <p>
-        Every line had been written, tested, changed, and improved by him.
-        That feeling was enough to give him the courage to continue.
-      </p>
-
-      <p>
-        Then a new chapter began. Every day brought another idea. Sometimes he
-        wanted to improve the design. Sometimes he wanted to add a new feature.
-        Sometimes he wanted to completely rebuild a section because the first
-        version did not feel right.
-      </p>
-
-      <p>
-        Some days were successful. Other days were full of broken layouts,
-        unexpected errors, and plans that simply did not work.
-      </p>
-
-      <p>
-        But even on the worst days, he learned something.
-      </p>
-
-      <div class="bigSpace"></div>
-
-      <p>
-        He slowly understood that success does not always follow a straight road.
-        Sometimes the road is blocked. Then a new path must be found.
-      </p>
-
-      <p>
-        Sometimes progress takes longer than expected. Then patience becomes more
-        important than speed.
-      </p>
-
-      <p>
-        Sometimes confidence disappears. During those moments, it helps to remember
-        how far you have already come.
-      </p>
-
-      <p>
-        He started keeping his old projects instead of deleting them. Months later,
-        he opened one of his first files and laughed.
-      </p>
-
-      <p>
-        The code was messy. The design was simple. The spacing was strange.
-        Some of the buttons did not even work correctly.
-      </p>
-
-      <p>
-        Yet that old project was special.
-      </p>
-
-      <p>
-        It was the beginning.
-      </p>
-
-      <p>
-        Without that first imperfect project, there would have been no reason to
-        create the second one. Without the second one, there would have been no
-        third. Every imperfect attempt had become a step toward something better.
-      </p>
-
-      <div class="highlight">
-        Progress is not about making everything perfect on the first attempt.
-        Progress is about making the next attempt better.
-      </div>
-
-      <p>
-        As the months passed, his ideas became larger. He started thinking beyond
-        a single page. He imagined complete systems, useful tools, creative apps,
-        gaming projects, online platforms, and digital products.
-      </p>
-
-      <p>
-        Sometimes the ideas were too ambitious for his current skills. Instead of
-        giving up, he wrote them down.
-      </p>
-
-      <p>
-        He believed that an idea did not have to be possible today to be worth
-        remembering.
-      </p>
-
-      <p>
-        Maybe he could build it next year. Maybe after learning a new language.
-        Maybe after understanding a new technology. Maybe after working with other
-        people.
-      </p>
-
-      <p>
-        The important thing was to keep the idea alive.
-      </p>
-
-      <div class="space"></div>
-
-      <p>
-        One night, while looking at the dark screen, he realized something important.
-        The biggest difference between his first day and now was not the amount of
-        code he knew.
-      </p>
-
-      <p>
-        It was his mindset.
-      </p>
-
-      <p>
-        In the beginning, every error looked like a reason to stop. Later, an error
-        became a question.
-      </p>
-
-      <p>
-        What caused it?
-      </p>
-
-      <p>
-        Which line created the problem?
-      </p>
-
-      <p>
-        What can be changed?
-      </p>
-
-      <p>
-        How can the same mistake be avoided next time?
-      </p>
-
-      <p>
-        That change made learning completely different.
-      </p>
-
-      <p>
-        He stopped expecting everything to work immediately. Instead, he became
-        comfortable with testing, failing, fixing, and trying again.
-      </p>
-
-      <p>
-        He learned that real progress often happens quietly. There may be no
-        applause. No one may know how many times a person failed before something
-        finally worked.
-      </p>
-
-      <div class="bigSpace"></div>
-
-      <p>
-        A year from now, he knew he might look back at this version of AURA ORNOB
-        and find many things he would want to improve.
-      </p>
-
-      <p>
-        He might change the colors. He might rebuild the layout. He might create
-        completely different projects. He might even laugh at the code he was
-        writing today.
-      </p>
-
-      <p>
-        And that would be okay.
-      </p>
-
-      <p>
-        Because learning means changing.
-      </p>
-
-      <p>
-        The goal was never to create something perfect forever. The goal was to
-        create something better than yesterday.
-      </p>
-
-      <p>
-        Outside the window, the night was still quiet. The distant lights were
-        still shining. The city had not changed much.
-      </p>
-
-      <p>
-        But inside that small room, something had changed.
-      </p>
-
-      <p>
-        A blank page was no longer just a blank page.
-      </p>
-
-      <p>
-        It was an opportunity.
-      </p>
-
-      <p>
-        An empty file was no longer empty.
-      </p>
-
-      <p>
-        It was the beginning of a project.
-      </p>
-
-      <p>
-        And a small idea was no longer just an idea.
-      </p>
-
-      <p>
-        It had become the first step toward a much bigger dream.
-      </p>
-
-      <div class="space"></div>
-
-      <p>
-        He saved the project one final time and looked at the screen.
-        The clock was moving toward morning.
-      </p>
-
-      <p>
-        He knew there would be more problems tomorrow. There would be more bugs,
-        more designs to fix, more things to learn, and probably more moments when
-        he would feel like giving up.
-      </p>
-
-      <p>
-        But he also knew something else.
-      </p>
-
-      <p>
-        He had already started.
-      </p>
-
-      <p>
-        And sometimes starting is the hardest part.
-      </p>
-
-      <p>
-        So he closed the editor, looked once more at the name AURA ORNOB, and smiled.
-      </p>
-
-      <p>
-        Tomorrow would be another day.
-      </p>
-
-      <p>
-        Another idea.
-      </p>
-
-      <p>
-        Another project.
-      </p>
-
-      <p>
-        Another opportunity to become better.
-      </p>
-
-      <p>
-        The journey had only just begun.
-      </p>
-
-      <div class="bigSpace"></div>
-
-      <p>
-        Years later, perhaps people would see only the finished products. They would
-        see polished interfaces, smooth buttons, beautiful animations, and systems
-        that appeared to work effortlessly.
-      </p>
-
-      <p>
-        They would not see the late nights. They would not see the broken versions.
-        They would not see the hundreds of refreshes, the forgotten passwords,
-        the wrong file paths, the missing brackets, or the endless moments spent
-        wondering why something refused to work.
-      </p>
-
-      <p>
-        They would only see the result.
-      </p>
-
-      <p>
-        But the creator would remember the journey.
-      </p>
-
-      <p>
-        He would remember that every successful project had once been nothing more
-        than a thought inside his head.
-      </p>
-
-      <p>
-        And that thought had become real because he decided to begin.
-      </p>
-
-      <div class="highlight">
-        Every great project begins with a simple decision:
-        “I will try.”
-      </div>
-
-      <p>
-        The story of AURA ORNOB was therefore not only a story about a website.
-        It was a story about learning, patience, mistakes, ambition, creativity,
-        and the courage to continue.
-      </p>
-
-      <p>
-        The screen was dark now.
-      </p>
-
-      <p>
-        The room was quiet.
-      </p>
-
-      <p>
-        The night was almost over.
-      </p>
-
-      <p>
-        But the dream was still awake.
-      </p>
-
-    </div>
-
-    <div class="owner">
-      <strong>OWNER : AURA ORNOB</strong><br>
-      <strong>ADMIN : AURA RAZU YT</strong>
-    </div>
-
-    <div class="bottom">
-
-      <div class="timer" id="timer">
-        Scroll to the bottom to start the 20-second timer.
-      </div>
-
-      <button
-        class="continue"
-        id="continueBtn"
-        disabled
-      >
-        Continue
-      </button>
-
-    </div>
-
-    <div class="final" id="finalBox">
-
-      <h2>Access Unlocked</h2>
-
-      <p style="margin-top:10px;color:#9eb8d3;">
-        You have completed all 6 pages.
-      </p>
-
-      <!-- Replace this URL with your real KEY / FILE URL -->
-      <a
-        class="get-btn"
-        href="https://example.com"
-        target="_blank"
-        rel="noopener"
-      >
-        GET KEY / FILE
-      </a>
-
-    </div>
-
-  </div>
-
-  <div class="footer">
-    AURA ORNOB © 2026
+  <div class="page-number" id="pageTop">
+    <span>PAGE</span> 1 / 6
   </div>
 
 </div>
 
+
+<div class="container">
+
+
+<!-- =========================
+     PROGRESS
+========================= -->
+
+<div class="progress-box">
+
+  <div
+    class="progress"
+    id="progress">
+  </div>
+
+</div>
+
+
+<!-- =========================
+     SEARCH
+========================= -->
+
+<div class="search">
+
+  <input
+    type="text"
+    id="search"
+    placeholder="Search inside the story..."
+  >
+
+</div>
+
+
+<!-- =========================
+     STORY CARD
+========================= -->
+
+<div class="card">
+
+
+<div class="card-title">
+  The Beginning of Something New
+</div>
+
+
+<div class="story" id="story">
+
+
+<p>
+It was already very late at night. The entire neighborhood was almost silent.
+A few distant street lights were glowing through the darkness, creating small
+islands of light along the empty road. A young man was sitting beside his
+window, thinking about his future.
+</p>
+
+
+<p>
+In front of him was a computer. On the screen there was nothing complicated,
+only a simple empty web page. To someone else it might have looked ordinary
+and meaningless. But to him, that blank page looked like a door leading toward
+something much bigger.
+</p>
+
+
+<p>
+He did not know where the next few years would take him. He did not know
+whether his ideas would become successful or disappear quietly. He only knew
+one thing. He wanted to create something with his own hands.
+</p>
+
+
+<p>
+He wanted to build something that other people could use. Something they
+could see on their phones, open on their computers, and remember after they
+had closed the browser.
+</p>
+
+
+<div class="space"></div>
+
+
+<p>
+The first days were not easy. He wrote a small piece of code and opened it
+in his browser. Nothing happened. He changed the code and tried again.
+Sometimes the page was completely empty. Sometimes the design broke.
+Sometimes a button appeared but refused to work.
+</p>
+
+
+<p>
+There were moments when he became frustrated. He wondered why something so
+simple could become so difficult. He watched tutorials, read examples,
+changed one line, saved the file, refreshed the browser, and waited.
+</p>
+
+
+<p>
+Again and again, the result was different from what he expected.
+But he did not stop.
+</p>
+
+
+<p>
+Every mistake taught him something new. Slowly he began to understand that
+code was not simply a collection of strange symbols. Every line had a
+purpose. Every element had a position. A tiny mistake could change the
+behavior of an entire page.
+</p>
+
+
+<div class="highlight">
+A small mistake in code can become a big lesson in the journey.
+</div>
+
+
+<p>
+With time, a routine began to form. In the morning he would learn something
+new. During the day he would test it. At night he would look at his mistakes
+and try to understand why they happened.
+</p>
+
+
+<p>
+Things that once looked impossible slowly became familiar. HTML became
+easier. CSS started making sense. JavaScript stopped looking like a wall of
+confusing words and started becoming a tool that could bring ideas to life.
+</p>
+
+
+<p>
+He discovered that creating a website was not only about writing code.
+It was also about patience, design, organization, testing, and understanding
+the people who would eventually use the website.
+</p>
+
+
+<div class="bigSpace"></div>
+
+
+<p>
+One evening he made an important decision. He wanted to create his own
+identity. Not just another random website, but something that could represent
+his ideas.
+</p>
+
+
+<p>
+He thought about different names for a long time. Some sounded too simple.
+Others were difficult to remember. Eventually one name stayed in his mind:
+AURA ORNOB.
+</p>
+
+
+<p>
+The name felt different to him. It represented his identity, his dreams,
+his creativity, and the future he wanted to build.
+</p>
+
+
+<p>
+He opened a new project and started designing it. He chose a dark theme,
+deep navy backgrounds, bright blue highlights, clean typography, and simple
+cards.
+</p>
+
+
+<p>
+He did not want the design to look complicated. He wanted it to feel modern,
+clean, fast, and comfortable to use.
+</p>
+
+
+<p>
+He tested the website on a phone. Then he opened it on a computer.
+On the smaller screen some text looked too large. A button was too small.
+Some spacing was uncomfortable. Another section looked perfect on desktop
+but strange on mobile.
+</p>
+
+
+<p>
+He fixed each problem one by one. He changed the spacing, adjusted the font,
+resized the buttons, and tested everything again.
+</p>
+
+
+<div class="space"></div>
+
+
+<p>
+Several days later, he opened the website again. This time he smiled.
+It was not the biggest website in the world. It was not used by thousands
+of people. It did not have a huge company behind it.
+</p>
+
+
+<p>
+But it was his.
+</p>
+
+
+<p>
+Every line had been written, tested, changed, and improved by him.
+That feeling was enough to give him the courage to continue.
+</p>
+
+
+<p>
+Then a new chapter began. Every day brought another idea. Sometimes he
+wanted to improve the design. Sometimes he wanted to add a new feature.
+Sometimes he wanted to completely rebuild a section because the first
+version did not feel right.
+</p>
+
+
+<p>
+Some days were successful. Other days were full of broken layouts,
+unexpected errors, and plans that simply did not work.
+</p>
+
+
+<p>
+But even on the worst days, he learned something.
+</p>
+
+
+<div class="bigSpace"></div>
+
+
+<p>
+He slowly understood that success does not always follow a straight road.
+Sometimes the road is blocked. Then a new path must be found.
+</p>
+
+
+<p>
+Sometimes progress takes longer than expected. Then patience becomes more
+important than speed.
+</p>
+
+
+<p>
+Sometimes confidence disappears. During those moments, it helps to remember
+how far you have already come.
+</p>
+
+
+<p>
+He started keeping his old projects instead of deleting them. Months later,
+he opened one of his first files and laughed.
+</p>
+
+
+<p>
+The code was messy. The design was simple. The spacing was strange.
+Some of the buttons did not even work correctly.
+</p>
+
+
+<p>
+Yet that old project was special.
+</p>
+
+
+<p>
+It was the beginning.
+</p>
+
+
+<p>
+Without that first imperfect project, there would have been no reason to
+create the second one. Without the second one, there would have been no
+third. Every imperfect attempt had become a step toward something better.
+</p>
+
+
+<div class="highlight">
+Progress is not about making everything perfect on the first attempt.
+Progress is about making the next attempt better.
+</div>
+
+
+<p>
+As the months passed, his ideas became larger. He started thinking beyond
+a single page. He imagined complete systems, useful tools, creative apps,
+gaming projects, online platforms, and digital products.
+</p>
+
+
+<p>
+Sometimes the ideas were too ambitious for his current skills. Instead of
+giving up, he wrote them down.
+</p>
+
+
+<p>
+He believed that an idea did not have to be possible today to be worth
+remembering.
+</p>
+
+
+<p>
+Maybe he could build it next year. Maybe after learning a new language.
+Maybe after understanding a new technology. Maybe after working with other
+people.
+</p>
+
+
+<p>
+The important thing was to keep the idea alive.
+</p>
+
+
+<div class="space"></div>
+
+
+<p>
+One night, while looking at the dark screen, he realized something important.
+The biggest difference between his first day and now was not the amount of
+code he knew.
+</p>
+
+
+<p>
+It was his mindset.
+</p>
+
+
+<p>
+In the beginning, every error looked like a reason to stop. Later, an error
+became a question.
+</p>
+
+
+<p>
+What caused it?
+</p>
+
+
+<p>
+Which line created the problem?
+</p>
+
+
+<p>
+What can be changed?
+</p>
+
+
+<p>
+How can the same mistake be avoided next time?
+</p>
+
+
+<p>
+That change made learning completely different.
+</p>
+
+
+<p>
+He stopped expecting everything to work immediately. Instead, he became
+comfortable with testing, failing, fixing, and trying again.
+</p>
+
+
+<p>
+He learned that real progress often happens quietly. There may be no
+applause. No one may know how many times a person failed before something
+finally worked.
+</p>
+
+
+<div class="bigSpace"></div>
+
+
+<p>
+A year from now, he knew he might look back at this version of AURA ORNOB
+and find many things he would want to improve.
+</p>
+
+
+<p>
+He might change the colors. He might rebuild the layout. He might create
+completely different projects. He might even laugh at the code he was
+writing today.
+</p>
+
+
+<p>
+And that would be okay.
+</p>
+
+
+<p>
+Because learning means changing.
+</p>
+
+
+<p>
+The goal was never to create something perfect forever. The goal was to
+create something better than yesterday.
+</p>
+
+
+<p>
+Outside the window, the night was still quiet. The distant lights were
+still shining. The city had not changed much.
+</p>
+
+
+<p>
+But inside that small room, something had changed.
+</p>
+
+
+<p>
+A blank page was no longer just a blank page.
+</p>
+
+
+<p>
+It was an opportunity.
+</p>
+
+
+<p>
+An empty file was no longer empty.
+</p>
+
+
+<p>
+It was the beginning of a project.
+</p>
+
+
+<p>
+And a small idea was no longer just an idea.
+</p>
+
+
+<p>
+It had become the first step toward a much bigger dream.
+</p>
+
+
+<div class="space"></div>
+
+
+<p>
+He saved the project one final time and looked at the screen.
+The clock was moving toward morning.
+</p>
+
+
+<p>
+He knew there would be more problems tomorrow. There would be more bugs,
+more designs to fix, more things to learn, and probably more moments when
+he would feel like giving up.
+</p>
+
+
+<p>
+But he also knew something else.
+</p>
+
+
+<p>
+He had already started.
+</p>
+
+
+<p>
+And sometimes starting is the hardest part.
+</p>
+
+
+<p>
+So he closed the editor, looked once more at the name AURA ORNOB, and smiled.
+</p>
+
+
+<p>
+Tomorrow would be another day.
+</p>
+
+
+<p>
+Another idea.
+</p>
+
+
+<p>
+Another project.
+</p>
+
+
+<p>
+Another opportunity to become better.
+</p>
+
+
+<p>
+The journey had only just begun.
+</p>
+
+
+<div class="bigSpace"></div>
+
+
+<p>
+Years later, perhaps people would see only the finished products. They would
+see polished interfaces, smooth buttons, beautiful animations, and systems
+that appeared to work effortlessly.
+</p>
+
+
+<p>
+They would not see the late nights. They would not see the broken versions.
+They would not see the hundreds of refreshes, the wrong file paths, the
+missing brackets, or the endless moments spent wondering why something
+refused to work.
+</p>
+
+
+<p>
+They would only see the result.
+</p>
+
+
+<p>
+But the creator would remember the journey.
+</p>
+
+
+<p>
+He would remember that every successful project had once been nothing more
+than a thought inside his head.
+</p>
+
+
+<p>
+And that thought had become real because he decided to begin.
+</p>
+
+
+<div class="highlight">
+Every great project begins with a simple decision:
+“I will try.”
+</div>
+
+
+<p>
+The story of AURA ORNOB was therefore not only a story about a website.
+It was a story about learning, patience, mistakes, ambition, creativity,
+and the courage to continue.
+</p>
+
+
+<p>
+The screen was dark now.
+</p>
+
+
+<p>
+The room was quiet.
+</p>
+
+
+<p>
+The night was almost over.
+</p>
+
+
+<p>
+But the dream was still awake.
+</p>
+
+
+</div>
+
+
+<!-- =========================
+     CONTINUE
+========================= -->
+
+<div class="bottom">
+
+  <div class="timer" id="timer">
+    Scroll to the bottom to start the 20-second timer.
+  </div>
+
+  <button
+    class="continue"
+    id="continueBtn"
+    disabled>
+    Continue
+  </button>
+
+</div>
+
+
+<!-- =========================
+     OWNER / ADMIN
+     BELOW CONTINUE
+========================= -->
+
+<div class="owner-admin">
+
+  <div class="title">
+    PROJECT INFORMATION
+  </div>
+
+  <div class="owner">
+    <span>OWNER :</span> AURA ORNOB
+  </div>
+
+  <div class="admin">
+    <span>ADMIN :</span> AURA RAZU YT
+  </div>
+
+</div>
+
+
+<!-- =========================
+     FINAL
+========================= -->
+
+<div
+  class="final"
+  id="finalBox">
+
+  <h2>
+    Access Unlocked
+  </h2>
+
+  <p
+    style="
+      margin-top:10px;
+      color:#9eb8d3;
+    ">
+    You have completed all 6 pages.
+  </p>
+
+  <!-- Replace this with your real KEY / FILE URL -->
+
+  <a
+    class="get-btn"
+    href="https://example.com"
+    target="_blank"
+    rel="noopener">
+
+    GET KEY / FILE
+
+  </a>
+
+</div>
+
+
+</div>
+
+
+<div class="footer">
+  AURA ORNOB © 2026
+</div>
+
+
 <script>
+
+/* =========================
+   SETTINGS
+========================= */
 
 const TOTAL_PAGES = 6;
 const WAIT_SECONDS = 20;
@@ -761,136 +1128,223 @@ let timeLeft = WAIT_SECONDS;
 let timerStarted = false;
 let countdown = null;
 
-const pageTop = document.getElementById("pageTop");
-const progress = document.getElementById("progress");
-const timer = document.getElementById("timer");
-const continueBtn = document.getElementById("continueBtn");
-const finalBox = document.getElementById("finalBox");
-const search = document.getElementById("search");
-const story = document.getElementById("story");
+
+/* =========================
+   ELEMENTS
+========================= */
+
+const pageTop =
+  document.getElementById("pageTop");
+
+const progress =
+  document.getElementById("progress");
+
+const timer =
+  document.getElementById("timer");
+
+const continueBtn =
+  document.getElementById("continueBtn");
+
+const finalBox =
+  document.getElementById("finalBox");
+
+const search =
+  document.getElementById("search");
+
+const story =
+  document.getElementById("story");
+
+
+/* =========================
+   UPDATE PAGE
+========================= */
 
 function updatePage(){
 
-  pageTop.textContent = `PAGE ${page} / ${TOTAL_PAGES}`;
+  pageTop.innerHTML =
+    `<span>PAGE</span> ${page} / ${TOTAL_PAGES}`;
 
   progress.style.width =
     `${(page / TOTAL_PAGES) * 100}%`;
 
   timeLeft = WAIT_SECONDS;
+
   timerStarted = false;
 
   clearInterval(countdown);
 
   continueBtn.disabled = true;
+
   continueBtn.classList.remove("enabled");
 
   timer.textContent =
     "Scroll to the bottom to start the 20-second timer.";
+
 }
+
+
+/* =========================
+   START TIMER
+========================= */
 
 function startTimer(){
 
   if(timerStarted) return;
 
   timerStarted = true;
+
   timeLeft = WAIT_SECONDS;
 
   timer.textContent =
     `Please wait ${timeLeft} seconds...`;
 
-  countdown = setInterval(function(){
+  countdown =
+    setInterval(function(){
 
-    timeLeft--;
+      timeLeft--;
 
-    if(timeLeft > 0){
+      if(timeLeft > 0){
 
-      timer.textContent =
-        `Please wait ${timeLeft} seconds...`;
+        timer.textContent =
+          `Please wait ${timeLeft} seconds...`;
 
-    }else{
+      }
 
-      clearInterval(countdown);
+      else{
 
-      timer.textContent =
-        "Ready. You can continue.";
+        clearInterval(countdown);
 
-      continueBtn.disabled = false;
-      continueBtn.classList.add("enabled");
-    }
+        timer.textContent =
+          "Ready. You can continue.";
 
-  },1000);
+        continueBtn.disabled = false;
+
+        continueBtn.classList.add("enabled");
+
+      }
+
+    },1000);
+
 }
 
-window.addEventListener("scroll",function(){
 
-  const currentScroll = window.scrollY;
-  const screenHeight = window.innerHeight;
-  const fullHeight = document.documentElement.scrollHeight;
+/* =========================
+   SCROLL DETECTION
+========================= */
 
-  if(
-    currentScroll + screenHeight
-    >= fullHeight - 120
-  ){
-    startTimer();
-  }
+window.addEventListener(
+  "scroll",
+  function(){
 
-});
+    const currentScroll =
+      window.scrollY;
 
-continueBtn.addEventListener("click",function(){
+    const screenHeight =
+      window.innerHeight;
 
-  if(page < TOTAL_PAGES){
+    const fullHeight =
+      document.documentElement.scrollHeight;
 
-    page++;
+    if(
+      currentScroll + screenHeight
+      >= fullHeight - 120
+    ){
 
-    updatePage();
-
-    window.scrollTo({
-      top:0,
-      behavior:"smooth"
-    });
-
-  }else{
-
-    finalBox.style.display = "block";
-
-    finalBox.scrollIntoView({
-      behavior:"smooth"
-    });
-
-  }
-
-});
-
-search.addEventListener("input",function(){
-
-  const query =
-    search.value.toLowerCase().trim();
-
-  const paragraphs =
-    story.querySelectorAll("p");
-
-  paragraphs.forEach(function(p){
-
-    const text =
-      p.textContent.toLowerCase();
-
-    if(!query || text.includes(query)){
-
-      p.style.display = "";
-
-    }else{
-
-      p.style.display = "none";
+      startTimer();
 
     }
 
-  });
+  }
+);
 
-});
+
+/* =========================
+   CONTINUE BUTTON
+========================= */
+
+continueBtn.addEventListener(
+  "click",
+  function(){
+
+    if(page < TOTAL_PAGES){
+
+      page++;
+
+      updatePage();
+
+      window.scrollTo({
+        top:0,
+        behavior:"smooth"
+      });
+
+    }
+
+    else{
+
+      finalBox.style.display =
+        "block";
+
+      finalBox.scrollIntoView({
+        behavior:"smooth"
+      });
+
+    }
+
+  }
+);
+
+
+/* =========================
+   SEARCH
+========================= */
+
+search.addEventListener(
+  "input",
+  function(){
+
+    const query =
+      search.value
+      .toLowerCase()
+      .trim();
+
+    const paragraphs =
+      story.querySelectorAll("p");
+
+    paragraphs.forEach(
+      function(p){
+
+        const text =
+          p.textContent.toLowerCase();
+
+        if(
+          !query ||
+          text.includes(query)
+        ){
+
+          p.style.display = "";
+
+        }
+
+        else{
+
+          p.style.display = "none";
+
+        }
+
+      }
+    );
+
+  }
+);
+
+
+/* =========================
+   INITIAL
+========================= */
 
 updatePage();
 
 </script>
 
 </body>
-        </html>
+  </html>
