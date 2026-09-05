@@ -2,7 +2,7 @@
 <html lang="bn">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Continue</title>
 
 <style>
@@ -24,8 +24,8 @@ body{
 .wrap{
   width:100%;
   max-width:720px;
-  min-height:100vh;
   background:#000;
+  min-height:100vh;
 }
 
 .top{
@@ -34,11 +34,10 @@ body{
   display:flex;
   align-items:center;
   padding:0 16px;
-  gap:14px;
   position:sticky;
   top:0;
+  z-index:20;
   background:#000;
-  z-index:10;
 }
 
 .logo{
@@ -53,49 +52,52 @@ body{
 }
 
 .card{
-  padding:24px 16px 60px;
+  padding:25px 16px 80px;
 }
 
 h1{
   font-size:28px;
-  line-height:1.25;
   margin:8px 0 18px;
 }
 
 p{
-  color:#cfcfcf;
-  line-height:1.8;
+  color:#ccc;
   font-size:16px;
+  line-height:1.9;
 }
 
-/* বড় content area */
-.long-content{
-  min-height:1200px;
-  padding-top:10px;
+/* প্রতিটি ধাপ ১০,০০০px */
+.long-page{
+  min-height:10000px;
 }
 
-.section{
-  margin:35px 0;
-  padding:20px;
-  background:#080808;
-  border:1px solid #202020;
+.block{
+  margin:40px 0;
+  padding:22px;
+  border:1px solid #222;
+  background:#050505;
   border-radius:8px;
 }
 
-.section h2{
-  font-size:20px;
-  margin:0 0 12px;
+.block h2{
+  margin:0 0 15px;
+  font-size:21px;
+}
+
+.spacer{
+  height:1500px;
 }
 
 .adlabel{
   text-align:center;
   color:#777;
   font-size:13px;
-  margin:35px 0 8px;
+  margin:30px 0 8px;
 }
 
 .adbox{
-  min-height:120px;
+  width:100%;
+  min-height:100px;
   border:1px solid #252525;
   background:#080808;
   display:flex;
@@ -104,25 +106,18 @@ p{
   overflow:hidden;
 }
 
-.adbox iframe,
-.adbox img{
-  max-width:100%;
-  border:0;
-}
-
-.bottom-message{
-  margin-top:40px;
-  padding:20px;
-  border:1px solid #252525;
-  border-radius:8px;
+.bottom{
+  margin-top:30px;
+  padding:25px 15px;
   text-align:center;
-  color:#aaa;
+  color:#999;
+  border:1px solid #292929;
+  border-radius:8px;
 }
 
 .timer{
   text-align:center;
   color:#aaa;
-  font-size:14px;
   margin:25px 0 12px;
 }
 
@@ -132,16 +127,14 @@ button{
   border-radius:4px;
   background:#fff;
   color:#111;
-  padding:16px 18px;
+  padding:16px;
   font-size:17px;
   font-weight:700;
-  cursor:pointer;
 }
 
 button:disabled{
   background:#303030;
   color:#777;
-  cursor:not-allowed;
 }
 
 .note{
@@ -176,13 +169,13 @@ button:disabled{
 
 .success a{
   display:block;
+  margin-top:25px;
+  padding:16px;
   background:#fff;
   color:#111;
   text-decoration:none;
-  padding:16px;
-  border-radius:4px;
   font-weight:700;
-  margin-top:25px;
+  border-radius:4px;
 }
 </style>
 </head>
@@ -191,230 +184,203 @@ button:disabled{
 
 <div class="wrap">
 
-  <div class="top">
-    <div class="logo">RODA E MOTOR</div>
-    <div class="step" id="stepText">1/5</div>
+<div class="top">
+  <div class="logo">RODA E MOTOR</div>
+  <div class="step" id="stepText">1/5</div>
+</div>
+
+<div id="gate" class="card">
+
+<h1>Continue para acessar</h1>
+
+<p>
+Desça a página até o final desta etapa.
+</p>
+
+<div class="long-page">
+
+<div class="block">
+<h2>Bem-vindo</h2>
+<p>
+Esta é a etapa de acesso. Continue fazendo scroll para baixo.
+</p>
+</div>
+
+<div class="spacer"></div>
+
+<div class="block">
+<h2>Continue</h2>
+<p>
+Ainda há conteúdo abaixo. Continue descendo a página.
+</p>
+</div>
+
+<div class="spacer"></div>
+
+<div class="block">
+<h2>Publicidade</h2>
+
+<div class="adlabel">ADVERTISEMENT</div>
+
+<div class="adbox">
+  <div id="ad-slot">
+    <!-- ADSTERRA CODE AQUI -->
   </div>
-
-  <div id="gate" class="card">
-
-    <h1>Continue para acessar</h1>
-
-    <p id="description">
-      Para continuar, desça a página até o final desta etapa.
-      Aguarde o contador e depois pressione Continue.
-    </p>
-
-
-    <!-- অনেক বড় Scroll করার জায়গা -->
-    <div class="long-content">
-
-      <div class="section">
-        <h2>Informação</h2>
-        <p>
-          Bem-vindo. Esta é a primeira etapa do acesso.
-          Role a página para baixo para visualizar todo o conteúdo.
-        </p>
-      </div>
-
-      <div class="section">
-        <h2>Continue lendo</h2>
-        <p>
-          Você precisa chegar ao final da página antes que o botão
-          Continue seja liberado.
-        </p>
-        <p>
-          Continue descendo. Há mais conteúdo abaixo.
-        </p>
-      </div>
-
-      <div class="section">
-        <h2>Conteúdo da etapa</h2>
-        <p>
-          Este espaço pode receber textos, imagens ou outros conteúdos
-          que você quiser adicionar posteriormente.
-        </p>
-        <p>
-          A página foi deixada propositalmente mais comprida para que
-          seja necessário fazer scroll até a parte inferior.
-        </p>
-      </div>
-
-
-      <!-- ADSTER​​RA BANNER -->
-      <div class="adlabel">
-        Publicidade
-      </div>
-
-      <div class="adbox">
-        <div id="ad-slot">
-          <!-- ADSTERRA CODE VAI AQUI -->
-        </div>
-      </div>
-
-
-      <div class="section">
-        <h2>Mais informações</h2>
-        <p>
-          Continue descendo até encontrar o botão Continue no final
-          desta etapa.
-        </p>
-        <p>
-          O anúncio ficará nesta área quando você inserir o código
-          fornecido pelo Adsterra.
-        </p>
-      </div>
-
-
-      <div class="section">
-        <h2>Quase chegando</h2>
-        <p>
-          Falta pouco. Continue fazendo scroll para chegar ao final.
-        </p>
-      </div>
-
-
-      <div class="section">
-        <h2>Final da etapa</h2>
-        <p>
-          Você chegou à parte final desta etapa.
-          Agora aguarde o contador terminar.
-        </p>
-      </div>
-
-    </div>
-
-
-    <div class="bottom-message">
-      Você chegou ao final desta etapa.
-    </div>
-
-
-    <div class="timer" id="timer">
-      Aguarde 10 segundos...
-    </div>
-
-    <button id="continueBtn" disabled>
-      Continue
-    </button>
-
-    <div class="note">
-      Etapa <span id="n">1</span> de 5
-    </div>
-
-    <div class="progress">
-      <i id="bar"></i>
-    </div>
-
-  </div>
-
-
-  <!-- FINAL -->
-  <div id="success" class="success hidden">
-
-    <h1>Pronto!</h1>
-
-    <p>
-      As 5 etapas foram concluídas.
-    </p>
-
-    <a id="destination"
-       href="#"
-       rel="noopener">
-      ACESSAR AGORA
-    </a>
-
-  </div>
+</div>
 
 </div>
 
+<div class="spacer"></div>
+
+<div class="block">
+<h2>Mais informações</h2>
+<p>
+Continue descendo até chegar à parte final desta etapa.
+</p>
+</div>
+
+<div class="spacer"></div>
+
+<div class="block">
+<h2>Quase no final</h2>
+<p>
+Continue fazendo scroll.
+</p>
+</div>
+
+<div class="spacer"></div>
+
+<div class="block">
+<h2>Final</h2>
+<p>
+Você chegou perto do final desta etapa.
+</p>
+</div>
+
+</div>
+
+<div class="bottom">
+Você chegou ao final desta etapa.
+</div>
+
+<div class="timer" id="timer">
+Desça até o final da página...
+</div>
+
+<button id="continueBtn" disabled>
+Continue
+</button>
+
+<div class="note">
+Etapa <span id="n">1</span> de 5
+</div>
+
+<div class="progress">
+<i id="bar"></i>
+</div>
+
+</div>
+
+<div id="success" class="success hidden">
+
+<h1>Pronto!</h1>
+
+<p>As 5 etapas foram concluídas.</p>
+
+<a id="destination" href="#" rel="noopener">
+ACESSAR AGORA
+</a>
+
+</div>
+
+</div>
 
 <script>
 
-/* =========================
-   CONFIGURAÇÃO
-========================= */
-
 const WAIT_SECONDS = 10;
 
-/* FINAL KEY / FILE LINK */
+/* পরে এখানে Key/File-এর আসল লিংক বসাবে */
 const DESTINATION_URL = "https://example.com";
 
-
-/* ========================= */
-
 const total = 5;
+
 let current = 1;
 let seconds = WAIT_SECONDS;
 let reachedBottom = false;
-let timerStarted = false;
+let timerRunning = false;
 
-const timer = document.getElementById("timer");
-const btn = document.getElementById("continueBtn");
-const stepText = document.getElementById("stepText");
-const n = document.getElementById("n");
-const bar = document.getElementById("bar");
-const gate = document.getElementById("gate");
-const success = document.getElementById("success");
-const destination = document.getElementById("destination");
+const timer =
+document.getElementById("timer");
+
+const btn =
+document.getElementById("continueBtn");
+
+const stepText =
+document.getElementById("stepText");
+
+const n =
+document.getElementById("n");
+
+const bar =
+document.getElementById("bar");
+
+const gate =
+document.getElementById("gate");
+
+const success =
+document.getElementById("success");
+
+const destination =
+document.getElementById("destination");
 
 
-/* =========================
-   CHECK BOTTOM
-========================= */
-
-window.addEventListener("scroll", function(){
+/* নিচে পৌঁছেছে কিনা */
+window.addEventListener("scroll",function(){
 
   const position =
     window.innerHeight + window.scrollY;
 
-  const height =
+  const pageHeight =
     document.documentElement.scrollHeight;
 
-  if(position >= height - 100){
+  if(position >= pageHeight - 150){
 
     reachedBottom = true;
 
     startTimer();
-
   }
 
 });
 
 
-/* =========================
-   TIMER
-========================= */
-
+/* নিচে পৌঁছানোর পর timer */
 function startTimer(){
 
-  if(timerStarted) return;
+  if(timerRunning) return;
 
-  timerStarted = true;
-
+  timerRunning = true;
   seconds = WAIT_SECONDS;
 
-  timer.textContent =
+  timer.innerText =
     "Aguarde " + seconds + " segundos...";
 
-  const tick = setInterval(function(){
+  const interval = setInterval(function(){
 
     seconds--;
 
     if(seconds > 0){
 
-      timer.textContent =
+      timer.innerText =
         "Aguarde " + seconds + " segundos...";
 
     }else{
 
-      clearInterval(tick);
+      clearInterval(interval);
 
-      timer.textContent =
-        "Agora você pode continuar.";
+      timer.innerText =
+        "✓ Agora você pode continuar.";
 
       btn.disabled = false;
-
     }
 
   },1000);
@@ -422,11 +388,8 @@ function startTimer(){
 }
 
 
-/* =========================
-   NEXT
-========================= */
-
-btn.addEventListener("click", function(){
+/* Continue */
+btn.addEventListener("click",function(){
 
   if(btn.disabled) return;
 
@@ -434,14 +397,28 @@ btn.addEventListener("click", function(){
 
     current++;
 
-    updateStep();
+    stepText.innerText =
+      current + "/5";
+
+    n.innerText =
+      current;
+
+    bar.style.width =
+      ((current / total) * 100) + "%";
+
+    reachedBottom = false;
+    timerRunning = false;
+    seconds = WAIT_SECONDS;
+
+    btn.disabled = true;
+
+    timer.innerText =
+      "Desça até o final da página...";
 
     window.scrollTo({
       top:0,
       behavior:"smooth"
     });
-
-    resetStep();
 
   }else{
 
@@ -456,53 +433,7 @@ btn.addEventListener("click", function(){
 
 });
 
-
-/* =========================
-   UPDATE
-========================= */
-
-function updateStep(){
-
-  stepText.textContent =
-    current + "/" + total;
-
-  n.textContent =
-    current;
-
-  bar.style.width =
-    ((current / total) * 100) + "%";
-
-}
-
-
-/* =========================
-   RESET
-========================= */
-
-function resetStep(){
-
-  seconds = WAIT_SECONDS;
-
-  reachedBottom = false;
-
-  timerStarted = false;
-
-  btn.disabled = true;
-
-  timer.textContent =
-    "Aguarde até o final da página...";
-
-}
-
-
-/* =========================
-   START
-========================= */
-
-timer.textContent =
-  "Página até o final faça scroll...";
-
 </script>
 
 </body>
-</html>
+  </html>
