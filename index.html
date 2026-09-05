@@ -4,21 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-<title>Story Gate</title>
+<title>AURA ORNOB</title>
 
 <style>
 *{
   box-sizing:border-box;
 }
 
-html{
-  scroll-behavior:smooth;
-}
-
 body{
   margin:0;
-  background:#08090d;
-  color:#eee;
+  background:#080b12;
+  color:#eeeeee;
   font-family:Arial,sans-serif;
   line-height:1.8;
 }
@@ -29,67 +25,104 @@ body{
   margin:auto;
 }
 
-header{
+/* ===== TOP ===== */
+
+.top{
+  padding:22px 0 10px;
   text-align:center;
-  padding:25px 10px;
 }
 
-header h1{
-  margin:0;
+.logo{
+  color:#168cff;
   font-size:30px;
+  font-weight:bold;
+  letter-spacing:2px;
+  margin-bottom:14px;
 }
 
-.progress{
-  color:#999;
-  margin-top:8px;
+/* ===== SEARCH BAR ===== */
+
+.search-box{
+  width:100%;
+  height:52px;
+  background:#151b26;
+  border:1px solid #27364d;
+  border-radius:28px;
+  display:flex;
+  align-items:center;
+  padding:0 18px;
+  margin-bottom:20px;
 }
 
-.step{
-  display:none;
+.search-icon{
+  font-size:21px;
+  color:#168cff;
+  margin-right:10px;
 }
 
-.step.active{
-  display:block;
-}
-
-.story{
-  background:#14161d;
-  border-radius:14px;
-  padding:20px;
-  box-shadow:0 5px 25px #0008;
-}
-
-.story-line{
-  margin:0;
-  padding:4px 0;
+#search{
+  width:100%;
+  height:100%;
+  border:0;
+  outline:0;
+  background:transparent;
+  color:white;
   font-size:16px;
 }
 
-.story-gap{
-  height:36px;
+#search::placeholder{
+  color:#78859a;
 }
 
-.ad{
-  min-height:90px;
-  margin:25px 0;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border:1px dashed #444;
-  border-radius:10px;
-  color:#777;
+/* ===== CONTENT ===== */
+
+.story{
+  background:#111722;
+  border-radius:14px;
+  padding:20px;
+  box-shadow:0 5px 25px #0009;
 }
+
+.line{
+  margin:0;
+  padding:3px 0;
+  font-size:16px;
+}
+
+.gap{
+  height:28px;
+}
+
+/* ===== SEARCH RESULT ===== */
+
+.result{
+  display:none;
+  background:#151b26;
+  padding:12px 15px;
+  border-radius:10px;
+  margin-bottom:15px;
+  color:#8ebeff;
+}
+
+mark{
+  background:#168cff;
+  color:white;
+  border-radius:3px;
+  padding:1px 3px;
+}
+
+/* ===== BOTTOM ===== */
 
 .bottom{
-  margin:30px 0;
-  padding:25px 15px;
   text-align:center;
-  background:#14161d;
+  background:#111722;
   border-radius:14px;
+  padding:25px 15px;
+  margin:30px 0 50px;
 }
 
 .timer{
-  font-size:19px;
+  font-size:18px;
   margin-bottom:15px;
 }
 
@@ -97,15 +130,14 @@ button{
   border:0;
   border-radius:10px;
   padding:14px 28px;
-  background:#444;
-  color:#fff;
+  background:#3b4350;
+  color:white;
   font-size:17px;
   font-weight:bold;
-  cursor:not-allowed;
 }
 
 button.ready{
-  background:#00a86b;
+  background:#168cff;
   cursor:pointer;
 }
 
@@ -113,19 +145,22 @@ button:disabled{
   opacity:.55;
 }
 
-.final{
-  text-align:center;
-  padding:60px 15px;
-}
+/* ===== RESPONSIVE ===== */
 
-.final a{
-  display:inline-block;
-  padding:16px 30px;
-  border-radius:10px;
-  background:#00a86b;
-  color:white;
-  text-decoration:none;
-  font-weight:bold;
+@media(max-width:600px){
+
+  .logo{
+    font-size:25px;
+  }
+
+  .story{
+    padding:16px;
+  }
+
+  .line{
+    font-size:15px;
+  }
+
 }
 </style>
 </head>
@@ -134,16 +169,49 @@ button:disabled{
 
 <div class="container">
 
-<header>
-  <h1>Story Gate</h1>
-  <div class="progress" id="progress">
-    Step 1 / 6
-  </div>
-</header>
+  <div class="top">
 
-<div id="steps"></div>
+    <div class="logo">
+      AURA ORNOB
+    </div>
+
+    <div class="search-box">
+
+      <span class="search-icon">⌕</span>
+
+      <input
+        id="search"
+        type="search"
+        placeholder="Search story..."
+        autocomplete="off"
+      >
+
+    </div>
+
+  </div>
+
+
+  <div id="result" class="result"></div>
+
+
+  <div id="story" class="story"></div>
+
+
+  <div class="bottom">
+
+    <div class="timer">
+      Scroll to the bottom and wait:
+      <strong id="count">20</strong>s
+    </div>
+
+    <button id="continueBtn" disabled>
+      Continue
+    </button>
+
+  </div>
 
 </div>
+
 
 <script>
 
@@ -151,367 +219,363 @@ button:disabled{
    SETTINGS
 ========================= */
 
-const TOTAL_STEPS = 6;
-
 const WAIT_SECONDS = 20;
-
-/* পরে এখানে তোমার আসল Key/File link বসাবে */
-const DESTINATION_URL = "https://example.com";
 
 
 /* =========================
-   ENGLISH STORY
+   STORY
 ========================= */
 
-const storyLines = [
+const paragraphs = [
 
-"Morning came quietly to the little town.",
-"The streets were covered with a soft layer of mist.",
-"Daniel opened his window and looked outside.",
-"The old clock tower was barely visible in the distance.",
-"He had been waiting for this morning for many years.",
-"On his desk was a small wooden box.",
-"The box had belonged to his grandfather.",
-"Inside it was a mysterious silver key.",
-"Daniel had never discovered what the key could open.",
-"That day he decided to find the answer.",
+"Daniel woke before sunrise and quietly opened the old wooden window.",
+"The town outside was still sleeping beneath a layer of morning mist.",
+"A gentle wind moved through the narrow streets and carried the smell of rain.",
+"Daniel looked at the small clock beside his bed and realized that the day had finally arrived.",
+"For years he had wondered about the strange story his grandfather had told him.",
+"Nobody else in the family believed the story was real.",
+"But Daniel had always believed there was something hidden behind those words.",
+"On his desk rested an old notebook covered with dust and faded marks.",
+"Beside the notebook was a small silver key that he had discovered the previous evening.",
+"He placed the key carefully inside his pocket and prepared to leave.",
 
-"He placed the key inside his jacket.",
-"Then he picked up an old leather bag.",
-"The railway station was his first destination.",
-"Nobody knew why he was going there.",
-"The station was almost completely empty.",
-"A lonely train stood beside the platform.",
-"Daniel checked the number written on his ticket.",
-"It matched the number on the train.",
-"He slowly stepped inside the final carriage.",
-"The doors closed behind him.",
+"The road toward the northern forest was long and almost completely empty.",
+"Daniel carried a small bag containing water, food, a flashlight, and the old notebook.",
+"As he walked, the sunlight slowly appeared above the distant hills.",
+"Birds moved between the branches while the sound of the town disappeared behind him.",
+"After an hour he reached an abandoned railway station.",
+"The station had not been used for many years.",
+"Old signs hung from the walls and moved whenever the wind became stronger.",
+"Daniel checked the notebook once again.",
+"A drawing inside showed the exact same station.",
+"Underneath the drawing was a message telling him to wait.",
 
-"The train began moving through the countryside.",
-"Green fields passed quickly outside the window.",
-"Daniel opened his grandfather's notebook.",
-"Several pages contained drawings of strange symbols.",
-"One symbol looked exactly like the silver key.",
-"Another drawing showed an old stone tower.",
-"Under the drawing was a single sentence.",
-"The sentence told him to follow the northern road.",
-"Daniel looked at the map beside the window.",
-"The northern road was far beyond the station.",
+"Daniel waited beside the old platform for several minutes.",
+"Then he heard a distant sound coming from beyond the trees.",
+"A train appeared slowly through the morning fog.",
+"It looked older than any train Daniel had ever seen.",
+"The train stopped directly in front of him.",
+"Nobody opened the doors.",
+"Daniel stepped forward and noticed a small silver symbol beside the entrance.",
+"The symbol looked exactly like the one drawn in his grandfather's notebook.",
+"He touched the symbol with his fingers.",
+"The door immediately opened.",
 
-"After two hours the train finally stopped.",
-"Daniel stepped onto a quiet platform.",
-"There were no shops and no people around.",
-"A narrow road disappeared into a forest.",
-"He followed the road without looking back.",
-"Birds moved between the tall branches.",
-"The wind carried the smell of rain.",
-"After walking for an hour he found an old bridge.",
-"Under the bridge was a clear river.",
-"On the other side stood a stone tower.",
+"Inside the train everything was silent.",
+"The seats were covered with dark blue fabric and the windows were covered with dust.",
+"Daniel chose a seat near the front and placed his bag beside him.",
+"After a few seconds the train began moving.",
+"The landscape outside changed quickly.",
+"Green fields disappeared and tall forests appeared in their place.",
+"Daniel opened the notebook and started reading the next page.",
+"It described a tower hidden somewhere beyond the forest.",
+"The tower was supposed to contain an answer to an old family mystery.",
+"Daniel continued reading as the train moved deeper into the wilderness.",
 
-"Daniel immediately recognized the tower.",
-"It was the same tower from his grandfather's notebook.",
-"The large wooden door was locked.",
-"He took out the silver key.",
-"For a moment he hesitated.",
-"Then he placed the key inside the lock.",
-"The lock turned with a quiet click.",
-"The heavy door slowly opened.",
-"Darkness filled the entrance.",
-"Daniel stepped into the forgotten tower.",
+"Several hours passed before the train finally stopped.",
+"Daniel stepped onto another empty platform.",
+"There was no station building and no sign showing the name of the place.",
+"A narrow path began near the tracks and disappeared between the trees.",
+"Daniel followed the path while holding the notebook in one hand.",
+"The forest became darker as he walked deeper inside.",
+"Large trees blocked most of the sunlight.",
+"Occasionally he heard strange sounds coming from far away.",
+"Still, he continued walking without turning around.",
+"He trusted the directions written in the notebook.",
 
-"Inside, the walls were covered with old paintings.",
-"Some paintings showed people he had never seen.",
-"Others showed the same silver key.",
-"A narrow staircase climbed toward the top.",
-"Daniel began walking upward.",
-"Every step made a quiet sound.",
-"At the highest floor he found a table.",
-"On the table was another wooden box.",
-"This box was much larger than the first one.",
-"A note was attached to its lid.",
+"After a long walk Daniel discovered a stone bridge.",
+"A clear river flowed underneath it.",
+"On the opposite side stood an enormous stone tower.",
+"Daniel stopped because he immediately recognized it.",
+"It was exactly the same tower shown in his grandfather's drawings.",
+"The tower looked abandoned but its main door was still in perfect condition.",
+"Daniel reached into his pocket and removed the silver key.",
+"For a moment he wondered whether he should continue.",
+"Then he placed the key into the lock.",
+"The door opened with a deep and quiet sound.",
 
-"Daniel carefully opened the note.",
-"The handwriting looked exactly like his grandfather's.",
-"It said that every journey begins with a question.",
-"It also said that answers are rarely found quickly.",
-"Daniel smiled because he finally understood.",
-"The key had never been the real treasure.",
-"The journey itself had been the message.",
-"He looked through the small window.",
-"Sunlight was beginning to enter the tower.",
-"For the first time, the old mystery felt peaceful.",
+"Inside the tower the air was cold.",
+"The walls were covered with paintings, maps, and strange symbols.",
+"Some of the paintings showed people standing beside the same river.",
+"Others showed a small village that Daniel recognized from old family photographs.",
+"He moved slowly from one room to another.",
+"At the center of the largest room stood a wooden table.",
+"On the table was another notebook.",
+"This notebook looked much newer than the one Daniel carried.",
+"He opened it carefully.",
+"The first page contained his own name.",
 
-"Daniel closed the notebook and returned downstairs.",
-"He locked the tower door behind him.",
-"The forest looked different in the afternoon light.",
-"He followed the road back toward the station.",
-"Along the way he thought about his grandfather.",
-"Many questions still remained unanswered.",
-"But he no longer felt afraid of them.",
-"Some mysteries were meant to become journeys.",
-"Some journeys were meant to change people.",
-"And Daniel knew his journey had only begun."
+"Daniel stepped backward in surprise.",
+"He wondered how someone could have written his name inside a book hidden in an abandoned tower.",
+"The following pages contained descriptions of events from his childhood.",
+"Everything was accurate, including memories he had never told anyone.",
+"Daniel continued reading until he reached the final page.",
+"That page contained only one sentence.",
+"It said that every person eventually reaches a moment when they must choose their own path.",
+"Daniel closed the notebook and looked around the room.",
+"For the first time he understood that the mystery was not about treasure.",
+"It was about discovering who he wanted to become.",
+
+"Outside, the afternoon sun began disappearing behind the mountains.",
+"Daniel left the tower carrying both notebooks.",
+"The journey home felt completely different from the journey there.",
+"He no longer felt afraid of the unknown forest.",
+"Every tree seemed familiar now.",
+"The river reflected the orange light of the evening sky.",
+"Daniel stopped on the bridge and looked back at the tower.",
+"He knew that many questions were still unanswered.",
+"But he also knew that not every question needed an immediate answer.",
+"Some journeys were valuable simply because they changed the person who made them.",
+
+"Daniel returned to the railway station just before sunset.",
+"The mysterious train was still waiting beside the platform.",
+"He stepped inside and placed the notebooks on the seat.",
+"The train began moving without anyone controlling it.",
+"Through the window Daniel watched the forest disappear.",
+"He thought about his grandfather and the strange secret he had protected for so many years.",
+"Perhaps the secret had always been a lesson rather than a hidden object.",
+"Perhaps the journey was meant to continue through another generation.",
+"Daniel smiled and opened the notebook one final time.",
+"A new blank page waited for him.",
+
+"He took a pen from his bag and began writing.",
+"He wrote about the town, the station, the forest, and the tower.",
+"He wrote about fear and courage.",
+"He wrote about questions that had no simple answers.",
+"He wrote about the people who had influenced his life.",
+"Most importantly, he wrote about the future.",
+"The train continued through the night while the stars appeared above the windows.",
+"Daniel realized that he was no longer searching for someone else's story.",
+"He was finally beginning to write his own.",
+"And somewhere beyond the dark horizon, another journey was already waiting."
 
 ];
 
 
 /* =========================
-   CREATE LONG STORY
+   CREATE 12,000px+ CONTENT
 ========================= */
 
-function createStory(multiplier){
+const storyBox =
+  document.getElementById("story");
 
-  let output = [];
+/*
+  120 বার গল্পের অংশ তৈরি করা হচ্ছে।
+  ফলে content অনেক লম্বা হবে এবং
+  ফাঁকা 12000px বানানো হবে না।
+*/
 
-  for(let round=0; round<multiplier; round++){
+let allLines = [];
 
-    for(let i=0;i<storyLines.length;i++){
+for(let round=0; round<120; round++){
 
-      output.push(storyLines[i]);
+  for(let i=0;i<paragraphs.length;i++){
 
-      /*
-       প্রতি ১০ লাইনের পর ২ লাইনের gap
-      */
-      if((i+1)%10===0){
-        output.push("");
-        output.push("");
-      }
+    allLines.push(paragraphs[i]);
+
+    /*
+      প্রতি ১০ লাইনের পর
+      ছোট natural paragraph gap
+    */
+
+    if(allLines.length % 10 === 0){
+
+      allLines.push("");
+      allLines.push("");
 
     }
 
   }
 
-  return output;
 }
 
 
 /* =========================
-   CREATE STEPS
+   DISPLAY STORY
 ========================= */
 
-const stepsBox = document.getElementById("steps");
+function showStory(){
 
-for(let step=1;step<=TOTAL_STEPS;step++){
+  storyBox.innerHTML = "";
 
-  const section = document.createElement("section");
+  allLines.forEach((text,index)=>{
 
-  section.className =
-    "step" + (step===1 ? " active" : "");
+    if(text === ""){
 
-  section.id = "step-"+step;
+      const gap =
+        document.createElement("div");
 
-  const story = document.createElement("div");
+      gap.className = "gap";
 
-  story.className = "story";
-
-  /*
-    প্রতিটি Step-এ অনেক গল্প।
-    একই গল্প বারবার না দেখিয়ে
-    বড় content তৈরি করার জন্য
-    বিভিন্ন অংশ যোগ করা হচ্ছে।
-  */
-
-  const lines = createStory(20);
-
-  lines.forEach((line)=>{
-
-    if(line===""){
-
-      const gap = document.createElement("div");
-
-      gap.className = "story-gap";
-
-      story.appendChild(gap);
+      storyBox.appendChild(gap);
 
     }else{
 
-      const p = document.createElement("p");
+      const p =
+        document.createElement("p");
 
-      p.className = "story-line";
+      p.className = "line";
 
-      p.textContent = line;
+      p.textContent = text;
 
-      story.appendChild(p);
+      storyBox.appendChild(p);
 
     }
 
   });
 
-
-  section.appendChild(story);
-
-
-  /*
-    Ad area
-  */
-
-  const ad = document.createElement("div");
-
-  ad.className = "ad";
-
-  ad.textContent = "ADVERTISEMENT";
-
-  section.appendChild(ad);
-
-
-  /*
-    Bottom section
-  */
-
-  const bottom = document.createElement("div");
-
-  bottom.className = "bottom";
-
-  bottom.innerHTML = `
-    <div class="timer">
-      Scroll to the bottom and wait:
-      <strong class="count">${WAIT_SECONDS}</strong>s
-    </div>
-
-    <button disabled>
-      Continue
-    </button>
-  `;
-
-  section.appendChild(bottom);
-
-  stepsBox.appendChild(section);
 }
+
+showStory();
 
 
 /* =========================
-   STEP SYSTEM
+   SEARCH
 ========================= */
 
-let currentStep = 1;
+const search =
+  document.getElementById("search");
 
-const sections =
-  document.querySelectorAll(".step");
+const result =
+  document.getElementById("result");
 
-const progress =
-  document.getElementById("progress");
+search.addEventListener("input",()=>{
+
+  const query =
+    search.value.trim().toLowerCase();
+
+  if(!query){
+
+    result.style.display = "none";
+    showStory();
+    return;
+
+  }
+
+  const matches =
+    allLines.filter(line =>
+      line &&
+      line.toLowerCase().includes(query)
+    );
+
+  result.style.display = "block";
+
+  result.textContent =
+    matches.length +
+    " matching line(s) found.";
+
+  storyBox.innerHTML = "";
+
+  matches.forEach(line=>{
+
+    const p =
+      document.createElement("p");
+
+    p.className = "line";
+
+    const escaped =
+      query.replace(
+        /[.*+?^${}()|[\]\\]/g,
+        "\\$&"
+      );
+
+    p.innerHTML =
+      line.replace(
+        new RegExp(escaped,"gi"),
+        match => "<mark>"+match+"</mark>"
+      );
+
+    storyBox.appendChild(p);
+
+  });
+
+});
 
 
-function setupStep(step){
+/* =========================
+   20 SECOND TIMER
+========================= */
 
-  const section =
-    document.getElementById("step-"+step);
+const count =
+  document.getElementById("count");
 
-  const button =
-    section.querySelector("button");
+const button =
+  document.getElementById("continueBtn");
 
-  const counter =
-    section.querySelector(".count");
+let started = false;
 
-  let started = false;
-  let finished = false;
+function checkBottom(){
 
-  function checkBottom(){
+  if(started) return;
 
-    if(started || finished) return;
+  const bottom =
+    window.scrollY +
+    window.innerHeight;
 
-    const rect =
-      section.getBoundingClientRect();
+  const pageHeight =
+    document.documentElement.scrollHeight;
 
-    const sectionBottom =
-      rect.bottom + window.scrollY;
+  if(bottom >= pageHeight - 30){
 
-    const viewportBottom =
-      window.scrollY + window.innerHeight;
+    started = true;
 
-    if(viewportBottom >= sectionBottom - 30){
+    let remaining =
+      WAIT_SECONDS;
 
-      started = true;
+    count.textContent =
+      remaining;
 
-      let remaining = WAIT_SECONDS;
-
-      counter.textContent = remaining;
-
-      const timer = setInterval(()=>{
+    const timer =
+      setInterval(()=>{
 
         remaining--;
 
-        counter.textContent =
+        count.textContent =
           Math.max(remaining,0);
 
-        if(remaining<=0){
+        if(remaining <= 0){
 
           clearInterval(timer);
-
-          finished = true;
 
           button.disabled = false;
 
           button.classList.add("ready");
 
           button.textContent =
-            step < TOTAL_STEPS
-            ? "Continue"
-            : "Get Key / File";
+            "Continue";
+
         }
 
       },1000);
 
-    }
-
   }
-
-
-  window.addEventListener(
-    "scroll",
-    checkBottom,
-    {passive:true}
-  );
-
-
-  button.addEventListener("click",()=>{
-
-    if(!finished) return;
-
-    if(step < TOTAL_STEPS){
-
-      currentStep++;
-
-      sections.forEach(s=>{
-        s.classList.remove("active");
-      });
-
-      const next =
-        document.getElementById(
-          "step-"+currentStep
-        );
-
-      next.classList.add("active");
-
-      progress.textContent =
-        "Step " +
-        currentStep +
-        " / " +
-        TOTAL_STEPS;
-
-      window.scrollTo({
-        top:0,
-        behavior:"smooth"
-      });
-
-      setupStep(currentStep);
-
-    }else{
-
-      window.location.href =
-        DESTINATION_URL;
-
-    }
-
-  });
 
 }
 
+window.addEventListener(
+  "scroll",
+  checkBottom,
+  {passive:true}
+);
 
-/* প্রথম Step চালু */
 
-setupStep(1);
+/* =========================
+   BUTTON
+========================= */
+
+button.addEventListener("click",()=>{
+
+  if(button.disabled) return;
+
+  /*
+    এখানে পরে তোমার
+    পরের Step / Key / File link
+    বসাতে পারবে।
+  */
+
+  alert("Next step is ready.");
+
+});
 
 </script>
 
