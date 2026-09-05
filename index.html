@@ -3,9 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
 <title>AURA ORNOB</title>
 
 <style>
+
 *{
   box-sizing:border-box;
 }
@@ -16,10 +18,11 @@ html{
 
 body{
   margin:0;
-  background:#080b12;
-  color:#eef3ff;
+  background:
+    radial-gradient(circle at top,#101c30 0%,#080b12 45%,#05070b 100%);
+  color:#eef4ff;
   font-family:Arial,sans-serif;
-  line-height:1.8;
+  line-height:1.7;
 }
 
 .container{
@@ -28,78 +31,130 @@ body{
   margin:auto;
 }
 
+
 /* HEADER */
 
 .header{
   text-align:center;
-  padding:24px 0 12px;
+  padding:28px 0 15px;
 }
 
 .logo{
   color:#168cff;
-  font-size:30px;
-  font-weight:bold;
-  letter-spacing:3px;
-  text-shadow:0 0 18px #168cff55;
+  font-size:31px;
+  font-weight:800;
+  letter-spacing:4px;
+  text-shadow:
+    0 0 10px #168cff66,
+    0 0 30px #168cff33;
 }
 
 .subtitle{
-  color:#7b899e;
-  font-size:13px;
-  margin-top:4px;
+  color:#8190a7;
+  font-size:12px;
+  letter-spacing:1.5px;
+  margin-top:5px;
 }
 
 
 /* PAGE CARD */
 
 .page-card{
-  background:#111824;
-  border:1px solid #26364e;
-  border-radius:16px;
-  padding:16px;
+  position:relative;
+  overflow:hidden;
+
+  background:
+    linear-gradient(
+      145deg,
+      #121d2d,
+      #0d141f
+    );
+
+  border:1px solid #263b58;
+  border-radius:18px;
+
+  padding:17px;
+
   text-align:center;
+
   margin:12px 0 18px;
-  box-shadow:0 8px 25px #0007;
+
+  box-shadow:
+    0 12px 35px #0009,
+    inset 0 1px 0 #ffffff08;
+}
+
+.page-card:before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:20%;
+  width:60%;
+  height:1px;
+  background:#168cff;
+  box-shadow:0 0 20px #168cff;
 }
 
 .page-number{
-  font-size:20px;
-  font-weight:bold;
-  letter-spacing:.5px;
+  font-size:19px;
+  font-weight:800;
+  letter-spacing:1px;
 }
 
 .page-number span{
   color:#168cff;
+  text-shadow:0 0 10px #168cff77;
 }
 
 .progress-bg{
   height:6px;
-  background:#222b39;
+  background:#202b3a;
   border-radius:20px;
-  margin-top:12px;
+  margin-top:13px;
   overflow:hidden;
 }
 
 .progress{
   height:100%;
   width:16.66%;
-  background:#168cff;
-  transition:.4s;
+
+  background:
+    linear-gradient(
+      90deg,
+      #0879e8,
+      #42a7ff
+    );
+
+  border-radius:20px;
+
+  box-shadow:
+    0 0 12px #168cff88;
+
+  transition:.5s;
 }
 
 
 /* SEARCH */
 
 .search-box{
-  height:52px;
+  height:54px;
+
   display:flex;
   align-items:center;
-  padding:0 17px;
+
+  padding:0 18px;
+
   margin-bottom:18px;
 
-  background:#111824;
-  border:1px solid #2a3b55;
-  border-radius:28px;
+  background:#0e1622;
+
+  border:1px solid #293d59;
+
+  border-radius:30px;
+
+  box-shadow:
+    0 10px 25px #0007,
+    inset 0 1px 0 #ffffff07;
 }
 
 .search-icon{
@@ -111,26 +166,37 @@ body{
 #search{
   width:100%;
   height:100%;
+
   border:0;
   outline:0;
+
   background:transparent;
+
   color:white;
-  font-size:16px;
+
+  font-size:15px;
 }
 
 #search::placeholder{
-  color:#718096;
+  color:#687990;
 }
 
 
-/* SEARCH RESULT */
+/* RESULT */
 
 .result{
   display:none;
-  background:#111824;
-  color:#7eb9ff;
-  border-radius:10px;
+
+  background:#101b2a;
+
+  color:#66adff;
+
+  border:1px solid #263c59;
+
+  border-radius:12px;
+
   padding:10px 14px;
+
   margin-bottom:14px;
 }
 
@@ -138,86 +204,181 @@ body{
 /* STORY */
 
 .story{
-  background:#111722;
-  border:1px solid #1e2b3d;
-  border-radius:16px;
+  position:relative;
+
+  background:
+    linear-gradient(
+      145deg,
+      #101722,
+      #0b111a
+    );
+
+  border:1px solid #1f3046;
+
+  border-radius:18px;
+
   padding:20px;
-  box-shadow:0 10px 35px #0008;
+
+  min-height:300px;
+
+  box-shadow:
+    0 15px 40px #0009,
+    inset 0 1px 0 #ffffff06;
 }
 
 .line{
   margin:0;
   padding:3px 0;
-  font-size:16px;
+  font-size:15px;
+  color:#dce6f5;
 }
 
 .gap{
-  height:18px;
+  height:15px;
+}
+
+
+/* BOTTOM PAGE */
+
+.bottom-page{
+  margin-top:20px;
 }
 
 
 /* BOTTOM */
 
 .bottom{
-  text-align:center;
-  margin:20px 0 50px;
-  padding:22px 15px;
 
-  background:#111824;
-  border:1px solid #26364e;
-  border-radius:16px;
+  text-align:center;
+
+  margin:18px 0 45px;
+
+  padding:23px 15px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #121d2c,
+      #0c131d
+    );
+
+  border:1px solid #293d58;
+
+  border-radius:18px;
+
+  box-shadow:
+    0 15px 35px #0009,
+    inset 0 1px 0 #ffffff07;
 }
 
 .timer{
-  color:#aab6c8;
-  margin-bottom:14px;
+  color:#a4b1c3;
+
+  margin-bottom:15px;
+
+  font-size:14px;
 }
 
 .timer strong{
   color:#168cff;
-  font-size:21px;
+
+  font-size:22px;
+
+  margin-left:5px;
+
+  text-shadow:
+    0 0 12px #168cff66;
 }
 
 button{
+
   border:0;
-  border-radius:10px;
-  padding:13px 30px;
 
-  background:#3b4554;
-  color:white;
+  border-radius:11px;
 
-  font-size:17px;
+  padding:14px 35px;
+
+  background:#303a49;
+
+  color:#8794a7;
+
+  font-size:16px;
+
   font-weight:bold;
+
+  transition:.25s;
+
   cursor:not-allowed;
 }
 
 button.ready{
-  background:#168cff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0879e8,
+      #168cff
+    );
+
+  color:white;
+
   cursor:pointer;
-  box-shadow:0 0 20px #168cff55;
+
+  box-shadow:
+    0 0 25px #168cff55;
+}
+
+button.ready:hover{
+  transform:translateY(-2px);
+  box-shadow:
+    0 5px 30px #168cff77;
 }
 
 
 /* FINAL */
 
 .final{
+
   display:none;
+
   text-align:center;
-  padding:45px 15px;
+
+  padding:50px 15px;
 }
 
 .final h2{
+
   color:#168cff;
+
+  font-size:26px;
+
+  text-shadow:
+    0 0 15px #168cff66;
 }
 
 .final a{
+
   display:inline-block;
-  padding:14px 28px;
-  background:#168cff;
+
+  padding:14px 30px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0879e8,
+      #168cff
+    );
+
   color:white;
+
   text-decoration:none;
-  border-radius:10px;
+
+  border-radius:11px;
+
   font-weight:bold;
+
+  box-shadow:
+    0 0 25px #168cff44;
 }
 
 
@@ -227,6 +388,7 @@ button.ready{
 
   .logo{
     font-size:25px;
+    letter-spacing:3px;
   }
 
   .story{
@@ -234,10 +396,11 @@ button.ready{
   }
 
   .line{
-    font-size:15px;
+    font-size:14px;
   }
 
 }
+
 </style>
 </head>
 
@@ -246,156 +409,165 @@ button.ready{
 
 <div class="container">
 
-  <!-- AURA ORNOB -->
 
-  <div class="header">
+<!-- HEADER -->
 
-    <div class="logo">
-      AURA ORNOB
-    </div>
+<div class="header">
 
-    <div class="subtitle">
-      Premium Story Gateway
-    </div>
-
+  <div class="logo">
+    AURA ORNOB
   </div>
 
-
-  <!-- TOP PAGE NUMBER -->
-
-  <div class="page-card">
-
-    <div class="page-number">
-      PAGE <span id="pageNumber">1</span> / 6
-    </div>
-
-    <div class="progress-bg">
-      <div
-        class="progress"
-        id="progress"
-      ></div>
-    </div>
-
+  <div class="subtitle">
+    PREMIUM STORY GATEWAY
   </div>
 
+</div>
 
-  <!-- SEARCH -->
 
-  <div class="search-box">
+<!-- TOP PAGE -->
 
-    <span class="search-icon">⌕</span>
+<div class="page-card">
 
-    <input
-      id="search"
-      type="search"
-      placeholder="Search story..."
-      autocomplete="off"
-    >
-
+  <div class="page-number">
+    PAGE <span id="pageNumber">1</span> / 6
   </div>
 
+  <div class="progress-bg">
 
-  <div
-    id="result"
-    class="result"
-  ></div>
-
-
-  <!-- STORY -->
-
-  <div
-    id="story"
-    class="story"
-  ></div>
-
-
-  <!-- BOTTOM PAGE NUMBER -->
-
-  <div class="page-card">
-
-    <div class="page-number">
-      PAGE <span id="pageNumberBottom">1</span> / 6
-    </div>
-
-    <div class="progress-bg">
-      <div
-        class="progress"
-        id="progressBottom"
-      ></div>
-    </div>
-
-  </div>
-
-
-  <!-- TIMER -->
-
-  <div class="bottom">
-
-    <div class="timer">
-
-      Scroll to the bottom and wait
-
-      <strong>
-        <span id="count">20</span>s
-      </strong>
-
-    </div>
-
-    <button
-      id="continueBtn"
-      disabled
-    >
-      Continue
-    </button>
-
-  </div>
-
-
-  <!-- FINAL -->
-
-  <div
-    id="final"
-    class="final"
-  >
-
-    <h2>AURA ORNOB</h2>
-
-    <p>
-      All 6 pages completed successfully.
-    </p>
-
-    <a
-      id="finalLink"
-      href="#"
-    >
-      GET KEY / FILE
-    </a>
+    <div
+      class="progress"
+      id="progress"
+    ></div>
 
   </div>
 
 </div>
 
 
+<!-- SEARCH -->
+
+<div class="search-box">
+
+  <span class="search-icon">
+    ⌕
+  </span>
+
+  <input
+    id="search"
+    type="search"
+    placeholder="Search story..."
+    autocomplete="off"
+  >
+
+</div>
+
+
+<div
+  id="result"
+  class="result"
+></div>
+
+
+<!-- STORY -->
+
+<div
+  id="story"
+  class="story"
+></div>
+
+
+<!-- BOTTOM PAGE -->
+
+<div class="page-card bottom-page">
+
+  <div class="page-number">
+    PAGE <span id="pageNumberBottom">1</span> / 6
+  </div>
+
+  <div class="progress-bg">
+
+    <div
+      class="progress"
+      id="progressBottom"
+    ></div>
+
+  </div>
+
+</div>
+
+
+<!-- TIMER -->
+
+<div class="bottom">
+
+  <div class="timer">
+
+    Scroll to the bottom and wait
+
+    <strong>
+      <span id="count">20</span>s
+    </strong>
+
+  </div>
+
+  <button
+    id="continueBtn"
+    disabled
+  >
+    Continue
+  </button>
+
+</div>
+
+
+<!-- FINAL -->
+
+<div
+  id="final"
+  class="final"
+>
+
+  <h2>
+    AURA ORNOB
+  </h2>
+
+  <p>
+    All 6 pages completed successfully.
+  </p>
+
+  <a
+    id="finalLink"
+    href="#"
+  >
+    GET KEY / FILE
+  </a>
+
+</div>
+
+</div>
+
+
 <script>
 
-/* ==========================
-   SETTINGS
-========================== */
+
+/* SETTINGS */
 
 const TOTAL_PAGES = 6;
 
 const WAIT_SECONDS = 20;
 
 
-/* পরে এখানে Key/File link বসাবে */
+/*
+  এখানে তোমার আসল
+  Key / File link বসাবে।
+*/
 
 const DESTINATION_URL =
 "https://example.com";
 
 
-/* ==========================
-   STORY
-========================== */
+/* STORY */
 
 const storyLines = [
 
@@ -490,9 +662,7 @@ const storyLines = [
 ];
 
 
-/* ==========================
-   VARIABLES
-========================== */
+/* VARIABLES */
 
 let currentPage = 1;
 
@@ -501,19 +671,11 @@ let timerStarted = false;
 let currentLines = [];
 
 
-/* ==========================
-   CREATE CONTENT
-========================== */
+/* CREATE PAGE */
 
 function makePage(){
 
   let lines = [];
-
-  /*
-    2 copies of the story.
-    Content will be around 720px+
-    depending on screen/font.
-  */
 
   for(let i=0;i<2;i++){
 
@@ -528,9 +690,7 @@ function makePage(){
 }
 
 
-/* ==========================
-   RENDER PAGE
-========================== */
+/* RENDER PAGE */
 
 function renderPage(){
 
@@ -570,11 +730,6 @@ function renderPage(){
     box.appendChild(p);
 
 
-    /*
-      প্রতি ১০ লাইনের পর
-      ছোট gap
-    */
-
     if((index+1)%10===0){
 
       const gap =
@@ -589,21 +744,19 @@ function renderPage(){
   });
 
 
-  /* TOP PAGE */
+  /* PAGE NUMBER */
 
   document.getElementById(
     "pageNumber"
   ).textContent = currentPage;
 
 
-  /* BOTTOM PAGE */
-
   document.getElementById(
     "pageNumberBottom"
   ).textContent = currentPage;
 
 
-  /* TOP PROGRESS */
+  /* PROGRESS */
 
   const percentage =
     (currentPage/TOTAL_PAGES)*100;
@@ -612,15 +765,13 @@ function renderPage(){
   document.getElementById(
     "progress"
   ).style.width =
-    percentage + "%";
+    percentage+"%";
 
-
-  /* BOTTOM PROGRESS */
 
   document.getElementById(
     "progressBottom"
   ).style.width =
-    percentage + "%";
+    percentage+"%";
 
 
   /* TIMER */
@@ -643,9 +794,7 @@ function renderPage(){
 }
 
 
-/* ==========================
-   SEARCH
-========================== */
+/* SEARCH */
 
 document
 .getElementById("search")
@@ -676,7 +825,8 @@ document
     );
 
 
-  result.style.display = "block";
+  result.style.display =
+    "block";
 
   result.textContent =
     matches.length +
@@ -702,28 +852,24 @@ document
 });
 
 
-/* ==========================
-   BOTTOM DETECTION
-========================== */
+/* TIMER */
 
 function checkBottom(){
 
-  if(timerStarted) return;
+  if(timerStarted)
+    return;
 
 
-  const currentPosition =
+  const position =
     window.scrollY +
     window.innerHeight;
 
 
-  const pageHeight =
+  const height =
     document.documentElement.scrollHeight;
 
 
-  if(
-    currentPosition >=
-    pageHeight - 30
-  ){
+  if(position >= height-30){
 
     timerStarted = true;
 
@@ -751,14 +897,18 @@ function checkBottom(){
         remaining--;
 
         count.textContent =
-          Math.max(remaining,0);
+          Math.max(
+            remaining,
+            0
+          );
 
 
         if(remaining <= 0){
 
           clearInterval(timer);
 
-          button.disabled = false;
+          button.disabled =
+            false;
 
           button.classList.add(
             "ready"
@@ -780,18 +930,17 @@ window.addEventListener(
 );
 
 
-/* ==========================
-   CONTINUE
-========================== */
+/* CONTINUE */
 
 document
 .getElementById("continueBtn")
 .addEventListener("click",function(){
 
-  if(this.disabled) return;
+  if(this.disabled)
+    return;
 
 
-  /* শেষ Page */
+  /* LAST PAGE */
 
   if(currentPage === TOTAL_PAGES){
 
@@ -813,9 +962,9 @@ document
       "none";
 
 
-    document.querySelectorAll(
-      ".page-card"
-    )[1].style.display =
+    document.querySelector(
+      ".bottom-page"
+    ).style.display =
       "none";
 
 
