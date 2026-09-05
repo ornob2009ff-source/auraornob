@@ -1,17 +1,20 @@
 <!doctype html>
-<html lang="bn">
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Continue</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>RODA E MOTOR</title>
 
 <style>
-*{box-sizing:border-box}
+*{
+  box-sizing:border-box;
+}
 
 html,body{
   margin:0;
   padding:0;
-  background:#000;
+  background:#050505;
   color:#fff;
   font-family:Arial,Helvetica,sans-serif;
 }
@@ -24,25 +27,25 @@ body{
 .wrap{
   width:100%;
   max-width:720px;
-  background:#000;
+  background:#050505;
   min-height:100vh;
 }
 
 .top{
   height:64px;
-  border-bottom:1px solid #252525;
+  border-bottom:1px solid #292929;
   display:flex;
   align-items:center;
   padding:0 16px;
   position:sticky;
   top:0;
-  z-index:20;
-  background:#000;
+  z-index:50;
+  background:#050505;
 }
 
 .logo{
-  font-size:22px;
-  font-weight:700;
+  font-size:21px;
+  font-weight:bold;
 }
 
 .step{
@@ -57,84 +60,119 @@ body{
 
 h1{
   font-size:28px;
-  margin:8px 0 18px;
+  line-height:1.3;
+  margin:10px 0 20px;
+}
+
+h2{
+  font-size:22px;
+  margin:0 0 14px;
+}
+
+h3{
+  font-size:18px;
+  margin:0 0 12px;
 }
 
 p{
-  color:#ccc;
+  color:#c8c8c8;
   font-size:16px;
   line-height:1.9;
 }
 
-/* প্রতিটি ধাপ ১০,০০০px */
 .long-page{
-  min-height:10000px;
+  min-height:20000px;
 }
 
-.block{
-  margin:40px 0;
-  padding:22px;
-  border:1px solid #222;
-  background:#050505;
-  border-radius:8px;
+.story{
+  margin:35px 0;
+  padding:23px;
+  border:1px solid #262626;
+  border-radius:10px;
+  background:#090909;
 }
 
-.block h2{
-  margin:0 0 15px;
-  font-size:21px;
+.story p{
+  margin-bottom:15px;
 }
 
-.spacer{
-  height:1500px;
-}
-
-.adlabel{
-  text-align:center;
+.number{
   color:#777;
   font-size:13px;
-  margin:30px 0 8px;
+  margin-bottom:10px;
+}
+
+.gap-small{
+  height:100px;
+}
+
+.gap-medium{
+  height:220px;
+}
+
+.ad-section{
+  margin:50px 0;
+  padding:25px 15px;
+  border:1px solid #252525;
+  border-radius:10px;
+  background:#080808;
+}
+
+.ad-title{
+  text-align:center;
+  color:#888;
+  font-size:13px;
+  margin-bottom:12px;
 }
 
 .adbox{
   width:100%;
-  min-height:100px;
-  border:1px solid #252525;
-  background:#080808;
+  min-height:120px;
   display:flex;
-  align-items:center;
   justify-content:center;
+  align-items:center;
+  background:#030303;
+  border:1px solid #222;
   overflow:hidden;
+}
+
+#ad-slot{
+  width:100%;
+  text-align:center;
 }
 
 .bottom{
   margin-top:30px;
-  padding:25px 15px;
+  padding:28px 18px;
   text-align:center;
   color:#999;
   border:1px solid #292929;
-  border-radius:8px;
+  border-radius:10px;
 }
 
 .timer{
   text-align:center;
   color:#aaa;
   margin:25px 0 12px;
+  font-size:15px;
 }
 
 button{
   width:100%;
   border:0;
-  border-radius:4px;
+  border-radius:6px;
   background:#fff;
   color:#111;
-  padding:16px;
+  padding:17px;
   font-size:17px;
-  font-weight:700;
+  font-weight:bold;
+  cursor:pointer;
 }
 
 button:disabled{
   background:#303030;
   color:#777;
+  cursor:not-allowed;
 }
 
 .note{
@@ -145,9 +183,11 @@ button:disabled{
 }
 
 .progress{
-  height:3px;
+  height:4px;
   background:#222;
   margin-top:18px;
+  border-radius:5px;
+  overflow:hidden;
 }
 
 .progress i{
@@ -163,19 +203,27 @@ button:disabled{
 }
 
 .success{
-  padding:60px 16px;
+  padding:80px 18px;
   text-align:center;
+}
+
+.success h1{
+  font-size:32px;
+}
+
+.success p{
+  color:#aaa;
 }
 
 .success a{
   display:block;
-  margin-top:25px;
-  padding:16px;
+  margin-top:30px;
+  padding:17px;
   background:#fff;
   color:#111;
   text-decoration:none;
-  font-weight:700;
-  border-radius:4px;
+  font-weight:bold;
+  border-radius:6px;
 }
 </style>
 </head>
@@ -191,80 +239,437 @@ button:disabled{
 
 <div id="gate" class="card">
 
-<h1>Continue para acessar</h1>
+<h1 id="mainTitle">A Story Begins</h1>
 
 <p>
-Desça a página até o final desta etapa.
+Take your time and read through the story.
+Scroll all the way to the bottom of this page.
+When you reach the end, a short timer will begin.
 </p>
 
-<div class="long-page">
+<div class="long-page" id="content">
 
-<div class="block">
-<h2>Bem-vindo</h2>
+<div class="story">
+<div class="number">CHAPTER 01</div>
+<h2>The Old City</h2>
+
 <p>
-Esta é a etapa de acesso. Continue fazendo scroll para baixo.
+The city was not the largest place in the world, but it had a strange
+kind of beauty. Every morning, the streets slowly came alive as people
+opened their shops and walked toward their daily work.
+</p>
+
+<p>
+At the edge of the main road stood a small wooden shop. The building
+looked older than almost everything around it. Nobody knew exactly
+when it had been built.
+</p>
+
+<p>
+People simply called it the Old Shop.
 </p>
 </div>
 
-<div class="spacer"></div>
+<div class="story">
+<div class="number">CHAPTER 02</div>
+<h2>The Stranger</h2>
 
-<div class="block">
-<h2>Continue</h2>
 <p>
-Ainda há conteúdo abaixo. Continue descendo a página.
+One quiet morning, a stranger appeared in front of the shop.
+He carried a dark leather bag and wore a simple gray coat.
+</p>
+
+<p>
+The shopkeeper looked at him carefully.
+</p>
+
+<p>
+“Are you looking for something?” the shopkeeper asked.
+</p>
+
+<p>
+The stranger smiled and answered,
+“I am looking for a story that this city has forgotten.”
 </p>
 </div>
 
-<div class="spacer"></div>
+<div class="story">
+<div class="number">CHAPTER 03</div>
+<h2>The Broken Clock</h2>
 
-<div class="block">
-<h2>Publicidade</h2>
+<p>
+Inside the shop was an old clock hanging on the wall.
+It had stopped working many years ago.
+</p>
 
-<div class="adlabel">ADVERTISEMENT</div>
+<p>
+Yet the shopkeeper knew something unusual about it.
+Every night at exactly midnight, the clock moved once.
+</p>
 
+<p>
+Nobody had ever discovered why.
+</p>
+</div>
+
+<div class="ad-section">
+<div class="ad-title">ADVERTISEMENT</div>
 <div class="adbox">
-  <div id="ad-slot">
-    <!-- ADSTERRA CODE AQUI -->
-  </div>
+<div id="ad-slot">
+<!-- ADSTERRA CODE HERE -->
+</div>
+</div>
 </div>
 
-</div>
+<div class="story">
+<div class="number">CHAPTER 04</div>
+<h2>The Midnight Promise</h2>
 
-<div class="spacer"></div>
-
-<div class="block">
-<h2>Mais informações</h2>
 <p>
-Continue descendo até chegar à parte final desta etapa.
+The stranger slowly walked toward the clock.
+He looked at it for several seconds.
+</p>
+
+<p>
+“I will return tonight,” he said.
+</p>
+
+<p>
+The shopkeeper asked,
+“Why?”
+</p>
+
+<p>
+The stranger simply replied,
+“Because the clock remembers what people forget.”
 </p>
 </div>
 
-<div class="spacer"></div>
+<div class="story">
+<div class="number">CHAPTER 05</div>
+<h2>The Wooden Box</h2>
 
-<div class="block">
-<h2>Quase no final</h2>
 <p>
-Continue fazendo scroll.
+That evening, while cleaning the shop, the shopkeeper discovered
+a small wooden box beneath an old table.
+</p>
+
+<p>
+Inside the box were photographs, a rusty key and a folded letter.
+</p>
+
+<p>
+The letter contained only one instruction:
+</p>
+
+<p>
+“Before midnight, stand beside the old clock.”
 </p>
 </div>
 
-<div class="spacer"></div>
+<div class="story">
+<div class="number">CHAPTER 06</div>
+<h2>Eleven Fifty-Five</h2>
 
-<div class="block">
-<h2>Final</h2>
 <p>
-Você chegou perto do final desta etapa.
+The night became silent.
+The streets slowly emptied.
+</p>
+
+<p>
+At eleven fifty-five, the shopkeeper stood beside the clock.
+The stranger had not arrived yet.
+</p>
+
+<p>
+Five minutes later, the clock moved.
+</p>
+
+<p>
+A small hidden door opened beneath it.
+</p>
+</div>
+
+<div class="story">
+<div class="number">CHAPTER 07</div>
+<h2>The Hidden Letter</h2>
+
+<p>
+Inside the hidden space was another letter.
+The shopkeeper opened it with shaking hands.
+</p>
+
+<p>
+There were only seven words:
+</p>
+
+<p>
+“The story has only just begun.”
+</p>
+</div>
+
+<div class="story">
+<div class="number">CHAPTER 08</div>
+<h2>The First Secret</h2>
+
+<p>
+The shopkeeper suddenly understood that the stranger had known
+about the hidden room long before he entered the shop.
+</p>
+
+<p>
+But why?
+</p>
+
+<p>
+And who had left the letters behind?
+</p>
+
+<p>
+Those questions remained unanswered.
+</p>
+</div>
+
+<div class="story">
+<div class="number">CHAPTER 09</div>
+<h2>A New Direction</h2>
+
+<p>
+The next morning, the shopkeeper decided to follow the address
+written on the back of one of the old photographs.
+</p>
+
+<p>
+It pointed toward the northern side of the city,
+where an abandoned house stood behind a line of trees.
+</p>
+</div>
+
+<div class="story">
+<div class="number">CHAPTER 10</div>
+<h2>The Journey</h2>
+
+<p>
+He closed the shop and began walking.
+The road was long, but curiosity was stronger than fear.
+</p>
+
+<p>
+After several hours, he finally reached the old house.
+A strange symbol was carved into the front door.
+</p>
+
+<p>
+It was the same symbol he had seen beside the clock.
+</p>
+</div>
+
+<div class="story">
+<div class="number">CHAPTER 11</div>
+<h2>The Door</h2>
+
+<p>
+For a moment, he stood completely still.
+Then he placed the rusty key inside the lock.
+</p>
+
+<p>
+The door opened without resistance.
+</p>
+
+<p>
+A cold wind moved through the empty hallway.
+Somewhere inside the house, a clock began ticking.
+</p>
+</div>
+
+<div class="story">
+<div class="number">CHAPTER 12</div>
+<h2>The First Photograph</h2>
+
+<p>
+On the wall were dozens of photographs.
+Every photograph showed the same mysterious person.
+</p>
+
+<p>
+Some photographs were fifty years old.
+Others appeared to be more than a century old.
+</p>
+
+<p>
+Yet the person in every photograph looked exactly the same.
+</p>
+</div>
+
+<div class="story">
+<div class="number">CHAPTER 13</div>
+<h2>The Hidden Room</h2>
+
+<p>
+Behind one of the photographs was a small opening in the wall.
+Inside was a narrow staircase leading underground.
+</p>
+
+<p>
+The shopkeeper took a deep breath and started walking down.
+</p>
+
+<p>
+At the bottom, he found a black box sitting on a wooden table.
+</p>
+</div>
+
+<div class="story">
+<div class="number">CHAPTER 14</div>
+<h2>The Final Key</h2>
+
+<p>
+The black box had a small lock.
+The rusty key from the shop fit perfectly.
+</p>
+
+<p>
+But before opening it, the shopkeeper noticed another letter.
+</p>
+
+<p>
+This time the letter said:
+“Once you open this box, there is no turning back.”
+</p>
+</div>
+
+<div class="story">
+<div class="number">CHAPTER 15</div>
+<h2>The Choice</h2>
+
+<p>
+He thought about the stranger.
+He thought about the clock.
+He thought about every unanswered question.
+</p>
+
+<p>
+Finally, he turned the key.
+</p>
+
+<p>
+The box opened.
+</p>
+</div>
+
+<div class="story">
+<div class="number">CHAPTER 16</div>
+<h2>The Message</h2>
+
+<p>
+There was no treasure inside.
+There was no gold.
+There was no money.
+</p>
+
+<p>
+There was only a small piece of paper.
+</p>
+
+<p>
+On it was written:
+</p>
+
+<p>
+“Every mystery begins with someone brave enough to ask a question.”
+</p>
+</div>
+
+<div class="story">
+<div class="number">CHAPTER 17</div>
+<h2>The Stranger Returns</h2>
+
+<p>
+Suddenly, footsteps echoed through the room.
+The shopkeeper turned around.
+</p>
+
+<p>
+The stranger was standing at the bottom of the stairs.
+</p>
+
+<p>
+“You found it,” he said.
+</p>
+
+<p>
+The shopkeeper looked at him and asked,
+“Who are you?”
+</p>
+</div>
+
+<div class="story">
+<div class="number">CHAPTER 18</div>
+<h2>The Answer</h2>
+
+<p>
+The stranger smiled.
+</p>
+
+<p>
+“I am simply the person who was waiting for you to find the answer.”
+</p>
+
+<p>
+The shopkeeper realized that the real mystery was not the house,
+the clock or the letters.
+</p>
+</div>
+
+<div class="story">
+<div class="number">CHAPTER 19</div>
+<h2>The Beginning</h2>
+
+<p>
+The entire journey had been designed to lead him toward one simple
+truth: sometimes the greatest adventure begins in the most ordinary
+place.
+</p>
+
+<p>
+The old shop had never been ordinary.
+It had simply been waiting for the right person to discover its secret.
+</p>
+</div>
+
+<div class="story">
+<div class="number">CHAPTER 20</div>
+<h2>To Be Continued</h2>
+
+<p>
+The stranger walked toward the door.
+Before leaving, he turned around and said,
+“There are four more doors.”
+</p>
+
+<p>
+The shopkeeper asked,
+“Where?”
+</p>
+
+<p>
+The stranger pointed toward the darkness.
+</p>
+
+<p>
+And then the lights went out.
 </p>
 </div>
 
 </div>
 
 <div class="bottom">
-Você chegou ao final desta etapa.
+✓ You have reached the end of this step.
 </div>
 
 <div class="timer" id="timer">
-Desça até o final da página...
+Scroll to the bottom and wait...
 </div>
 
 <button id="continueBtn" disabled>
@@ -272,7 +677,7 @@ Continue
 </button>
 
 <div class="note">
-Etapa <span id="n">1</span> de 5
+Step <span id="n">1</span> / 5
 </div>
 
 <div class="progress">
@@ -283,12 +688,14 @@ Etapa <span id="n">1</span> de 5
 
 <div id="success" class="success hidden">
 
-<h1>Pronto!</h1>
+<h1>✓ Completed!</h1>
 
-<p>As 5 etapas foram concluídas.</p>
+<p>
+All five steps have been completed successfully.
+</p>
 
 <a id="destination" href="#" rel="noopener">
-ACESSAR AGORA
+ACCESS KEY / FILE
 </a>
 
 </div>
@@ -299,42 +706,27 @@ ACESSAR AGORA
 
 const WAIT_SECONDS = 10;
 
-/* পরে এখানে Key/File-এর আসল লিংক বসাবে */
+/* PUT YOUR FINAL KEY / FILE LINK HERE */
 const DESTINATION_URL = "https://example.com";
 
 const total = 5;
 
 let current = 1;
 let seconds = WAIT_SECONDS;
-let reachedBottom = false;
 let timerRunning = false;
 
-const timer =
-document.getElementById("timer");
-
-const btn =
-document.getElementById("continueBtn");
-
-const stepText =
-document.getElementById("stepText");
-
-const n =
-document.getElementById("n");
-
-const bar =
-document.getElementById("bar");
-
-const gate =
-document.getElementById("gate");
-
-const success =
-document.getElementById("success");
-
-const destination =
-document.getElementById("destination");
+const timer = document.getElementById("timer");
+const btn = document.getElementById("continueBtn");
+const stepText = document.getElementById("stepText");
+const n = document.getElementById("n");
+const bar = document.getElementById("bar");
+const gate = document.getElementById("gate");
+const success = document.getElementById("success");
+const destination = document.getElementById("destination");
+const content = document.getElementById("content");
+const mainTitle = document.getElementById("mainTitle");
 
 
-/* নিচে পৌঁছেছে কিনা */
 window.addEventListener("scroll",function(){
 
   const position =
@@ -344,25 +736,22 @@ window.addEventListener("scroll",function(){
     document.documentElement.scrollHeight;
 
   if(position >= pageHeight - 150){
-
-    reachedBottom = true;
-
     startTimer();
   }
 
 });
 
 
-/* নিচে পৌঁছানোর পর timer */
 function startTimer(){
 
   if(timerRunning) return;
 
   timerRunning = true;
+
   seconds = WAIT_SECONDS;
 
   timer.innerText =
-    "Aguarde " + seconds + " segundos...";
+    "Please wait " + seconds + " seconds...";
 
   const interval = setInterval(function(){
 
@@ -371,16 +760,17 @@ function startTimer(){
     if(seconds > 0){
 
       timer.innerText =
-        "Aguarde " + seconds + " segundos...";
+        "Please wait " + seconds + " seconds...";
 
     }else{
 
       clearInterval(interval);
 
       timer.innerText =
-        "✓ Agora você pode continuar.";
+        "✓ Continue is now unlocked";
 
       btn.disabled = false;
+
     }
 
   },1000);
@@ -388,7 +778,6 @@ function startTimer(){
 }
 
 
-/* Continue */
 btn.addEventListener("click",function(){
 
   if(btn.disabled) return;
@@ -406,14 +795,19 @@ btn.addEventListener("click",function(){
     bar.style.width =
       ((current / total) * 100) + "%";
 
-    reachedBottom = false;
     timerRunning = false;
+
     seconds = WAIT_SECONDS;
 
     btn.disabled = true;
 
     timer.innerText =
-      "Desça até o final da página...";
+      "Scroll to the bottom and wait...";
+
+    mainTitle.innerText =
+      "Step " + current + " — The Story Continues";
+
+    createNewStory(current);
 
     window.scrollTo({
       top:0,
@@ -432,6 +826,254 @@ btn.addEventListener("click",function(){
   }
 
 });
+
+
+function createNewStory(step){
+
+  let extra = "";
+
+  if(step === 2){
+
+    extra = `
+    ${makeStory("CHAPTER 21","The Second Door",
+    "The darkness slowly disappeared. When the lights returned, the shopkeeper discovered another door behind the wall. The door was made of dark wood and had no handle.")}
+
+    ${makeStory("CHAPTER 22","A Strange Map",
+    "Beside the door was an old map. It showed the city, but the streets were completely different from the streets he knew.")}
+
+    ${makeStory("CHAPTER 23","The Northern Road",
+    "The map showed a road leading north. According to the notes on the map, the road could only be found after sunset.")}
+
+    ${makeStory("CHAPTER 24","The Journey Begins",
+    "He waited until evening and followed the instructions. The road appeared between two old buildings, exactly where the map had indicated.")}
+
+    ${makeStory("CHAPTER 25","The Silent Forest",
+    "The road eventually disappeared into a forest. The trees were tall and the air was unusually quiet.")}
+
+    ${makeStory("CHAPTER 26","The Old Tower",
+    "Deep inside the forest stood an abandoned stone tower. A single light could be seen through the highest window.")}
+
+    ${makeStory("CHAPTER 27","The Staircase",
+    "Inside the tower was a spiral staircase. Each step had a number carved into it.")}
+
+    ${makeStory("CHAPTER 28","The Number Seven",
+    "When he reached the seventh floor, he discovered a small room filled with books. Every book described a different mystery.")}
+
+    ${makeStory("CHAPTER 29","The Missing Book",
+    "One shelf had an empty space. A label above it read: The Story of the Forgotten City.")}
+
+    ${makeStory("CHAPTER 30","Another Clue",
+    "On the table was another letter. It contained a simple instruction: Continue until you find the person who remembers everything.")}
+
+    ${makeStory("CHAPTER 31","The Library",
+    "Behind the tower was an underground library. Thousands of books were stored there.")}
+
+    ${makeStory("CHAPTER 32","The Keeper",
+    "An old man appeared between the shelves. He said he had been waiting for the shopkeeper.")}
+
+    ${makeStory("CHAPTER 33","A Warning",
+    "The old man warned him that some secrets were better left hidden.")}
+
+    ${makeStory("CHAPTER 34","The Choice",
+    "The shopkeeper refused to turn back. He wanted to know why the stranger had chosen him.")}
+
+    ${makeStory("CHAPTER 35","The Third Letter",
+    "The keeper handed him another letter. It contained a drawing of the old shop.")}
+
+    ${makeStory("CHAPTER 36","The Connection",
+    "For the first time, he understood that the shop, the tower and the house were connected.")}
+
+    ${makeStory("CHAPTER 37","The Hidden Name",
+    "Inside the letter was a name he had seen many times before, but never understood.")}
+
+    ${makeStory("CHAPTER 38","The Memory",
+    "The name belonged to the first owner of the old shop.")}
+
+    ${makeStory("CHAPTER 39","The Truth",
+    "The first owner had created the entire system of hidden doors to protect a secret.")}
+
+    ${makeStory("CHAPTER 40","The Next Door",
+    "The keeper pointed toward a staircase and said, There is still another door.")}
+
+    <div class="ad-section">
+      <div class="ad-title">ADVERTISEMENT</div>
+      <div class="adbox">
+        <div id="ad-slot"></div>
+      </div>
+    </div>
+
+    ${makeStory("CHAPTER 41","The Long Hallway",
+    "The staircase led to a long hallway. At the end was a metal door.")}
+
+    ${makeStory("CHAPTER 42","The Metal Door",
+    "There was no lock on the door. Instead, there was a small clock.")}
+
+    ${makeStory("CHAPTER 43","Midnight Again",
+    "The clock slowly moved toward midnight. The shopkeeper waited.")}
+
+    ${makeStory("CHAPTER 44","The Opening",
+    "At exactly midnight, the metal door opened by itself.")}
+
+    ${makeStory("CHAPTER 45","A New World",
+    "Beyond the door was a room filled with hundreds of clocks.")}
+
+    ${makeStory("CHAPTER 46","The Clock Room",
+    "Every clock showed a different time. One of them showed the exact time from the day the old shop was built.")}
+
+    ${makeStory("CHAPTER 47","The Final Question",
+    "A voice from the darkness asked, Are you ready to know the truth?")}
+
+    ${makeStory("CHAPTER 48","The Answer",
+    "The shopkeeper answered yes.")}
+
+    ${makeStory("CHAPTER 49","The Door Closes",
+    "Behind him, the door slowly closed.")}
+
+    ${makeStory("CHAPTER 50","The Journey Continues",
+    "The room became silent. Somewhere ahead, another clock began ticking.")}
+
+    <div class="gap-medium"></div>
+    `;
+
+  }
+
+  else if(step === 3){
+
+    extra = generateChapters(
+      51,
+      100,
+      "Step 3 — The Hidden Truth"
+    );
+
+  }
+
+  else if(step === 4){
+
+    extra = generateChapters(
+      101,
+      150,
+      "Step 4 — The Secret"
+    );
+
+  }
+
+  else if(step === 5){
+
+    extra = generateChapters(
+      151,
+      200,
+      "Step 5 — The Final Chapter"
+    );
+
+  }
+
+  content.innerHTML = extra;
+
+}
+
+
+function makeStory(number,title,text){
+
+  return `
+  <div class="story">
+    <div class="number">${number}</div>
+    <h2>${title}</h2>
+    <p>${text}</p>
+    <p>
+      The journey continued slowly, revealing another small piece
+      of the mystery. Every answer seemed to create a new question,
+      and every new question led somewhere unexpected.
+    </p>
+  </div>
+  `;
+
+}
+
+
+function generateChapters(start,end,title){
+
+  let html = `
+  <div class="story">
+    <div class="number">NEW CHAPTER</div>
+    <h2>${title}</h2>
+    <p>
+      The story moves deeper into the unknown.
+      Every chapter contains another part of the journey.
+    </p>
+  </div>
+  `;
+
+  for(let i=start;i<=end;i++){
+
+    const titles = [
+      "The Hidden Path",
+      "A Silent Room",
+      "The Old Notebook",
+      "A Forgotten Name",
+      "The Secret Door",
+      "The Empty Street",
+      "The Last Photograph",
+      "A New Clue",
+      "The Unknown Visitor",
+      "The Lost Key"
+    ];
+
+    const titleText =
+      titles[(i-start)%titles.length];
+
+    html += `
+    <div class="story">
+      <div class="number">CHAPTER ${String(i).padStart(3,"0")}</div>
+
+      <h2>${titleText}</h2>
+
+      <p>
+        The journey continued through another quiet part of the city.
+        Nothing looked unusual at first, but the deeper the traveler
+        went, the more strange details began to appear.
+      </p>
+
+      <p>
+        An old wall stood beside the road. There were marks on it
+        that seemed meaningless, yet they matched the symbols found
+        earlier in the story.
+      </p>
+
+      <p>
+        He stopped for a moment and looked around. The streets were
+        almost empty. Somewhere in the distance, a clock was ticking.
+      </p>
+
+      <p>
+        He knew that turning back would be easier, but the mystery
+        had already become too important to ignore.
+      </p>
+
+      <p>
+        So he continued forward, carrying the old key and the letters
+        that had brought him this far.
+      </p>
+    </div>
+    `;
+
+    if(i % 10 === 0){
+
+      html += `
+      <div class="ad-section">
+        <div class="ad-title">ADVERTISEMENT</div>
+        <div class="adbox">
+          <div id="ad-slot"></div>
+        </div>
+      </div>
+      `;
+
+    }
+
+  }
+
+  return html;
+
+}
 
 </script>
 
