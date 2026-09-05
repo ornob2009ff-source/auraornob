@@ -2,12 +2,16 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>AURA ORNOB</title>
 
 <style>
 *{
   box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
 }
 
 body{
@@ -28,7 +32,7 @@ body{
 
 .header{
   text-align:center;
-  padding:25px 0 12px;
+  padding:24px 0 12px;
 }
 
 .logo{
@@ -36,28 +40,32 @@ body{
   font-size:30px;
   font-weight:bold;
   letter-spacing:3px;
+  text-shadow:0 0 18px #168cff55;
 }
 
 .subtitle{
-  color:#78879d;
+  color:#7b899e;
   font-size:13px;
   margin-top:4px;
 }
 
-/* PAGE INDICATOR */
+
+/* PAGE CARD */
 
 .page-card{
   background:#111824;
   border:1px solid #26364e;
   border-radius:16px;
-  padding:17px;
+  padding:16px;
   text-align:center;
   margin:12px 0 18px;
+  box-shadow:0 8px 25px #0007;
 }
 
 .page-number{
   font-size:20px;
   font-weight:bold;
+  letter-spacing:.5px;
 }
 
 .page-number span{
@@ -79,6 +87,7 @@ body{
   transition:.4s;
 }
 
+
 /* SEARCH */
 
 .search-box{
@@ -95,7 +104,7 @@ body{
 
 .search-icon{
   color:#168cff;
-  font-size:21px;
+  font-size:22px;
   margin-right:10px;
 }
 
@@ -113,6 +122,19 @@ body{
   color:#718096;
 }
 
+
+/* SEARCH RESULT */
+
+.result{
+  display:none;
+  background:#111824;
+  color:#7eb9ff;
+  border-radius:10px;
+  padding:10px 14px;
+  margin-bottom:14px;
+}
+
+
 /* STORY */
 
 .story{
@@ -125,30 +147,20 @@ body{
 
 .line{
   margin:0;
-  padding:4px 0;
+  padding:3px 0;
   font-size:16px;
 }
 
 .gap{
-  height:22px;
+  height:18px;
 }
 
-/* RESULT */
-
-.result{
-  display:none;
-  background:#111824;
-  color:#7eb9ff;
-  border-radius:10px;
-  padding:10px 14px;
-  margin-bottom:14px;
-}
 
 /* BOTTOM */
 
 .bottom{
   text-align:center;
-  margin:25px 0 50px;
+  margin:20px 0 50px;
   padding:22px 15px;
 
   background:#111824;
@@ -185,6 +197,7 @@ button.ready{
   box-shadow:0 0 20px #168cff55;
 }
 
+
 /* FINAL */
 
 .final{
@@ -207,6 +220,9 @@ button.ready{
   font-weight:bold;
 }
 
+
+/* MOBILE */
+
 @media(max-width:600px){
 
   .logo{
@@ -225,11 +241,12 @@ button.ready{
 </style>
 </head>
 
+
 <body>
 
 <div class="container">
 
-  <!-- HEADER -->
+  <!-- AURA ORNOB -->
 
   <div class="header">
 
@@ -244,7 +261,7 @@ button.ready{
   </div>
 
 
-  <!-- PAGE NUMBER -->
+  <!-- TOP PAGE NUMBER -->
 
   <div class="page-card">
 
@@ -292,6 +309,24 @@ button.ready{
   ></div>
 
 
+  <!-- BOTTOM PAGE NUMBER -->
+
+  <div class="page-card">
+
+    <div class="page-number">
+      PAGE <span id="pageNumberBottom">1</span> / 6
+    </div>
+
+    <div class="progress-bg">
+      <div
+        class="progress"
+        id="progressBottom"
+      ></div>
+    </div>
+
+  </div>
+
+
   <!-- TIMER -->
 
   <div class="bottom">
@@ -326,7 +361,7 @@ button.ready{
     <h2>AURA ORNOB</h2>
 
     <p>
-      All 6 pages completed.
+      All 6 pages completed successfully.
     </p>
 
     <a
@@ -352,7 +387,7 @@ const TOTAL_PAGES = 6;
 const WAIT_SECONDS = 20;
 
 
-/* পরে এখানে তোমার আসল Key/File link বসাবে */
+/* পরে এখানে Key/File link বসাবে */
 
 const DESTINATION_URL =
 "https://example.com";
@@ -362,7 +397,7 @@ const DESTINATION_URL =
    STORY
 ========================== */
 
-const story = [
+const storyLines = [
 
 "Daniel woke before sunrise and looked outside his window.",
 "The small town was quiet beneath the morning mist.",
@@ -375,7 +410,6 @@ const story = [
 "He picked up his travel bag.",
 "Then he quietly left his house.",
 
-
 "The road toward the northern forest was long.",
 "Daniel walked beside the old railway line.",
 "Birds flew between the tall trees.",
@@ -386,7 +420,6 @@ const story = [
 "Daniel opened his grandfather's notebook.",
 "A drawing showed the same station.",
 "Under the drawing was a mysterious message.",
-
 
 "The message told him to wait.",
 "Daniel stood beside the northern platform.",
@@ -399,7 +432,6 @@ const story = [
 "The carriage was completely empty.",
 "He chose a seat near the window.",
 
-
 "The train slowly began moving.",
 "Fields disappeared behind the window.",
 "Thick forests replaced the green fields.",
@@ -410,7 +442,6 @@ const story = [
 "Daniel decided to follow the directions.",
 "The train continued deeper into the wilderness.",
 "Several hours passed in silence.",
-
 
 "Finally the train stopped.",
 "Daniel stepped onto another empty platform.",
@@ -423,7 +454,6 @@ const story = [
 "On the other side stood a massive tower.",
 "Daniel recognized the tower immediately.",
 
-
 "It was the same tower from the drawing.",
 "The main door was locked.",
 "Daniel took the silver key from his pocket.",
@@ -434,7 +464,6 @@ const story = [
 "Daniel turned on his flashlight.",
 "The walls were covered with strange paintings.",
 "Some paintings showed the same silver key.",
-
 
 "Daniel walked through several empty rooms.",
 "At the center of the largest room was a wooden table.",
@@ -447,7 +476,6 @@ const story = [
 "Every detail was accurate.",
 "Daniel continued reading.",
 
-
 "The final page contained a single sentence.",
 "It said that every journey begins with a question.",
 "It also said that answers are rarely found quickly.",
@@ -457,120 +485,102 @@ const story = [
 "He closed the notebook.",
 "Outside, the sun was beginning to set.",
 "Daniel left the tower.",
-"He carried both notebooks with him.",
-
-
-"The forest looked different in the evening light.",
-"Daniel followed the path back to the station.",
-"The river reflected the orange sky.",
-"He stopped on the bridge for a moment.",
-"Many questions still remained unanswered.",
-"But he was no longer afraid of them.",
-"Some mysteries become meaningful journeys.",
-"Some journeys change people forever.",
-"Daniel continued walking.",
-"The railway station appeared in the distance.",
-
-
-"The mysterious train was still waiting.",
-"Daniel stepped inside.",
-"He placed the notebooks on the seat.",
-"The doors closed slowly.",
-"The train began moving through the forest.",
-"Daniel watched the trees disappear.",
-"He thought about his grandfather.",
-"Perhaps the secret had always been a lesson.",
-"Perhaps every generation had to discover it.",
-"Daniel opened the notebook one final time."
+"He carried both notebooks with him."
 
 ];
-
-
-/* ==========================
-   CREATE PAGE CONTENT
-========================== */
-
-function makePage(){
-
-  let lines=[];
-
-  /*
-    5 copies = roughly 1200px+
-    depending on device/font size.
-  */
-
-  for(let i=0;i<5;i++){
-
-    story.forEach(line=>{
-      lines.push(line);
-    });
-
-  }
-
-  return lines;
-}
 
 
 /* ==========================
    VARIABLES
 ========================== */
 
-let currentPage=1;
+let currentPage = 1;
 
-let timerStarted=false;
+let timerStarted = false;
 
-let currentLines=[];
+let currentLines = [];
 
 
 /* ==========================
-   RENDER
+   CREATE CONTENT
+========================== */
+
+function makePage(){
+
+  let lines = [];
+
+  /*
+    2 copies of the story.
+    Content will be around 720px+
+    depending on screen/font.
+  */
+
+  for(let i=0;i<2;i++){
+
+    storyLines.forEach(line=>{
+      lines.push(line);
+    });
+
+  }
+
+  return lines;
+
+}
+
+
+/* ==========================
+   RENDER PAGE
 ========================== */
 
 function renderPage(){
 
-  const box=
+  const box =
     document.getElementById("story");
 
-  const search=
+  const search =
     document.getElementById("search");
 
-  const result=
+  const result =
     document.getElementById("result");
 
-  const button=
+  const button =
     document.getElementById("continueBtn");
 
-  box.innerHTML="";
 
-  search.value="";
+  box.innerHTML = "";
 
-  result.style.display="none";
+  search.value = "";
 
-  timerStarted=false;
+  result.style.display = "none";
 
-  currentLines=makePage();
+  timerStarted = false;
+
+  currentLines = makePage();
 
 
   currentLines.forEach((text,index)=>{
 
-    const p=
+    const p =
       document.createElement("p");
 
-    p.className="line";
+    p.className = "line";
 
-    p.textContent=text;
+    p.textContent = text;
 
     box.appendChild(p);
 
 
-    /* প্রতি ১০ লাইনের পর ছোট gap */
+    /*
+      প্রতি ১০ লাইনের পর
+      ছোট gap
+    */
 
     if((index+1)%10===0){
 
-      const gap=
+      const gap =
         document.createElement("div");
 
-      gap.className="gap";
+      gap.className = "gap";
 
       box.appendChild(gap);
 
@@ -579,28 +589,54 @@ function renderPage(){
   });
 
 
+  /* TOP PAGE */
+
   document.getElementById(
     "pageNumber"
-  ).textContent=currentPage;
+  ).textContent = currentPage;
+
+
+  /* BOTTOM PAGE */
+
+  document.getElementById(
+    "pageNumberBottom"
+  ).textContent = currentPage;
+
+
+  /* TOP PROGRESS */
+
+  const percentage =
+    (currentPage/TOTAL_PAGES)*100;
 
 
   document.getElementById(
     "progress"
-  ).style.width=
-    ((currentPage/TOTAL_PAGES)*100)+"%";
+  ).style.width =
+    percentage + "%";
 
+
+  /* BOTTOM PROGRESS */
+
+  document.getElementById(
+    "progressBottom"
+  ).style.width =
+    percentage + "%";
+
+
+  /* TIMER */
 
   document.getElementById(
     "count"
-  ).textContent=WAIT_SECONDS;
+  ).textContent =
+    WAIT_SECONDS;
 
 
-  button.disabled=true;
+  button.disabled = true;
 
   button.classList.remove("ready");
 
-  button.textContent=
-    currentPage<TOTAL_PAGES
+  button.textContent =
+    currentPage < TOTAL_PAGES
     ? "Continue"
     : "GET KEY / FILE";
 
@@ -615,17 +651,17 @@ document
 .getElementById("search")
 .addEventListener("input",function(){
 
-  const q=
+  const query =
     this.value.trim().toLowerCase();
 
-  const box=
+  const box =
     document.getElementById("story");
 
-  const result=
+  const result =
     document.getElementById("result");
 
 
-  if(!q){
+  if(!query){
 
     renderPage();
 
@@ -634,30 +670,30 @@ document
   }
 
 
-  const matches=
-    currentLines.filter(line=>
-      line.toLowerCase().includes(q)
+  const matches =
+    currentLines.filter(line =>
+      line.toLowerCase().includes(query)
     );
 
 
-  result.style.display="block";
+  result.style.display = "block";
 
-  result.textContent=
-    matches.length+
+  result.textContent =
+    matches.length +
     " result(s) found.";
 
 
-  box.innerHTML="";
+  box.innerHTML = "";
 
 
   matches.forEach(line=>{
 
-    const p=
+    const p =
       document.createElement("p");
 
-    p.className="line";
+    p.className = "line";
 
-    p.textContent=line;
+    p.textContent = line;
 
     box.appendChild(p);
 
@@ -667,59 +703,66 @@ document
 
 
 /* ==========================
-   BOTTOM TIMER
+   BOTTOM DETECTION
 ========================== */
 
 function checkBottom(){
 
-  if(timerStarted)return;
+  if(timerStarted) return;
 
 
-  const position=
-    window.scrollY+
+  const currentPosition =
+    window.scrollY +
     window.innerHeight;
 
 
-  const height=
+  const pageHeight =
     document.documentElement.scrollHeight;
 
 
-  if(position>=height-30){
+  if(
+    currentPosition >=
+    pageHeight - 30
+  ){
 
-    timerStarted=true;
+    timerStarted = true;
 
-    let remaining=
+
+    let remaining =
       WAIT_SECONDS;
 
 
-    const count=
+    const count =
       document.getElementById("count");
 
-    const button=
+    const button =
       document.getElementById(
         "continueBtn"
       );
 
 
-    count.textContent=remaining;
+    count.textContent =
+      remaining;
 
 
-    const timer=
+    const timer =
       setInterval(()=>{
 
         remaining--;
 
-        count.textContent=
+        count.textContent =
           Math.max(remaining,0);
 
 
-        if(remaining<=0){
+        if(remaining <= 0){
 
           clearInterval(timer);
 
-          button.disabled=false;
+          button.disabled = false;
 
-          button.classList.add("ready");
+          button.classList.add(
+            "ready"
+          );
 
         }
 
@@ -745,32 +788,41 @@ document
 .getElementById("continueBtn")
 .addEventListener("click",function(){
 
-  if(this.disabled)return;
+  if(this.disabled) return;
 
 
   /* শেষ Page */
 
-  if(currentPage===TOTAL_PAGES){
+  if(currentPage === TOTAL_PAGES){
 
     document.getElementById(
       "finalLink"
-    ).href=
+    ).href =
       DESTINATION_URL;
 
 
     document.getElementById(
       "story"
-    ).style.display="none";
+    ).style.display =
+      "none";
 
 
     document.querySelector(
       ".bottom"
-    ).style.display="none";
+    ).style.display =
+      "none";
+
+
+    document.querySelectorAll(
+      ".page-card"
+    )[1].style.display =
+      "none";
 
 
     document.getElementById(
       "final"
-    ).style.display="block";
+    ).style.display =
+      "block";
 
 
     window.scrollTo({
@@ -783,7 +835,7 @@ document
   }
 
 
-  /* পরের Page */
+  /* NEXT PAGE */
 
   currentPage++;
 
