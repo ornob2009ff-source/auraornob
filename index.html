@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -7,1215 +7,679 @@
 <title>AURA ORNOB</title>
 
 <style>
-
 *{
   box-sizing:border-box;
-}
-
-html{
-  scroll-behavior:smooth;
+  margin:0;
+  padding:0;
 }
 
 body{
-  margin:0;
-  min-height:100vh;
-
+  font-family:Arial,sans-serif;
   background:
-    radial-gradient(
-      circle at 50% -10%,
-      #12325b 0%,
-      #0b1422 28%,
-      #060a11 65%,
-      #03050a 100%
-    );
-
-  color:#eef5ff;
-
-  font-family:
-    Arial,
-    sans-serif;
+    radial-gradient(circle at top,#071f46 0%,#020711 42%,#01030a 100%);
+  color:#fff;
+  min-height:100vh;
 }
-
-
-/* MAIN */
 
 .container{
-  width:94%;
-  max-width:850px;
+  width:92%;
+  max-width:700px;
   margin:auto;
-  padding-bottom:35px;
+  padding:18px 0 40px;
 }
-
-
-/* HEADER */
 
 .header{
   text-align:center;
-  padding:30px 0 18px;
+  padding:18px 10px;
 }
 
 .logo{
-  font-size:31px;
+  font-size:30px;
   font-weight:900;
-
-  letter-spacing:4px;
-
-  color:#2298ff;
-
-  text-shadow:
-    0 0 8px #168cff,
-    0 0 25px #168cff66,
-    0 0 45px #168cff33;
+  letter-spacing:3px;
+  color:#39a9ff;
+  text-shadow:0 0 20px #087cff;
 }
 
-.subtitle{
-  margin-top:6px;
-
-  color:#71839b;
-
-  font-size:11px;
-
-  letter-spacing:2px;
+.sub{
+  margin-top:7px;
+  color:#8fa8c5;
+  font-size:13px;
 }
 
-
-/* PAGE CARD */
-
-.page-card{
-  position:relative;
-
-  padding:17px;
-
-  margin-bottom:17px;
-
-  text-align:center;
-
+.card{
+  background:rgba(5,14,29,.88);
+  border:1px solid rgba(44,153,255,.25);
   border-radius:18px;
-
-  border:1px solid #294463;
-
-  background:
-    linear-gradient(
-      145deg,
-      #111e2e,
-      #0a121d
-    );
-
-  box-shadow:
-    0 12px 35px #000b,
-    inset 0 1px 0 #ffffff08;
-
-  overflow:hidden;
+  padding:18px;
+  margin-top:15px;
+  box-shadow:0 0 25px rgba(0,102,255,.10);
 }
 
-.page-card:after{
-  content:"";
-
-  position:absolute;
-
-  top:0;
-  left:25%;
-
-  width:50%;
-  height:1px;
-
-  background:#249aff;
-
-  box-shadow:
-    0 0 18px #168cff;
+.pageTop{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-weight:bold;
 }
 
-.page-number{
-  font-size:18px;
-
-  font-weight:800;
-
-  letter-spacing:1px;
-}
-
-.page-number span{
-  color:#2298ff;
-
-  text-shadow:
-    0 0 12px #168cff88;
-}
-
-
-/* PROGRESS */
-
-.progress-bg{
-  height:5px;
-
-  margin-top:13px;
-
-  background:#202c3c;
-
-  border-radius:20px;
-
-  overflow:hidden;
+.pageNumber{
+  color:#39a9ff;
 }
 
 .progress{
-  height:100%;
-
-  width:16.66%;
-
+  height:7px;
+  background:#101b2c;
   border-radius:20px;
-
-  background:
-    linear-gradient(
-      90deg,
-      #087be9,
-      #42aaff
-    );
-
-  box-shadow:
-    0 0 12px #168cffaa;
-
-  transition:.5s;
+  overflow:hidden;
+  margin-top:13px;
 }
 
-
-/* SEARCH */
-
-.search-box{
-  height:53px;
-
-  display:flex;
-  align-items:center;
-
-  padding:0 18px;
-
-  margin-bottom:17px;
-
-  border-radius:30px;
-
-  border:1px solid #29415e;
-
-  background:
-    linear-gradient(
-      145deg,
-      #0e1927,
-      #09111b
-    );
-
-  box-shadow:
-    0 10px 30px #0009,
-    inset 0 1px 0 #ffffff08;
-}
-
-.search-icon{
-  color:#2298ff;
-
-  font-size:22px;
-
-  margin-right:10px;
-
-  text-shadow:
-    0 0 10px #168cff;
-}
-
-#search{
-  width:100%;
+.progressBar{
   height:100%;
+  width:16.66%;
+  background:linear-gradient(90deg,#087cff,#55c5ff);
+  box-shadow:0 0 12px #087cff;
+  transition:.4s;
+}
 
-  border:0;
-  outline:0;
+.search{
+  margin-top:15px;
+}
 
-  background:transparent;
+.search input{
+  width:100%;
+  padding:14px;
+  border-radius:12px;
+  border:1px solid #18385e;
+  background:#050d1a;
+  color:white;
+  outline:none;
+}
 
-  color:#fff;
-
+.story{
+  margin-top:16px;
+  min-height:1400px;
+  line-height:1.85;
+  color:#d9e7f7;
   font-size:15px;
 }
 
-#search::placeholder{
-  color:#667990;
+.story p{
+  margin-bottom:22px;
 }
 
-
-/* RESULT */
-
-.result{
-  display:none;
-
-  margin-bottom:15px;
-
-  padding:10px 14px;
-
-  border-radius:12px;
-
-  color:#69b4ff;
-
-  border:1px solid #294463;
-
-  background:#0d1928;
+.storyTitle{
+  color:#4db5ff;
+  font-size:22px;
+  font-weight:bold;
+  margin-bottom:20px;
 }
 
-
-/* STORY */
-
-.story{
-  min-height:500px;
-
-  padding:18px;
-
-  border-radius:18px;
-
-  border:1px solid #20354e;
-
-  background:
-    linear-gradient(
-      145deg,
-      #101a27,
-      #080f18
-    );
-
-  box-shadow:
-    0 15px 40px #000b,
-    inset 0 1px 0 #ffffff07;
-}
-
-.line{
-  margin:0;
-
-  padding:2px 0;
-
-  font-size:14px;
-
-  line-height:1.65;
-
-  color:#dce7f5;
-}
-
-.gap{
-  height:9px;
-}
-
-
-/* BOTTOM PAGE */
-
-.bottom-page{
-  margin-top:18px;
-}
-
-
-/* CONTINUE AREA */
-
-.bottom{
-
-  margin-top:15px;
-
-  padding:24px 15px 20px;
-
+.bottomPage{
   text-align:center;
+  padding:20px;
+  margin-top:20px;
+}
 
-  border-radius:18px;
+.bottomPage span{
+  color:#39a9ff;
+  font-weight:bold;
+}
 
-  border:1px solid #29415d;
+.timerBox{
+  text-align:center;
+}
 
-  background:
-    linear-gradient(
-      145deg,
-      #111d2c,
-      #0a111b
-    );
-
-  box-shadow:
-    0 15px 40px #000b,
-    inset 0 1px 0 #ffffff08;
+.timerText{
+  color:#9db2ca;
+  font-size:14px;
+  margin-bottom:10px;
 }
 
 .timer{
-  color:#8999ad;
-
-  font-size:13px;
-
-  margin-bottom:16px;
+  font-size:34px;
+  font-weight:900;
+  color:#42b6ff;
+  margin:8px;
 }
-
-.timer strong{
-  color:#2298ff;
-
-  font-size:22px;
-
-  margin-left:5px;
-
-  text-shadow:
-    0 0 12px #168cff88;
-}
-
-
-/* BUTTON */
 
 button{
-
-  width:85%;
-
-  max-width:330px;
-
-  padding:14px 20px;
-
-  border:1px solid #39485a;
-
-  border-radius:12px;
-
-  background:
-    linear-gradient(
-      145deg,
-      #303b4a,
-      #252e3a
-    );
-
-  color:#77869a;
-
+  width:100%;
+  padding:15px;
+  border:none;
+  border-radius:13px;
   font-size:16px;
-
-  font-weight:800;
-
-  cursor:not-allowed;
-
-  transition:.25s;
-}
-
-button.ready{
-
-  color:#fff;
-
-  border-color:#168cff;
-
-  background:
-    linear-gradient(
-      135deg,
-      #0879e8,
-      #2298ff
-    );
-
+  font-weight:bold;
+  color:white;
+  background:#0d5fd7;
   cursor:pointer;
-
-  box-shadow:
-    0 0 25px #168cff55,
-    inset 0 1px 0 #ffffff22;
+  transition:.2s;
 }
 
-button.ready:hover{
-  transform:translateY(-2px);
-
-  box-shadow:
-    0 8px 30px #168cff66;
+button:disabled{
+  background:#26364b;
+  color:#718196;
+  cursor:not-allowed;
 }
 
-
-/* OWNER ADMIN */
-
-.credits{
-
-  margin-top:15px;
-
-  padding:17px 15px;
-
-  text-align:center;
-
-  border-radius:15px;
-
-  border:1px solid #1f344c;
-
-  background:
-    linear-gradient(
-      145deg,
-      #0d1724,
-      #080f18
-    );
-
-  box-shadow:
-    0 10px 25px #0008;
-}
-
-.credit-line{
-
-  margin:5px 0;
-
-  font-size:13px;
-
-  letter-spacing:.5px;
-
-  color:#8292a7;
-}
-
-.credit-name{
-
-  color:#dce9f8;
-
-  font-weight:800;
-
+button:not(:disabled):active{
+  transform:scale(.98);
 }
 
 .owner{
-  color:#2298ff;
-
-  text-shadow:
-    0 0 8px #168cff55;
+  text-align:center;
+  margin-top:14px;
+  padding:15px;
+  border-radius:13px;
+  background:#050d19;
+  border:1px solid #17365a;
+  color:#91a9c4;
+  line-height:1.8;
 }
 
-.admin{
-  color:#b8c9dc;
+.owner b{
+  color:#42b6ff;
 }
-
-
-/* FINAL */
 
 .final{
-
   display:none;
-
   text-align:center;
-
-  padding:50px 15px;
-
-  border-radius:18px;
-
-  border:1px solid #294463;
-
-  background:#0d1724;
-
-  box-shadow:
-    0 15px 40px #000b;
 }
 
 .final h2{
-
-  color:#2298ff;
-
-  font-size:27px;
-
-  text-shadow:
-    0 0 18px #168cff66;
-}
-
-.final p{
-  color:#8292a7;
+  color:#42b6ff;
+  margin-bottom:12px;
 }
 
 .final a{
-
-  display:inline-block;
-
-  margin-top:8px;
-
-  padding:14px 30px;
-
-  border-radius:12px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #0879e8,
-      #2298ff
-    );
-
-  color:white;
-
+  display:block;
   text-decoration:none;
-
-  font-weight:800;
-
-  box-shadow:
-    0 0 25px #168cff44;
+  background:#0d6be8;
+  color:white;
+  padding:16px;
+  border-radius:13px;
+  font-weight:bold;
 }
 
-
-/* MOBILE */
-
-@media(max-width:600px){
-
-  .container{
-    width:93%;
-  }
-
-  .logo{
-    font-size:25px;
-    letter-spacing:3px;
-  }
-
-  .story{
-    padding:15px;
-  }
-
-  .line{
-    font-size:13.5px;
-  }
-
-  button{
-    width:92%;
-  }
-
+.hidden{
+  display:none;
 }
-
 </style>
 </head>
-
 
 <body>
 
 <div class="container">
 
-
-<!-- HEADER -->
-
-<div class="header">
-
-  <div class="logo">
-    AURA ORNOB
+  <div class="header">
+    <div class="logo">AURA ORNOB</div>
+    <div class="sub">PREMIUM ACCESS GATE</div>
   </div>
 
-  <div class="subtitle">
-    PREMIUM STORY GATEWAY
-  </div>
+  <div class="card">
 
-</div>
-
-
-<!-- TOP PAGE -->
-
-<div class="page-card">
-
-  <div class="page-number">
-    PAGE <span id="pageNumber">1</span> / 6
-  </div>
-
-  <div class="progress-bg">
-
-    <div
-      class="progress"
-      id="progress"
-    ></div>
-
-  </div>
-
-</div>
-
-
-<!-- SEARCH -->
-
-<div class="search-box">
-
-  <span class="search-icon">
-    ⌕
-  </span>
-
-  <input
-    id="search"
-    type="search"
-    placeholder="Search story..."
-    autocomplete="off"
-  >
-
-</div>
-
-
-<div
-  id="result"
-  class="result"
-></div>
-
-
-<!-- STORY -->
-
-<div
-  id="story"
-  class="story"
-></div>
-
-
-<!-- BOTTOM PAGE -->
-
-<div class="page-card bottom-page">
-
-  <div class="page-number">
-    PAGE <span id="pageNumberBottom">1</span> / 6
-  </div>
-
-  <div class="progress-bg">
-
-    <div
-      class="progress"
-      id="progressBottom"
-    ></div>
-
-  </div>
-
-</div>
-
-
-<!-- CONTINUE -->
-
-<div class="bottom">
-
-  <div class="timer">
-
-    Scroll to bottom & wait
-
-    <strong>
-      <span id="count">20</span>s
-    </strong>
-
-  </div>
-
-
-  <button
-    id="continueBtn"
-    disabled
-  >
-    Continue
-  </button>
-
-
-  <!-- OWNER / ADMIN -->
-
-  <div class="credits">
-
-    <div class="credit-line">
-      OWNER :
-      <span class="credit-name owner">
-        AURA ORNOB
-      </span>
+    <div class="pageTop">
+      <span>STORY ACCESS</span>
+      <span class="pageNumber" id="topPage">PAGE 1 / 6</span>
     </div>
 
-    <div class="credit-line">
-      ADMIN :
-      <span class="credit-name admin">
-        AURA RAZU YT
-      </span>
+    <div class="progress">
+      <div class="progressBar" id="progressBar"></div>
+    </div>
+
+    <div class="search">
+      <input
+        type="text"
+        id="search"
+        placeholder="গল্পের মধ্যে খুঁজুন..."
+      >
+    </div>
+
+    <div class="story" id="story">
+
+      <div class="storyTitle">AURA ORNOB — THE JOURNEY</div>
+
+      <p>
+      রাত তখন অনেক গভীর। শহরের চারপাশে নীরবতা নেমে এসেছে।
+      দূরের কয়েকটি আলো ছাড়া চারদিকে যেন অন্ধকারের রাজত্ব।
+      একজন তরুণ জানালার পাশে বসে নিজের ভবিষ্যৎ নিয়ে ভাবছিল।
+      সে জানত সামনে অনেক কঠিন পথ অপেক্ষা করছে।
+      কিন্তু তার মনে ভয় ছিল না।
+      কারণ সে বিশ্বাস করত, চেষ্টা করলে অসম্ভব বলে কিছু থাকে না।
+      </p>
+
+      <p>
+      ছোটবেলা থেকেই তার স্বপ্ন ছিল নিজের কিছু তৈরি করা।
+      অন্যরা যখন শুধু সমস্যার কথা বলত,
+      সে তখন সমস্যার সমাধান খুঁজত।
+      অনেকবার সে ব্যর্থ হয়েছে।
+      অনেকবার নিজের ওপর সন্দেহ করেছে।
+      তবুও প্রতিবার সে আবার শুরু করেছে।
+      কারণ তার কাছে ব্যর্থতা মানে শেষ নয়,
+      বরং নতুন করে শেখার একটি সুযোগ।
+      </p>
+
+      <p>
+      একদিন সে একটি পুরোনো কম্পিউটারের সামনে বসে।
+      স্ক্রিনে তখন শুধু একটি সাদা পেজ।
+      কোনো ডিজাইন নেই, কোনো ছবি নেই, কোনো বড় লেখা নেই।
+      কিন্তু সেই খালি পেজের মধ্যেই সে নিজের ভবিষ্যৎ দেখতে পেল।
+      সে ভাবল, একদিন এই ছোট্ট পেজ থেকেই বড় কিছু তৈরি হবে।
+      </p>
+
+      <p>
+      প্রথম কয়েকদিন কাজ করতে গিয়ে অসংখ্য ভুল হলো।
+      কখনো কোড কাজ করল না।
+      কখনো ওয়েবসাইট খুলল না।
+      কখনো আবার একটি ছোট ভুলের কারণে পুরো ডিজাইন নষ্ট হয়ে গেল।
+      কিন্তু সে থামেনি।
+      প্রতিটি ভুল তাকে আরও শক্ত করে তুলছিল।
+      </p>
+
+      <p>
+      সময়ের সঙ্গে সঙ্গে তার কাজের প্রতি ভালোবাসা বাড়তে লাগল।
+      সে নতুন নতুন জিনিস শিখতে লাগল।
+      HTML, CSS এবং JavaScript-এর ছোট ছোট বিষয়গুলো
+      তার কাছে ধীরে ধীরে সহজ হয়ে উঠল।
+      যে কাজ একসময় কঠিন মনে হতো,
+      কিছুদিন পর সেই কাজই তার কাছে সাধারণ হয়ে গেল।
+      </p>
+
+      <p>
+      তার সবচেয়ে বড় শক্তি ছিল ধৈর্য।
+      সে জানত বড় কিছু একদিনে তৈরি হয় না।
+      একটি ভালো ওয়েবসাইট তৈরি করতে যেমন সময় লাগে,
+      তেমনি জীবনের বড় স্বপ্ন পূরণ করতেও সময় লাগে।
+      তাই সে প্রতিদিন একটু একটু করে সামনে এগিয়ে যেত।
+      </p>
+
+      <p>
+      কয়েক মাস পর তার তৈরি করা প্রথম প্রজেক্ট মানুষের সামনে আসে।
+      প্রথমে খুব বেশি মানুষ সেটি দেখেনি।
+      কিন্তু সে হতাশ হয়নি।
+      বরং সে বুঝতে পারল,
+      এখনো অনেক কিছু শেখার বাকি আছে।
+      তাই সে আবার ডিজাইন পরিবর্তন করল,
+      নতুন ফিচার যোগ করল,
+      এবং আগের ভুলগুলো ঠিক করল।
+      </p>
+
+      <p>
+      একসময় তার ওয়েবসাইট দেখতে আগের চেয়ে অনেক সুন্দর হয়ে গেল।
+      ডার্ক ব্যাকগ্রাউন্ডের ওপর নীল আলো,
+      পরিষ্কার বাটন,
+      সুন্দর কার্ড এবং স্মুথ অ্যানিমেশন—
+      সবকিছু মিলিয়ে একটি প্রিমিয়াম অনুভূতি তৈরি হলো।
+      সে নিজের কাজ দেখে হাসল।
+      কারণ সে জানত, এই জায়গায় পৌঁছাতে তাকে অনেক রাত জাগতে হয়েছে।
+      </p>
+
+      <p>
+      কিন্তু গল্প এখানেই শেষ নয়।
+      বরং এখান থেকেই আসল যাত্রা শুরু।
+      কারণ স্বপ্ন যত বড় হয়,
+      দায়িত্বও তত বড় হয়।
+      সে ঠিক করল, সামনে আরও বড় প্রজেক্ট তৈরি করবে।
+      নিজের একটি ব্র্যান্ড তৈরি করবে।
+      এবং একদিন এমন কিছু বানাবে,
+      যা মানুষ অনেকদিন মনে রাখবে।
+      </p>
+
+      <p>
+      পরের সকালে সূর্য ওঠার আগেই সে আবার কাজ শুরু করল।
+      তার সামনে ছিল নতুন একটি ডিজাইন।
+      পাশে ছিল একটি নোটবুক।
+      নোটবুকের প্রথম পাতায় লেখা ছিল—
+      “আজকের কাজ কালকের ভবিষ্যৎ তৈরি করবে।”
+      এই একটি বাক্যই তাকে প্রতিদিন নতুন করে উৎসাহ দিত।
+      </p>
+
+      <p>
+      দিন যেতে লাগল।
+      নতুন নতুন মানুষ তার কাজ দেখতে শুরু করল।
+      কেউ প্রশংসা করল,
+      কেউ ভুল ধরিয়ে দিল,
+      আবার কেউ বলল কাজটি আরও ভালো করা সম্ভব।
+      সে সবার কথা শুনল।
+      কারণ সে জানত,
+      শেখার কোনো শেষ নেই।
+      </p>
+
+      <p>
+      একটি সময় তার সামনে বড় একটি সুযোগ আসে।
+      সুযোগটি ছিল কঠিন,
+      কিন্তু সে জানত এটি তার জন্য গুরুত্বপূর্ণ।
+      তাই সে পুরো শক্তি দিয়ে কাজ শুরু করল।
+      প্রতিদিনের ছোট ছোট অগ্রগতি
+      কয়েক সপ্তাহ পর একটি বড় পরিবর্তনে পরিণত হলো।
+      </p>
+
+      <p>
+      সেই দিন রাতে সে আবার জানালার পাশে দাঁড়াল।
+      শহরের আলো তখনও জ্বলছিল।
+      সে নিজের পুরোনো দিনগুলোর কথা মনে করল।
+      যে ছেলে একসময় একটি খালি HTML পেজ দেখে বসে থাকত,
+      আজ সে নিজের তৈরি ডিজাইন মানুষের সামনে দেখাতে পারছে।
+      </p>
+
+      <p>
+      সে বুঝতে পারল,
+      সফলতার সবচেয়ে গুরুত্বপূর্ণ বিষয় প্রতিভা নয়,
+      বরং নিয়মিত চেষ্টা।
+      প্রতিদিন এক ধাপ এগিয়ে যাওয়া।
+      ভুল হলে আবার চেষ্টা করা।
+      এবং নিজের স্বপ্নকে মাঝপথে ছেড়ে না দেওয়া।
+      </p>
+
+      <p>
+      এরপর থেকে তার একটি নিয়ম হয়ে গেল।
+      কোনো কাজ অসম্পূর্ণ রেখে সে ঘুমাবে না।
+      যদি পুরো কাজ শেষ করতে না পারে,
+      অন্তত পরের দিনের জন্য পরিকল্পনা করে রাখবে।
+      এই ছোট নিয়মটি তার জীবনকে অনেক বদলে দিল।
+      </p>
+
+      <p>
+      বছর ঘুরতে থাকল।
+      তার কাজের পরিমাণ বাড়তে লাগল।
+      নতুন নতুন প্রজেক্ট তৈরি হলো।
+      প্রতিটি প্রজেক্টের সঙ্গে তার অভিজ্ঞতাও বাড়ল।
+      সে বুঝতে শিখল,
+      সুন্দর ডিজাইনের পাশাপাশি ব্যবহারকারীর অভিজ্ঞতাও গুরুত্বপূর্ণ।
+      </p>
+
+      <p>
+      একদিন সে নিজের ব্র্যান্ডের নাম ঠিক করল—
+      AURA ORNOB।
+      নামটি তার কাছে শুধু একটি নাম ছিল না।
+      এটি ছিল তার দীর্ঘ সময়ের চেষ্টা,
+      স্বপ্ন এবং ভবিষ্যতের প্রতীক।
+      </p>
+
+      <p>
+      AURA ORNOB-এর লক্ষ্য ছিল সহজ।
+      এমন কিছু তৈরি করা,
+      যা দেখতে সুন্দর,
+      ব্যবহার করতে সহজ,
+      এবং মানুষের মনে একটি আলাদা অনুভূতি তৈরি করে।
+      সে জানত এই পথ সহজ নয়।
+      কিন্তু সে প্রস্তুত ছিল।
+      </p>
+
+      <p>
+      নতুন পরিকল্পনা তৈরি হলো।
+      নতুন ডিজাইন তৈরি হলো।
+      প্রতিদিন নতুন কিছু শেখা চলতে থাকল।
+      মাঝে মাঝে কাজ আটকে যেত।
+      তখন সে একটু বিরতি নিত,
+      আবার ফিরে এসে সমস্যাটি সমাধান করত।
+      </p>
+
+      <p>
+      ধীরে ধীরে সে বুঝতে পারল,
+      সবচেয়ে বড় পরিবর্তন বাইরে নয়,
+      নিজের ভেতরে হয়েছে।
+      আগে যে সমস্যা দেখে সে ভয় পেত,
+      এখন সেই সমস্যাই তাকে ভাবতে শেখায়।
+      আগে যে ভুল তাকে হতাশ করত,
+      এখন সেই ভুল তাকে আরও ভালো হতে সাহায্য করে।
+      </p>
+
+      <p>
+      শেষ পর্যন্ত সে একটি কথা নিজের মনে স্থির করল—
+      “আমি যতবার পড়ে যাব,
+      ততবার উঠে দাঁড়াব।”
+      এই বিশ্বাসই তার সবচেয়ে বড় শক্তি হয়ে গেল।
+      </p>
+
+      <p>
+      গল্পের এই অংশ এখানেই শেষ নয়।
+      সামনে আরও অনেক পথ।
+      আরও অনেক কাজ।
+      আরও অনেক স্বপ্ন।
+      কিন্তু প্রতিটি বড় গল্পের শুরু হয় একটি ছোট সিদ্ধান্ত দিয়ে।
+      আর সেই সিদ্ধান্ত ছিল—
+      থামব না।
+      </p>
+
+      <p>
+      তাই যদি তোমারও কোনো স্বপ্ন থাকে,
+      আজ থেকেই শুরু করো।
+      ছোট করে শুরু করো,
+      কিন্তু নিয়মিত করো।
+      কারণ একদিন সেই ছোট ছোট কাজই
+      তোমার সবচেয়ে বড় অর্জনে পরিণত হবে।
+      </p>
+
+      <p>
+      AURA ORNOB-এর এই যাত্রাও ঠিক তেমন।
+      আজ একটি ছোট পেজ,
+      কাল একটি বড় প্রজেক্ট,
+      আর একদিন হয়তো এমন একটি নাম
+      যা অনেক মানুষের কাছে পরিচিত হবে।
+      </p>
+
+      <p>
+      রাত আরও গভীর হলো।
+      কিন্তু স্ক্রিনের আলো তখনও জ্বলছিল।
+      কাজ শেষ হয়নি।
+      নতুন দিনের পরিকল্পনাও শেষ হয়নি।
+      সে আবার কীবোর্ডের দিকে তাকাল
+      এবং নতুন করে কাজ শুরু করল।
+      </p>
+
+      <p>
+      কারণ স্বপ্ন দেখা সহজ,
+      কিন্তু সেই স্বপ্নের জন্য প্রতিদিন কাজ করা
+      আসল সাহসের বিষয়।
+      আর সে সেই সাহস নিয়েই সামনে এগিয়ে যাচ্ছিল।
+      </p>
+
+      <p>
+      এই যাত্রার প্রতিটি ধাপে একটি শিক্ষা ছিল।
+      ধৈর্য ধরো।
+      ভুল থেকে শেখো।
+      নিজের ওপর বিশ্বাস রাখো।
+      আর সবচেয়ে গুরুত্বপূর্ণ—
+      শুরু করার পর মাঝপথে থেমে যেও না।
+      </p>
+
+      <p>
+      সামনে হয়তো আরও কঠিন দিন আসবে।
+      হয়তো কিছু পরিকল্পনা ব্যর্থ হবে।
+      হয়তো কিছু মানুষ পাশে থাকবে না।
+      কিন্তু নিজের লক্ষ্য যদি পরিষ্কার থাকে,
+      তাহলে পথ খুঁজে নেওয়া সম্ভব।
+      </p>
+
+      <p>
+      শেষ পর্যন্ত সফলতা তাদের কাছেই আসে
+      যারা বারবার চেষ্টা করে।
+      তাই এই গল্পের সবচেয়ে গুরুত্বপূর্ণ লাইন হলো—
+      “আজ ছোট হলেও শুরু করো,
+      কারণ ভবিষ্যতের বড় গল্পের প্রথম অধ্যায়
+      আজই লেখা হচ্ছে।”
+      </p>
+
     </div>
 
   </div>
 
+  <div class="card bottomPage">
+    <div id="bottomPage">PAGE 1 / 6</div>
+  </div>
+
+  <div class="card timerBox">
+
+    <div class="timerText">
+      নিচ পর্যন্ত স্ক্রল করে অপেক্ষা করুন
+    </div>
+
+    <div class="timer" id="timer">
+      20
+    </div>
+
+    <button id="continueBtn" disabled>
+      CONTINUE
+    </button>
+
+    <div class="owner">
+      <b>OWNER : AURA ORNOB</b><br>
+      <b>ADMIN : AURA RAZU YT</b>
+    </div>
+
+  </div>
+
+  <div class="card final" id="final">
+
+    <h2>ACCESS UNLOCKED</h2>
+
+    <p style="color:#9db2ca;margin-bottom:15px;">
+      আপনার জন্য Key / File প্রস্তুত।
+    </p>
+
+    <a href="https://example.com" target="_blank">
+      GET KEY / FILE
+    </a>
+
+  </div>
+
 </div>
-
-
-<!-- FINAL -->
-
-<div
-  id="final"
-  class="final"
->
-
-  <h2>
-    AURA ORNOB
-  </h2>
-
-  <p>
-    All 6 pages completed successfully.
-  </p>
-
-  <a
-    id="finalLink"
-    href="#"
-  >
-    GET KEY / FILE
-  </a>
-
-</div>
-
-
-</div>
-
 
 <script>
 
-
-/* SETTINGS */
-
 const TOTAL_PAGES = 6;
-
 const WAIT_SECONDS = 20;
 
-
-/*
-  এখানে তোমার আসল
-  Key / File link বসাবে।
-*/
-
-const DESTINATION_URL =
-"https://example.com";
-
-
-/* STORY */
-
-const storyLines = [
-
-"Daniel woke before sunrise and looked outside his window.",
-"The small town was quiet beneath the morning mist.",
-"A gentle wind moved through the empty streets.",
-"He remembered the strange story his grandfather had told him.",
-"For years Daniel had wondered if the story was real.",
-"On his desk was an old notebook covered with dust.",
-"Beside the notebook rested a small silver key.",
-"Daniel placed the key inside his jacket.",
-"He picked up his travel bag.",
-"Then he quietly left his house.",
-
-"The road toward the northern forest was long.",
-"Daniel walked beside the old railway line.",
-"Birds flew between the tall trees.",
-"The morning sun slowly appeared above the hills.",
-"After an hour he reached an abandoned station.",
-"The station had been empty for many years.",
-"Old signs moved in the wind.",
-"Daniel opened his grandfather's notebook.",
-"A drawing showed the same station.",
-"Under the drawing was a mysterious message.",
-
-"The message told him to wait.",
-"Daniel stood beside the northern platform.",
-"Several quiet minutes passed.",
-"Then he heard a distant whistle.",
-"A dark train appeared through the fog.",
-"The train stopped in front of him.",
-"The doors opened by themselves.",
-"Daniel stepped inside.",
-"The carriage was completely empty.",
-"He chose a seat near the window.",
-
-"The train slowly began moving.",
-"Fields disappeared behind the window.",
-"Thick forests replaced the green fields.",
-"Daniel continued reading the notebook.",
-"It described an ancient stone tower.",
-"The tower was hidden beyond the forest.",
-"Nobody in the town knew about it.",
-"Daniel decided to follow the directions.",
-"The train continued deeper into the wilderness.",
-"Several hours passed in silence."
-
-];
-
-
-/* VARIABLES */
-
-let currentPage = 1;
-
+let page = 1;
+let timeLeft = WAIT_SECONDS;
 let timerStarted = false;
 
-let currentLines = [];
+const timer = document.getElementById("timer");
+const continueBtn = document.getElementById("continueBtn");
+const story = document.getElementById("story");
+const topPage = document.getElementById("topPage");
+const bottomPage = document.getElementById("bottomPage");
+const progressBar = document.getElementById("progressBar");
+const final = document.getElementById("final");
+const search = document.getElementById("search");
 
+function updatePage(){
 
-/* CREATE PAGE */
+  topPage.textContent =
+    "PAGE " + page + " / " + TOTAL_PAGES;
 
-function makePage(){
+  bottomPage.textContent =
+    "PAGE " + page + " / " + TOTAL_PAGES;
 
-  let lines = [];
+  progressBar.style.width =
+    ((page / TOTAL_PAGES) * 100) + "%";
 
-  /*
-    1 copy = compact
-    প্রায় 200px+ হবে
-    device অনুযায়ী।
-  */
+  timeLeft = WAIT_SECONDS;
 
-  for(let i=0;i<1;i++){
+  timer.textContent = timeLeft;
 
-    storyLines.forEach(line=>{
-      lines.push(line);
-    });
+  continueBtn.disabled = true;
 
-  }
-
-  return lines;
-
-}
-
-
-/* RENDER */
-
-function renderPage(){
-
-  const box =
-    document.getElementById(
-      "story"
-    );
-
-  const search =
-    document.getElementById(
-      "search"
-    );
-
-  const result =
-    document.getElementById(
-      "result"
-    );
-
-  const button =
-    document.getElementById(
-      "continueBtn"
-    );
-
-
-  box.innerHTML = "";
-
-  search.value = "";
-
-  result.style.display =
-    "none";
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
 
   timerStarted = false;
+}
 
-  currentLines =
-    makePage();
+function startTimer(){
 
+  if(timerStarted) return;
 
-  currentLines.forEach(
-    (text,index)=>{
+  timerStarted = true;
 
-      const p =
-        document.createElement(
-          "p"
-        );
+  let countdown = setInterval(()=>{
 
-      p.className =
-        "line";
+    timeLeft--;
 
-      p.textContent =
-        text;
+    timer.textContent = timeLeft;
 
-      box.appendChild(p);
+    if(timeLeft <= 0){
 
+      clearInterval(countdown);
 
-      if(
-        (index+1)%10===0
-      ){
+      continueBtn.disabled = false;
 
-        const gap =
-          document.createElement(
-            "div"
-          );
-
-        gap.className =
-          "gap";
-
-        box.appendChild(gap);
-
-      }
+      timer.textContent = "✓";
 
     }
-  );
 
-
-  /* PAGE */
-
-  document.getElementById(
-    "pageNumber"
-  ).textContent =
-    currentPage;
-
-
-  document.getElementById(
-    "pageNumberBottom"
-  ).textContent =
-    currentPage;
-
-
-  /* PROGRESS */
-
-  const percentage =
-    (currentPage /
-    TOTAL_PAGES) * 100;
-
-
-  document.getElementById(
-    "progress"
-  ).style.width =
-    percentage + "%";
-
-
-  document.getElementById(
-    "progressBottom"
-  ).style.width =
-    percentage + "%";
-
-
-  /* TIMER */
-
-  document.getElementById(
-    "count"
-  ).textContent =
-    WAIT_SECONDS;
-
-
-  button.disabled =
-    true;
-
-  button.classList.remove(
-    "ready"
-  );
-
-
-  button.textContent =
-    currentPage <
-    TOTAL_PAGES
-    ? "Continue"
-    : "GET KEY / FILE";
+  },1000);
 
 }
 
+window.addEventListener("scroll",()=>{
 
-/* SEARCH */
+  const scrollTop =
+    window.scrollY || document.documentElement.scrollTop;
 
-document
-.getElementById("search")
-.addEventListener(
-  "input",
-  function(){
-
-    const query =
-      this.value
-      .trim()
-      .toLowerCase();
-
-
-    const box =
-      document.getElementById(
-        "story"
-      );
-
-    const result =
-      document.getElementById(
-        "result"
-      );
-
-
-    if(!query){
-
-      renderPage();
-
-      return;
-
-    }
-
-
-    const matches =
-      currentLines.filter(
-        line =>
-        line
-        .toLowerCase()
-        .includes(query)
-      );
-
-
-    result.style.display =
-      "block";
-
-
-    result.textContent =
-      matches.length +
-      " result(s) found.";
-
-
-    box.innerHTML = "";
-
-
-    matches.forEach(
-      line=>{
-
-        const p =
-          document.createElement(
-            "p"
-          );
-
-        p.className =
-          "line";
-
-        p.textContent =
-          line;
-
-        box.appendChild(p);
-
-      }
-    );
-
-  }
-);
-
-
-/* TIMER */
-
-function checkBottom(){
-
-  if(timerStarted)
-    return;
-
-
-  const position =
-    window.scrollY +
+  const windowHeight =
     window.innerHeight;
 
+  const fullHeight =
+    document.documentElement.scrollHeight;
 
-  const height =
-    document.documentElement
-    .scrollHeight;
+  if(scrollTop + windowHeight >= fullHeight - 80){
 
-
-  if(
-    position >=
-    height - 30
-  ){
-
-    timerStarted =
-      true;
-
-
-    let remaining =
-      WAIT_SECONDS;
-
-
-    const count =
-      document.getElementById(
-        "count"
-      );
-
-
-    const button =
-      document.getElementById(
-        "continueBtn"
-      );
-
-
-    count.textContent =
-      remaining;
-
-
-    const timer =
-      setInterval(
-        ()=>{
-
-          remaining--;
-
-
-          count.textContent =
-            Math.max(
-              remaining,
-              0
-            );
-
-
-          if(
-            remaining <= 0
-          ){
-
-            clearInterval(
-              timer
-            );
-
-
-            button.disabled =
-              false;
-
-
-            button.classList.add(
-              "ready"
-            );
-
-          }
-
-        },
-        1000
-      );
+    startTimer();
 
   }
 
-}
+});
 
+continueBtn.addEventListener("click",()=>{
 
-window.addEventListener(
-  "scroll",
-  checkBottom,
-  {passive:true}
-);
+  if(page < TOTAL_PAGES){
 
+    page++;
 
-/* CONTINUE */
+    updatePage();
 
-document
-.getElementById(
-  "continueBtn"
-)
-.addEventListener(
-  "click",
-  function(){
+  }else{
 
-    if(this.disabled)
-      return;
+    final.style.display = "block";
 
-
-    /* LAST PAGE */
-
-    if(
-      currentPage ===
-      TOTAL_PAGES
-    ){
-
-      document.getElementById(
-        "finalLink"
-      ).href =
-        DESTINATION_URL;
-
-
-      document.getElementById(
-        "story"
-      ).style.display =
-        "none";
-
-
-      document.querySelector(
-        ".bottom"
-      ).style.display =
-        "none";
-
-
-      document.querySelector(
-        ".bottom-page"
-      ).style.display =
-        "none";
-
-
-      document.getElementById(
-        "final"
-      ).style.display =
-        "block";
-
-
-      window.scrollTo({
-        top:0,
-        behavior:"smooth"
-      });
-
-
-      return;
-
-    }
-
-
-    /* NEXT PAGE */
-
-    currentPage++;
-
-
-    renderPage();
-
-
-    window.scrollTo({
-      top:0,
+    final.scrollIntoView({
       behavior:"smooth"
     });
 
   }
-);
 
+});
 
-/* START */
+search.addEventListener("input",()=>{
 
-renderPage();
+  const value =
+    search.value.toLowerCase().trim();
+
+  const paragraphs =
+    story.querySelectorAll("p");
+
+  paragraphs.forEach(p=>{
+
+    const text =
+      p.textContent.toLowerCase();
+
+    p.style.display =
+      !value || text.includes(value)
+      ? "block"
+      : "none";
+
+  });
+
+});
+
+updatePage();
 
 </script>
 
 </body>
-  </html>
+</html>
