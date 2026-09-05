@@ -26,33 +26,36 @@ body{
   min-height:100vh;
 }
 
+
 /* =========================
-   TOP BRAND
+   HEADER
 ========================= */
 
 .header{
   width:100%;
   text-align:center;
-  padding:22px 15px 12px;
+  padding:25px 15px 13px;
 }
 
 .logo{
-  display:inline-block;
   color:#39b5ff;
-  font-size:25px;
+  font-size:26px;
   font-weight:900;
-  letter-spacing:1.5px;
+  letter-spacing:1.6px;
   text-shadow:0 0 18px rgba(35,170,255,.35);
 }
 
+
 /* =========================
-   PAGE INDICATOR
+   PAGE BOX
 ========================= */
 
 .page-box{
   width:min(920px,94%);
   margin:8px auto 0;
-  padding:12px 18px;
+
+  padding:13px 18px;
+
   text-align:center;
 
   background:
@@ -63,7 +66,8 @@ body{
     );
 
   border:1px solid rgba(48,166,255,.45);
-  border-radius:12px;
+
+  border-radius:13px;
 
   box-shadow:
     0 0 22px rgba(0,132,255,.12),
@@ -71,7 +75,7 @@ body{
 }
 
 .page-number{
-  color:#ffffff;
+  color:#fff;
   font-size:14px;
   font-weight:800;
   letter-spacing:1.2px;
@@ -81,8 +85,9 @@ body{
   color:#38b5ff;
 }
 
+
 /* =========================
-   MAIN
+   CONTAINER
 ========================= */
 
 .container{
@@ -90,6 +95,7 @@ body{
   margin:auto;
   padding:18px 0 70px;
 }
+
 
 /* =========================
    PROGRESS
@@ -100,6 +106,7 @@ body{
   height:7px;
 
   background:#101b2a;
+
   border-radius:20px;
 
   overflow:hidden;
@@ -121,6 +128,7 @@ body{
   transition:.4s;
 }
 
+
 /* =========================
    SEARCH
 ========================= */
@@ -135,11 +143,13 @@ body{
   padding:14px 17px;
 
   border-radius:12px;
+
   border:1px solid #193858;
 
   outline:none;
 
   background:#07111f;
+
   color:white;
 
   font-size:15px;
@@ -151,6 +161,7 @@ body{
   box-shadow:
     0 0 18px rgba(0,136,255,.12);
 }
+
 
 /* =========================
    STORY CARD
@@ -173,12 +184,14 @@ body{
 
 .card-title{
   color:#4ab8ff;
+
   font-size:19px;
 
-  margin-bottom:16px;
+  margin-bottom:18px;
 
   text-align:center;
 }
+
 
 /* =========================
    STORY
@@ -220,17 +233,70 @@ body{
   color:#b9d9f5;
 }
 
+
 /* =========================
-   BOTTOM AREA
+   BOTTOM SECTION
 ========================= */
 
-.bottom{
+.bottom-section{
+
   margin-top:35px;
+
+  padding-top:24px;
+
+  border-top:1px solid rgba(80,145,195,.25);
 
   text-align:center;
 }
 
+
+/* =========================
+   AD AREA
+========================= */
+
+.ad-section{
+
+  margin-bottom:22px;
+
+  padding:20px;
+
+  min-height:120px;
+
+  border-radius:14px;
+
+  background:#050e1a;
+
+  border:1px dashed #214765;
+
+  text-align:center;
+}
+
+.ad-title{
+
+  color:#66849d;
+
+  font-size:11px;
+
+  letter-spacing:1.5px;
+
+  margin-bottom:10px;
+}
+
+.ad-placeholder{
+
+  color:#405a70;
+
+  font-size:13px;
+
+}
+
+
+/* =========================
+   TIMER
+========================= */
+
 .timer{
+
   color:#91aac4;
 
   font-size:14px;
@@ -238,7 +304,34 @@ body{
   margin-bottom:12px;
 }
 
+
+/* =========================
+   CONTINUE BOX
+========================= */
+
+.continue-box{
+
+  padding:17px;
+
+  border-radius:14px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(7,23,40,.96),
+      rgba(5,15,27,.96)
+    );
+
+  border:1px solid #173c5b;
+}
+
+
+/* =========================
+   CONTINUE BUTTON
+========================= */
+
 .continue{
+
   width:100%;
 
   padding:15px;
@@ -268,6 +361,7 @@ body{
 }
 
 .continue.enabled{
+
   opacity:1;
 
   box-shadow:
@@ -275,19 +369,42 @@ body{
 }
 
 .continue:disabled{
+
   cursor:not-allowed;
 }
+
+
+/* =========================
+   DIVIDER
+========================= */
+
+.section-line{
+
+  width:100%;
+
+  height:1px;
+
+  margin:25px 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #244963,
+      transparent
+    );
+}
+
 
 /* =========================
    OWNER ADMIN
 ========================= */
 
 .owner-admin{
-  margin-top:18px;
 
-  padding:18px;
+  padding:20px;
 
-  border-radius:14px;
+  border-radius:15px;
 
   background:
     linear-gradient(
@@ -305,44 +422,50 @@ body{
 }
 
 .owner-admin .title{
+
   color:#6d91ae;
 
   font-size:11px;
 
   letter-spacing:1.5px;
 
-  margin-bottom:10px;
+  margin-bottom:12px;
 }
 
 .owner{
-  color:#ffffff;
+
+  color:white;
 
   font-size:14px;
 
-  margin-bottom:6px;
+  margin-bottom:7px;
 }
 
 .admin{
-  color:#ffffff;
+
+  color:white;
 
   font-size:14px;
 }
 
 .owner span,
 .admin span{
+
   color:#36adff;
 
   font-weight:800;
 }
 
+
 /* =========================
-   FINAL
+   FINAL BOX
 ========================= */
 
 .final{
+
   display:none;
 
-  margin-top:30px;
+  margin-top:25px;
 
   padding:25px;
 
@@ -356,6 +479,7 @@ body{
 }
 
 .get-btn{
+
   display:inline-block;
 
   margin-top:18px;
@@ -373,11 +497,13 @@ body{
   font-weight:700;
 }
 
+
 /* =========================
    FOOTER
 ========================= */
 
 .footer{
+
   margin-top:45px;
 
   text-align:center;
@@ -387,15 +513,12 @@ body{
   font-size:12px;
 }
 
+
 /* =========================
    MOBILE
 ========================= */
 
 @media(max-width:600px){
-
-  .header{
-    padding-top:20px;
-  }
 
   .logo{
     font-size:23px;
@@ -437,7 +560,7 @@ body{
 
 
 <!-- =========================
-     PAGE NUMBER
+     PAGE
 ========================= -->
 
 <div class="page-box">
@@ -475,21 +598,19 @@ body{
   <input
     type="text"
     id="search"
-    placeholder="Search inside the story..."
-  >
+    placeholder="Search inside the story...">
 
 </div>
 
 
 <!-- =========================
-     STORY CARD
+     STORY
 ========================= -->
 
 <div class="card">
 
-
 <div class="card-title">
-  The Beginning of Something New
+The Beginning of Something New
 </div>
 
 
@@ -503,7 +624,6 @@ islands of light along the empty road. A young man was sitting beside his
 window, thinking about his future.
 </p>
 
-
 <p>
 In front of him was a computer. On the screen there was nothing complicated,
 only a simple empty web page. To someone else it might have looked ordinary
@@ -511,13 +631,11 @@ and meaningless. But to him, that blank page looked like a door leading toward
 something much bigger.
 </p>
 
-
 <p>
 He did not know where the next few years would take him. He did not know
 whether his ideas would become successful or disappear quietly. He only knew
 one thing. He wanted to create something with his own hands.
 </p>
-
 
 <p>
 He wanted to build something that other people could use. Something they
@@ -525,9 +643,7 @@ could see on their phones, open on their computers, and remember after they
 had closed the browser.
 </p>
 
-
 <div class="space"></div>
-
 
 <p>
 The first days were not easy. He wrote a small piece of code and opened it
@@ -536,19 +652,16 @@ Sometimes the page was completely empty. Sometimes the design broke.
 Sometimes a button appeared but refused to work.
 </p>
 
-
 <p>
 There were moments when he became frustrated. He wondered why something so
 simple could become so difficult. He watched tutorials, read examples,
 changed one line, saved the file, refreshed the browser, and waited.
 </p>
 
-
 <p>
 Again and again, the result was different from what he expected.
 But he did not stop.
 </p>
-
 
 <p>
 Every mistake taught him something new. Slowly he began to understand that
@@ -557,11 +670,9 @@ purpose. Every element had a position. A tiny mistake could change the
 behavior of an entire page.
 </p>
 
-
 <div class="highlight">
 A small mistake in code can become a big lesson in the journey.
 </div>
-
 
 <p>
 With time, a routine began to form. In the morning he would learn something
@@ -569,13 +680,11 @@ new. During the day he would test it. At night he would look at his mistakes
 and try to understand why they happened.
 </p>
 
-
 <p>
 Things that once looked impossible slowly became familiar. HTML became
 easier. CSS started making sense. JavaScript stopped looking like a wall of
 confusing words and started becoming a tool that could bring ideas to life.
 </p>
-
 
 <p>
 He discovered that creating a website was not only about writing code.
@@ -583,9 +692,7 @@ It was also about patience, design, organization, testing, and understanding
 the people who would eventually use the website.
 </p>
 
-
 <div class="bigSpace"></div>
-
 
 <p>
 One evening he made an important decision. He wanted to create his own
@@ -593,19 +700,16 @@ identity. Not just another random website, but something that could represent
 his ideas.
 </p>
 
-
 <p>
 He thought about different names for a long time. Some sounded too simple.
 Others were difficult to remember. Eventually one name stayed in his mind:
 AURA ORNOB.
 </p>
 
-
 <p>
 The name felt different to him. It represented his identity, his dreams,
 his creativity, and the future he wanted to build.
 </p>
-
 
 <p>
 He opened a new project and started designing it. He chose a dark theme,
@@ -613,12 +717,10 @@ deep navy backgrounds, bright blue highlights, clean typography, and simple
 cards.
 </p>
 
-
 <p>
 He did not want the design to look complicated. He wanted it to feel modern,
 clean, fast, and comfortable to use.
 </p>
-
 
 <p>
 He tested the website on a phone. Then he opened it on a computer.
@@ -627,15 +729,12 @@ Some spacing was uncomfortable. Another section looked perfect on desktop
 but strange on mobile.
 </p>
 
-
 <p>
 He fixed each problem one by one. He changed the spacing, adjusted the font,
 resized the buttons, and tested everything again.
 </p>
 
-
 <div class="space"></div>
-
 
 <p>
 Several days later, he opened the website again. This time he smiled.
@@ -643,17 +742,14 @@ It was not the biggest website in the world. It was not used by thousands
 of people. It did not have a huge company behind it.
 </p>
 
-
 <p>
 But it was his.
 </p>
-
 
 <p>
 Every line had been written, tested, changed, and improved by him.
 That feeling was enough to give him the courage to continue.
 </p>
-
 
 <p>
 Then a new chapter began. Every day brought another idea. Sometimes he
@@ -662,60 +758,49 @@ Sometimes he wanted to completely rebuild a section because the first
 version did not feel right.
 </p>
 
-
 <p>
 Some days were successful. Other days were full of broken layouts,
 unexpected errors, and plans that simply did not work.
 </p>
 
-
 <p>
 But even on the worst days, he learned something.
 </p>
 
-
 <div class="bigSpace"></div>
-
 
 <p>
 He slowly understood that success does not always follow a straight road.
 Sometimes the road is blocked. Then a new path must be found.
 </p>
 
-
 <p>
 Sometimes progress takes longer than expected. Then patience becomes more
 important than speed.
 </p>
-
 
 <p>
 Sometimes confidence disappears. During those moments, it helps to remember
 how far you have already come.
 </p>
 
-
 <p>
 He started keeping his old projects instead of deleting them. Months later,
 he opened one of his first files and laughed.
 </p>
-
 
 <p>
 The code was messy. The design was simple. The spacing was strange.
 Some of the buttons did not even work correctly.
 </p>
 
-
 <p>
 Yet that old project was special.
 </p>
 
-
 <p>
 It was the beginning.
 </p>
-
 
 <p>
 Without that first imperfect project, there would have been no reason to
@@ -723,12 +808,10 @@ create the second one. Without the second one, there would have been no
 third. Every imperfect attempt had become a step toward something better.
 </p>
 
-
 <div class="highlight">
 Progress is not about making everything perfect on the first attempt.
 Progress is about making the next attempt better.
 </div>
-
 
 <p>
 As the months passed, his ideas became larger. He started thinking beyond
@@ -736,18 +819,15 @@ a single page. He imagined complete systems, useful tools, creative apps,
 gaming projects, online platforms, and digital products.
 </p>
 
-
 <p>
 Sometimes the ideas were too ambitious for his current skills. Instead of
 giving up, he wrote them down.
 </p>
 
-
 <p>
 He believed that an idea did not have to be possible today to be worth
 remembering.
 </p>
-
 
 <p>
 Maybe he could build it next year. Maybe after learning a new language.
@@ -755,14 +835,11 @@ Maybe after understanding a new technology. Maybe after working with other
 people.
 </p>
 
-
 <p>
 The important thing was to keep the idea alive.
 </p>
 
-
 <div class="space"></div>
-
 
 <p>
 One night, while looking at the dark screen, he realized something important.
@@ -770,48 +847,39 @@ The biggest difference between his first day and now was not the amount of
 code he knew.
 </p>
 
-
 <p>
 It was his mindset.
 </p>
-
 
 <p>
 In the beginning, every error looked like a reason to stop. Later, an error
 became a question.
 </p>
 
-
 <p>
 What caused it?
 </p>
-
 
 <p>
 Which line created the problem?
 </p>
 
-
 <p>
 What can be changed?
 </p>
-
 
 <p>
 How can the same mistake be avoided next time?
 </p>
 
-
 <p>
 That change made learning completely different.
 </p>
-
 
 <p>
 He stopped expecting everything to work immediately. Instead, he became
 comfortable with testing, failing, fixing, and trying again.
 </p>
-
 
 <p>
 He learned that real progress often happens quietly. There may be no
@@ -819,15 +887,12 @@ applause. No one may know how many times a person failed before something
 finally worked.
 </p>
 
-
 <div class="bigSpace"></div>
-
 
 <p>
 A year from now, he knew he might look back at this version of AURA ORNOB
 and find many things he would want to improve.
 </p>
-
 
 <p>
 He might change the colors. He might rebuild the layout. He might create
@@ -835,72 +900,58 @@ completely different projects. He might even laugh at the code he was
 writing today.
 </p>
 
-
 <p>
 And that would be okay.
 </p>
 
-
 <p>
 Because learning means changing.
 </p>
-
 
 <p>
 The goal was never to create something perfect forever. The goal was to
 create something better than yesterday.
 </p>
 
-
 <p>
 Outside the window, the night was still quiet. The distant lights were
 still shining. The city had not changed much.
 </p>
 
-
 <p>
 But inside that small room, something had changed.
 </p>
-
 
 <p>
 A blank page was no longer just a blank page.
 </p>
 
-
 <p>
 It was an opportunity.
 </p>
-
 
 <p>
 An empty file was no longer empty.
 </p>
 
-
 <p>
 It was the beginning of a project.
 </p>
-
 
 <p>
 And a small idea was no longer just an idea.
 </p>
 
-
 <p>
 It had become the first step toward a much bigger dream.
 </p>
 
-
 <div class="space"></div>
-
 
 <p>
 He saved the project one final time and looked at the screen.
 The clock was moving toward morning.
 </p>
-
 
 <p>
 He knew there would be more problems tomorrow. There would be more bugs,
@@ -908,61 +959,49 @@ more designs to fix, more things to learn, and probably more moments when
 he would feel like giving up.
 </p>
 
-
 <p>
 But he also knew something else.
 </p>
-
 
 <p>
 He had already started.
 </p>
 
-
 <p>
 And sometimes starting is the hardest part.
 </p>
-
 
 <p>
 So he closed the editor, looked once more at the name AURA ORNOB, and smiled.
 </p>
 
-
 <p>
 Tomorrow would be another day.
 </p>
-
 
 <p>
 Another idea.
 </p>
 
-
 <p>
 Another project.
 </p>
-
 
 <p>
 Another opportunity to become better.
 </p>
 
-
 <p>
 The journey had only just begun.
 </p>
 
-
 <div class="bigSpace"></div>
-
 
 <p>
 Years later, perhaps people would see only the finished products. They would
 see polished interfaces, smooth buttons, beautiful animations, and systems
 that appeared to work effortlessly.
 </p>
-
 
 <p>
 They would not see the late nights. They would not see the broken versions.
@@ -971,33 +1010,27 @@ missing brackets, or the endless moments spent wondering why something
 refused to work.
 </p>
 
-
 <p>
 They would only see the result.
 </p>
 
-
 <p>
 But the creator would remember the journey.
 </p>
-
 
 <p>
 He would remember that every successful project had once been nothing more
 than a thought inside his head.
 </p>
 
-
 <p>
 And that thought had become real because he decided to begin.
 </p>
-
 
 <div class="highlight">
 Every great project begins with a simple decision:
 “I will try.”
 </div>
-
 
 <p>
 The story of AURA ORNOB was therefore not only a story about a website.
@@ -1005,54 +1038,76 @@ It was a story about learning, patience, mistakes, ambition, creativity,
 and the courage to continue.
 </p>
 
-
 <p>
 The screen was dark now.
 </p>
-
 
 <p>
 The room was quiet.
 </p>
 
-
 <p>
 The night was almost over.
 </p>
-
 
 <p>
 But the dream was still awake.
 </p>
 
-
 </div>
 
 
 <!-- =========================
-     CONTINUE
+     BOTTOM
 ========================= -->
 
-<div class="bottom">
+<div class="bottom-section">
 
-  <div class="timer" id="timer">
-    Scroll to the bottom to start the 20-second timer.
+
+<!-- AD WILL GO HERE -->
+
+<div class="ad-section">
+
+  <div class="ad-title">
+    ADVERTISEMENT
   </div>
+
+  <div class="ad-placeholder">
+    Your advertisement will appear here.
+  </div>
+
+</div>
+
+
+<!-- TIMER -->
+
+<div class="timer" id="timer">
+  Scroll to the bottom to start the 20-second timer.
+</div>
+
+
+<!-- CONTINUE SEPARATE BOX -->
+
+<div class="continue-box">
 
   <button
     class="continue"
     id="continueBtn"
     disabled>
+
     Continue
+
   </button>
 
 </div>
 
 
-<!-- =========================
-     OWNER / ADMIN
-     BELOW CONTINUE
-========================= -->
+<!-- LINE -->
+
+<div class="section-line"></div>
+
+
+<!-- OWNER ADMIN -->
 
 <div class="owner-admin">
 
@@ -1067,6 +1122,9 @@ But the dream was still awake.
   <div class="admin">
     <span>ADMIN :</span> AURA RAZU YT
   </div>
+
+</div>
+
 
 </div>
 
@@ -1088,10 +1146,13 @@ But the dream was still awake.
       margin-top:10px;
       color:#9eb8d3;
     ">
+
     You have completed all 6 pages.
+
   </p>
 
-  <!-- Replace this with your real KEY / FILE URL -->
+
+  <!-- CHANGE THIS TO YOUR REAL KEY/FILE LINK -->
 
   <a
     class="get-btn"
@@ -1110,22 +1171,32 @@ But the dream was still awake.
 
 
 <div class="footer">
-  AURA ORNOB © 2026
+AURA ORNOB © 2026
 </div>
 
 
 <script>
+
 
 /* =========================
    SETTINGS
 ========================= */
 
 const TOTAL_PAGES = 6;
+
 const WAIT_SECONDS = 20;
 
+
+/* =========================
+   VARIABLES
+========================= */
+
 let page = 1;
+
 let timeLeft = WAIT_SECONDS;
+
 let timerStarted = false;
+
 let countdown = null;
 
 
@@ -1134,25 +1205,25 @@ let countdown = null;
 ========================= */
 
 const pageTop =
-  document.getElementById("pageTop");
+document.getElementById("pageTop");
 
 const progress =
-  document.getElementById("progress");
+document.getElementById("progress");
 
 const timer =
-  document.getElementById("timer");
+document.getElementById("timer");
 
 const continueBtn =
-  document.getElementById("continueBtn");
+document.getElementById("continueBtn");
 
 const finalBox =
-  document.getElementById("finalBox");
+document.getElementById("finalBox");
 
 const search =
-  document.getElementById("search");
+document.getElementById("search");
 
 const story =
-  document.getElementById("story");
+document.getElementById("story");
 
 
 /* =========================
@@ -1167,15 +1238,20 @@ function updatePage(){
   progress.style.width =
     `${(page / TOTAL_PAGES) * 100}%`;
 
-  timeLeft = WAIT_SECONDS;
+  timeLeft =
+    WAIT_SECONDS;
 
-  timerStarted = false;
+  timerStarted =
+    false;
 
   clearInterval(countdown);
 
-  continueBtn.disabled = true;
+  continueBtn.disabled =
+    true;
 
-  continueBtn.classList.remove("enabled");
+  continueBtn.classList.remove(
+    "enabled"
+  );
 
   timer.textContent =
     "Scroll to the bottom to start the 20-second timer.";
@@ -1184,16 +1260,19 @@ function updatePage(){
 
 
 /* =========================
-   START TIMER
+   TIMER
 ========================= */
 
 function startTimer(){
 
-  if(timerStarted) return;
+  if(timerStarted)
+    return;
 
-  timerStarted = true;
+  timerStarted =
+    true;
 
-  timeLeft = WAIT_SECONDS;
+  timeLeft =
+    WAIT_SECONDS;
 
   timer.textContent =
     `Please wait ${timeLeft} seconds...`;
@@ -1217,9 +1296,12 @@ function startTimer(){
         timer.textContent =
           "Ready. You can continue.";
 
-        continueBtn.disabled = false;
+        continueBtn.disabled =
+          false;
 
-        continueBtn.classList.add("enabled");
+        continueBtn.classList.add(
+          "enabled"
+        );
 
       }
 
@@ -1229,7 +1311,7 @@ function startTimer(){
 
 
 /* =========================
-   SCROLL DETECTION
+   SCROLL
 ========================= */
 
 window.addEventListener(
@@ -1259,7 +1341,7 @@ window.addEventListener(
 
 
 /* =========================
-   CONTINUE BUTTON
+   CONTINUE
 ========================= */
 
 continueBtn.addEventListener(
@@ -1314,20 +1396,23 @@ search.addEventListener(
       function(p){
 
         const text =
-          p.textContent.toLowerCase();
+          p.textContent
+          .toLowerCase();
 
         if(
           !query ||
           text.includes(query)
         ){
 
-          p.style.display = "";
+          p.style.display =
+            "";
 
         }
 
         else{
 
-          p.style.display = "none";
+          p.style.display =
+            "none";
 
         }
 
@@ -1339,7 +1424,7 @@ search.addEventListener(
 
 
 /* =========================
-   INITIAL
+   START
 ========================= */
 
 updatePage();
