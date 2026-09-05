@@ -2,19 +2,25 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>AURA ORNOB</title>
 
 <style>
+
 *{
   box-sizing:border-box;
 }
 
+html{
+  scroll-behavior:smooth;
+}
+
 body{
   margin:0;
-  background:#080b12;
-  color:#eeeeee;
+  background:
+    radial-gradient(circle at top,#111d35,#07090e 55%);
+  color:#eef3ff;
   font-family:Arial,sans-serif;
   line-height:1.8;
 }
@@ -25,136 +31,243 @@ body{
   margin:auto;
 }
 
-/* ===== TOP ===== */
 
-.top{
-  padding:22px 0 10px;
+/* =========================
+   PREMIUM HEADER
+========================= */
+
+.header{
   text-align:center;
+  padding:25px 0 15px;
 }
 
 .logo{
+  font-size:32px;
+  font-weight:800;
+  letter-spacing:3px;
   color:#168cff;
-  font-size:30px;
-  font-weight:bold;
-  letter-spacing:2px;
-  margin-bottom:14px;
+  text-shadow:
+    0 0 15px #168cff55;
 }
 
-/* ===== SEARCH BAR ===== */
+.subtitle{
+  color:#7f8da5;
+  font-size:13px;
+  margin-top:4px;
+}
+
+
+/* =========================
+   PAGE NUMBER
+========================= */
+
+.page-card{
+  margin:15px 0;
+  padding:18px;
+  background:#101722;
+  border:1px solid #26354c;
+  border-radius:16px;
+  text-align:center;
+  box-shadow:0 10px 35px #0008;
+}
+
+.page-number{
+  font-size:20px;
+  font-weight:bold;
+  color:#fff;
+}
+
+.page-number span{
+  color:#168cff;
+}
+
+
+/* =========================
+   PROGRESS
+========================= */
+
+.progress-bg{
+  width:100%;
+  height:7px;
+  background:#202936;
+  border-radius:20px;
+  overflow:hidden;
+  margin-top:13px;
+}
+
+.progress{
+  height:100%;
+  width:16.66%;
+  background:#168cff;
+  border-radius:20px;
+  transition:.4s;
+}
+
+
+/* =========================
+   SEARCH
+========================= */
 
 .search-box{
   width:100%;
-  height:52px;
-  background:#151b26;
-  border:1px solid #27364d;
-  border-radius:28px;
+  height:54px;
+  background:#111925;
+  border:1px solid #2a3b55;
+  border-radius:30px;
+
   display:flex;
   align-items:center;
+
   padding:0 18px;
-  margin-bottom:20px;
+  margin:18px 0;
 }
 
 .search-icon{
-  font-size:21px;
   color:#168cff;
+  font-size:22px;
   margin-right:10px;
 }
 
 #search{
   width:100%;
   height:100%;
-  border:0;
-  outline:0;
+  border:none;
+  outline:none;
   background:transparent;
   color:white;
   font-size:16px;
 }
 
 #search::placeholder{
-  color:#78859a;
+  color:#718097;
 }
 
-/* ===== CONTENT ===== */
+
+/* =========================
+   SEARCH RESULT
+========================= */
+
+.result{
+  display:none;
+  padding:10px 15px;
+  margin-bottom:15px;
+  border-radius:10px;
+  background:#101722;
+  color:#7fbaff;
+}
+
+
+/* =========================
+   STORY
+========================= */
 
 .story{
-  background:#111722;
-  border-radius:14px;
-  padding:20px;
-  box-shadow:0 5px 25px #0009;
+  background:#10151e;
+  border:1px solid #1d2a3b;
+  border-radius:16px;
+  padding:22px;
+
+  box-shadow:
+    0 15px 45px #0009;
 }
 
 .line{
   margin:0;
-  padding:3px 0;
+  padding:4px 0;
   font-size:16px;
+  color:#e5eaf3;
 }
 
 .gap{
   height:28px;
 }
 
-/* ===== SEARCH RESULT ===== */
 
-.result{
-  display:none;
-  background:#151b26;
-  padding:12px 15px;
-  border-radius:10px;
-  margin-bottom:15px;
-  color:#8ebeff;
-}
-
-mark{
-  background:#168cff;
-  color:white;
-  border-radius:3px;
-  padding:1px 3px;
-}
-
-/* ===== BOTTOM ===== */
+/* =========================
+   BOTTOM
+========================= */
 
 .bottom{
-  text-align:center;
-  background:#111722;
-  border-radius:14px;
+  margin:30px 0 60px;
   padding:25px 15px;
-  margin:30px 0 50px;
+
+  background:#101722;
+  border:1px solid #26354c;
+  border-radius:16px;
+
+  text-align:center;
 }
 
 .timer{
-  font-size:18px;
-  margin-bottom:15px;
+  color:#aab6c9;
+  margin-bottom:16px;
+}
+
+.timer strong{
+  color:#168cff;
+  font-size:22px;
 }
 
 button{
-  border:0;
-  border-radius:10px;
-  padding:14px 28px;
-  background:#3b4350;
+  border:none;
+  border-radius:11px;
+  padding:14px 32px;
+
+  background:#303947;
   color:white;
+
   font-size:17px;
   font-weight:bold;
+
+  cursor:not-allowed;
 }
 
 button.ready{
   background:#168cff;
+  box-shadow:0 0 20px #168cff55;
   cursor:pointer;
 }
 
-button:disabled{
-  opacity:.55;
+
+/* =========================
+   FINAL
+========================= */
+
+.final{
+  display:none;
+  text-align:center;
+  padding:50px 20px;
 }
 
-/* ===== RESPONSIVE ===== */
+.final h2{
+  color:#168cff;
+}
+
+.final a{
+  display:inline-block;
+  padding:15px 30px;
+
+  background:#168cff;
+  color:white;
+
+  border-radius:11px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:600px){
 
   .logo{
-    font-size:25px;
+    font-size:26px;
   }
 
   .story{
-    padding:16px;
+    padding:17px;
   }
 
   .line{
@@ -162,368 +275,552 @@ button:disabled{
   }
 
 }
+
 </style>
 </head>
+
 
 <body>
 
 <div class="container">
 
-  <div class="top">
 
-    <div class="logo">
-      AURA ORNOB
-    </div>
+<!-- HEADER -->
 
-    <div class="search-box">
+<div class="header">
 
-      <span class="search-icon">⌕</span>
+  <div class="logo">
+    AURA ORNOB
+  </div>
 
-      <input
-        id="search"
-        type="search"
-        placeholder="Search story..."
-        autocomplete="off"
-      >
+  <div class="subtitle">
+    Premium Story Gateway
+  </div>
 
-    </div>
+</div>
+
+
+<!-- PAGE CARD -->
+
+<div class="page-card">
+
+  <div class="page-number">
+    PAGE <span id="pageNumber">1</span> / 6
+  </div>
+
+  <div class="progress-bg">
+    <div
+      class="progress"
+      id="progress"
+    ></div>
+  </div>
+
+</div>
+
+
+<!-- SEARCH -->
+
+<div class="search-box">
+
+  <span class="search-icon">
+    ⌕
+  </span>
+
+  <input
+    id="search"
+    type="search"
+    placeholder="Search this page..."
+    autocomplete="off"
+  >
+
+</div>
+
+
+<div
+  id="result"
+  class="result"
+></div>
+
+
+<!-- STORY -->
+
+<div
+  id="story"
+  class="story"
+></div>
+
+
+<!-- BOTTOM -->
+
+<div class="bottom">
+
+  <div class="timer">
+
+    Scroll to the bottom and wait
+
+    <strong>
+      <span id="count">20</span>s
+    </strong>
 
   </div>
 
+  <button
+    id="continueBtn"
+    disabled
+  >
+    Continue
+  </button>
 
-  <div id="result" class="result"></div>
+</div>
 
 
-  <div id="story" class="story"></div>
+<!-- FINAL -->
 
+<div
+  id="final"
+  class="final"
+>
 
-  <div class="bottom">
+  <h2>
+    AURA ORNOB
+  </h2>
 
-    <div class="timer">
-      Scroll to the bottom and wait:
-      <strong id="count">20</strong>s
-    </div>
+  <p>
+    All pages completed successfully.
+  </p>
 
-    <button id="continueBtn" disabled>
-      Continue
-    </button>
+  <a
+    id="finalLink"
+    href="#"
+  >
+    GET KEY / FILE
+  </a>
 
-  </div>
+</div>
+
 
 </div>
 
 
 <script>
 
-/* =========================
+/* =================================
    SETTINGS
-========================= */
+================================= */
+
+const TOTAL_PAGES = 6;
 
 const WAIT_SECONDS = 20;
 
 
-/* =========================
-   STORY
-========================= */
+/*
+  পরে এখানে তোমার আসল
+  Key / File / Destination URL বসাবে
+*/
 
-const paragraphs = [
+const DESTINATION_URL =
+  "https://example.com";
 
-"Daniel woke before sunrise and quietly opened the old wooden window.",
-"The town outside was still sleeping beneath a layer of morning mist.",
-"A gentle wind moved through the narrow streets and carried the smell of rain.",
-"Daniel looked at the small clock beside his bed and realized that the day had finally arrived.",
-"For years he had wondered about the strange story his grandfather had told him.",
-"Nobody else in the family believed the story was real.",
-"But Daniel had always believed there was something hidden behind those words.",
-"On his desk rested an old notebook covered with dust and faded marks.",
-"Beside the notebook was a small silver key that he had discovered the previous evening.",
-"He placed the key carefully inside his pocket and prepared to leave.",
 
-"The road toward the northern forest was long and almost completely empty.",
-"Daniel carried a small bag containing water, food, a flashlight, and the old notebook.",
-"As he walked, the sunlight slowly appeared above the distant hills.",
-"Birds moved between the branches while the sound of the town disappeared behind him.",
+/* =================================
+   STORY DATABASE
+================================= */
+
+const storyLines = [
+
+"Daniel woke before sunrise and opened the old wooden window.",
+"The town outside was quiet beneath a thin layer of morning mist.",
+"A soft wind moved through the empty streets.",
+"Daniel looked at the clock beside his bed.",
+"Today was the day he had been waiting for.",
+"For years he had wondered about his grandfather's mysterious story.",
+"Nobody in the family believed the story was true.",
+"Daniel had always believed there was something hidden behind it.",
+"On his desk rested an old leather notebook.",
+"Beside the notebook was a small silver key.",
+
+
+"He placed the key carefully inside his jacket.",
+"Then he picked up his old travel bag.",
+"The road toward the northern forest was long.",
+"Daniel left the house without making any noise.",
+"Sunlight slowly appeared above the distant hills.",
+"Birds flew between the branches of the trees.",
+"The sound of the town disappeared behind him.",
 "After an hour he reached an abandoned railway station.",
 "The station had not been used for many years.",
-"Old signs hung from the walls and moved whenever the wind became stronger.",
-"Daniel checked the notebook once again.",
-"A drawing inside showed the exact same station.",
-"Underneath the drawing was a message telling him to wait.",
+"Old signs moved gently in the morning wind.",
 
-"Daniel waited beside the old platform for several minutes.",
-"Then he heard a distant sound coming from beyond the trees.",
-"A train appeared slowly through the morning fog.",
-"It looked older than any train Daniel had ever seen.",
-"The train stopped directly in front of him.",
-"Nobody opened the doors.",
-"Daniel stepped forward and noticed a small silver symbol beside the entrance.",
-"The symbol looked exactly like the one drawn in his grandfather's notebook.",
-"He touched the symbol with his fingers.",
-"The door immediately opened.",
 
-"Inside the train everything was silent.",
-"The seats were covered with dark blue fabric and the windows were covered with dust.",
-"Daniel chose a seat near the front and placed his bag beside him.",
+"Daniel opened the notebook again.",
+"A drawing showed the exact same station.",
+"Under the drawing was a strange message.",
+"The message told him to wait beside the northern platform.",
+"Daniel looked around but saw nobody.",
+"Several minutes passed in complete silence.",
+"Then a distant whistle came from beyond the forest.",
+"A dark train slowly appeared through the fog.",
+"It stopped directly in front of Daniel.",
+"The doors opened without anyone touching them.",
+
+
+"Daniel stepped inside the train.",
+"The carriage was completely empty.",
+"Old blue seats lined both sides of the room.",
+"Dust covered the windows.",
+"Daniel chose a seat near the front.",
+"He placed his bag beside him.",
 "After a few seconds the train began moving.",
 "The landscape outside changed quickly.",
-"Green fields disappeared and tall forests appeared in their place.",
-"Daniel opened the notebook and started reading the next page.",
-"It described a tower hidden somewhere beyond the forest.",
-"The tower was supposed to contain an answer to an old family mystery.",
-"Daniel continued reading as the train moved deeper into the wilderness.",
+"Green fields disappeared behind thick forests.",
+"Daniel opened the notebook and continued reading.",
 
-"Several hours passed before the train finally stopped.",
-"Daniel stepped onto another empty platform.",
-"There was no station building and no sign showing the name of the place.",
-"A narrow path began near the tracks and disappeared between the trees.",
-"Daniel followed the path while holding the notebook in one hand.",
-"The forest became darker as he walked deeper inside.",
-"Large trees blocked most of the sunlight.",
-"Occasionally he heard strange sounds coming from far away.",
-"Still, he continued walking without turning around.",
-"He trusted the directions written in the notebook.",
 
-"After a long walk Daniel discovered a stone bridge.",
-"A clear river flowed underneath it.",
-"On the opposite side stood an enormous stone tower.",
-"Daniel stopped because he immediately recognized it.",
-"It was exactly the same tower shown in his grandfather's drawings.",
-"The tower looked abandoned but its main door was still in perfect condition.",
-"Daniel reached into his pocket and removed the silver key.",
-"For a moment he wondered whether he should continue.",
-"Then he placed the key into the lock.",
-"The door opened with a deep and quiet sound.",
+"The notebook described a forgotten stone tower.",
+"The tower was hidden beyond the northern forest.",
+"According to the story, it contained an important secret.",
+"Daniel read every word carefully.",
+"The train moved deeper into the wilderness.",
+"Several hours passed without another passenger appearing.",
+"Finally the train slowed down.",
+"It stopped beside a completely empty platform.",
+"Daniel stepped outside.",
+"A narrow path disappeared between the trees.",
 
-"Inside the tower the air was cold.",
-"The walls were covered with paintings, maps, and strange symbols.",
-"Some of the paintings showed people standing beside the same river.",
-"Others showed a small village that Daniel recognized from old family photographs.",
-"He moved slowly from one room to another.",
+
+"He followed the path into the forest.",
+"Large branches blocked the sunlight above him.",
+"The air became colder as he walked farther.",
+"Occasionally Daniel heard sounds in the distance.",
+"He continued forward without turning around.",
+"After a long walk he found an old stone bridge.",
+"A clear river flowed beneath the bridge.",
+"On the other side stood a massive tower.",
+"Daniel immediately recognized the building.",
+"It was exactly like the drawing in his notebook.",
+
+
+"The tower door was locked.",
+"Daniel reached into his jacket.",
+"He took out the silver key.",
+"For a moment he wondered whether the key would work.",
+"Then he placed it into the lock.",
+"The lock turned with a quiet click.",
+"The heavy wooden door opened slowly.",
+"Darkness filled the entrance.",
+"Daniel turned on his flashlight.",
+"Then he stepped inside.",
+
+
+"The walls were covered with strange paintings.",
+"Some paintings showed people standing beside the river.",
+"Others showed the same silver key.",
+"Daniel walked through several empty rooms.",
 "At the center of the largest room stood a wooden table.",
-"On the table was another notebook.",
-"This notebook looked much newer than the one Daniel carried.",
-"He opened it carefully.",
+"Another notebook rested on the table.",
+"This notebook looked much newer.",
+"Daniel carefully opened it.",
 "The first page contained his own name.",
+"He stepped backward in surprise.",
 
-"Daniel stepped backward in surprise.",
-"He wondered how someone could have written his name inside a book hidden in an abandoned tower.",
-"The following pages contained descriptions of events from his childhood.",
-"Everything was accurate, including memories he had never told anyone.",
-"Daniel continued reading until he reached the final page.",
-"That page contained only one sentence.",
-"It said that every person eventually reaches a moment when they must choose their own path.",
-"Daniel closed the notebook and looked around the room.",
-"For the first time he understood that the mystery was not about treasure.",
-"It was about discovering who he wanted to become.",
 
-"Outside, the afternoon sun began disappearing behind the mountains.",
+"The following pages described events from his childhood.",
+"Every detail was accurate.",
+"Some memories had never been told to anyone.",
+"Daniel continued reading.",
+"The final page contained only one sentence.",
+"It said that every journey begins with a question.",
+"It also said that answers are rarely found quickly.",
+"Daniel finally understood the meaning of the journey.",
+"The silver key had never been the real treasure.",
+"The journey itself was the message.",
+
+
+"Outside, the afternoon sun was disappearing.",
 "Daniel left the tower carrying both notebooks.",
-"The journey home felt completely different from the journey there.",
-"He no longer felt afraid of the unknown forest.",
-"Every tree seemed familiar now.",
-"The river reflected the orange light of the evening sky.",
-"Daniel stopped on the bridge and looked back at the tower.",
-"He knew that many questions were still unanswered.",
-"But he also knew that not every question needed an immediate answer.",
-"Some journeys were valuable simply because they changed the person who made them.",
+"The forest looked different in the evening light.",
+"He followed the same path back toward the station.",
+"The river reflected the orange sky.",
+"Daniel stopped on the bridge and looked behind him.",
+"Many questions still remained unanswered.",
+"But he no longer felt afraid of them.",
+"Some mysteries were meant to become journeys.",
+"Some journeys were meant to change people.",
 
-"Daniel returned to the railway station just before sunset.",
-"The mysterious train was still waiting beside the platform.",
+
+"Daniel reached the railway station before sunset.",
+"The mysterious train was still waiting.",
 "He stepped inside and placed the notebooks on the seat.",
-"The train began moving without anyone controlling it.",
-"Through the window Daniel watched the forest disappear.",
-"He thought about his grandfather and the strange secret he had protected for so many years.",
-"Perhaps the secret had always been a lesson rather than a hidden object.",
-"Perhaps the journey was meant to continue through another generation.",
-"Daniel smiled and opened the notebook one final time.",
-"A new blank page waited for him.",
+"The doors closed slowly.",
+"The train began moving through the forest.",
+"Daniel watched the trees disappear behind the window.",
+"He thought about his grandfather.",
+"Perhaps the secret had always been a lesson.",
+"Perhaps every generation had to discover it alone.",
+"Daniel smiled and opened the notebook.",
 
-"He took a pen from his bag and began writing.",
-"He wrote about the town, the station, the forest, and the tower.",
+
+"A blank page was waiting for him.",
+"He took a pen from his bag.",
+"Then he began writing his own story.",
+"He wrote about the town and the railway station.",
+"He wrote about the forest and the tower.",
 "He wrote about fear and courage.",
-"He wrote about questions that had no simple answers.",
-"He wrote about the people who had influenced his life.",
+"He wrote about questions without simple answers.",
 "Most importantly, he wrote about the future.",
-"The train continued through the night while the stars appeared above the windows.",
-"Daniel realized that he was no longer searching for someone else's story.",
-"He was finally beginning to write his own.",
-"And somewhere beyond the dark horizon, another journey was already waiting."
+"The train continued through the night.",
+"And Daniel knew that his journey had only begun."
 
 ];
 
 
-/* =========================
-   CREATE 12,000px+ CONTENT
-========================= */
+/* =================================
+   PAGE DATA
+================================= */
 
-const storyBox =
-  document.getElementById("story");
+let currentPage = 1;
 
-/*
-  120 বার গল্পের অংশ তৈরি করা হচ্ছে।
-  ফলে content অনেক লম্বা হবে এবং
-  ফাঁকা 12000px বানানো হবে না।
-*/
 
-let allLines = [];
+/* =================================
+   CREATE CONTENT
+================================= */
 
-for(let round=0; round<120; round++){
+function createPageContent(page){
 
-  for(let i=0;i<paragraphs.length;i++){
+  let lines = [];
 
-    allLines.push(paragraphs[i]);
+  /*
+    প্রতি Page-এ একই base story
+    বিভিন্নভাবে repeat করে বড় content তৈরি করা হচ্ছে।
+    
+    ফাঁকা 5000px নয়,
+    actual text দিয়েই content তৈরি হচ্ছে।
+  */
 
-    /*
-      প্রতি ১০ লাইনের পর
-      ছোট natural paragraph gap
-    */
+  for(let round=0; round<14; round++){
 
-    if(allLines.length % 10 === 0){
-
-      allLines.push("");
-      allLines.push("");
-
-    }
+    storyLines.forEach(line=>{
+      lines.push(line);
+    });
 
   }
+
+  return lines;
 
 }
 
 
-/* =========================
-   DISPLAY STORY
-========================= */
+/* =================================
+   RENDER PAGE
+================================= */
 
-function showStory(){
+function renderPage(){
 
-  storyBox.innerHTML = "";
+  const story =
+    document.getElementById("story");
 
-  allLines.forEach((text,index)=>{
+  const search =
+    document.getElementById("search");
 
-    if(text === ""){
+  const result =
+    document.getElementById("result");
 
-      const gap =
-        document.createElement("div");
+  story.innerHTML = "";
 
-      gap.className = "gap";
+  search.value = "";
 
-      storyBox.appendChild(gap);
+  result.style.display = "none";
 
-    }else{
-
-      const p =
-        document.createElement("p");
-
-      p.className = "line";
-
-      p.textContent = text;
-
-      storyBox.appendChild(p);
-
-    }
-
-  });
-
-}
-
-showStory();
+  const lines =
+    createPageContent(currentPage);
 
 
-/* =========================
-   SEARCH
-========================= */
-
-const search =
-  document.getElementById("search");
-
-const result =
-  document.getElementById("result");
-
-search.addEventListener("input",()=>{
-
-  const query =
-    search.value.trim().toLowerCase();
-
-  if(!query){
-
-    result.style.display = "none";
-    showStory();
-    return;
-
-  }
-
-  const matches =
-    allLines.filter(line =>
-      line &&
-      line.toLowerCase().includes(query)
-    );
-
-  result.style.display = "block";
-
-  result.textContent =
-    matches.length +
-    " matching line(s) found.";
-
-  storyBox.innerHTML = "";
-
-  matches.forEach(line=>{
+  lines.forEach((text,index)=>{
 
     const p =
       document.createElement("p");
 
     p.className = "line";
 
-    const escaped =
-      query.replace(
-        /[.*+?^${}()|[\]\\]/g,
-        "\\$&"
-      );
+    p.textContent = text;
 
-    p.innerHTML =
-      line.replace(
-        new RegExp(escaped,"gi"),
-        match => "<mark>"+match+"</mark>"
-      );
+    story.appendChild(p);
 
-    storyBox.appendChild(p);
+
+    /*
+      প্রতি ১০ লাইনের পর
+      ছোট gap
+    */
+
+    if((index+1)%10===0){
+
+      const gap =
+        document.createElement("div");
+
+      gap.className = "gap";
+
+      story.appendChild(gap);
+
+    }
+
+  });
+
+
+  /*
+    Page number
+  */
+
+  document.getElementById(
+    "pageNumber"
+  ).textContent =
+    currentPage;
+
+
+  /*
+    Progress
+  */
+
+  document.getElementById(
+    "progress"
+  ).style.width =
+    ((currentPage/TOTAL_PAGES)*100)+"%";
+
+
+  /*
+    Timer reset
+  */
+
+  document.getElementById(
+    "count"
+  ).textContent =
+    WAIT_SECONDS;
+
+
+  const button =
+    document.getElementById(
+      "continueBtn"
+    );
+
+  button.disabled = true;
+
+  button.classList.remove("ready");
+
+  button.textContent =
+    currentPage < TOTAL_PAGES
+    ? "Continue"
+    : "GET KEY / FILE";
+
+}
+
+
+/* =================================
+   SEARCH
+================================= */
+
+document
+.getElementById("search")
+.addEventListener("input",function(){
+
+  const query =
+    this.value.trim().toLowerCase();
+
+  const story =
+    document.getElementById("story");
+
+  const result =
+    document.getElementById("result");
+
+
+  if(!query){
+
+    renderPage();
+
+    return;
+
+  }
+
+
+  const lines =
+    createPageContent(currentPage);
+
+
+  const matches =
+    lines.filter(line =>
+      line.toLowerCase().includes(query)
+    );
+
+
+  result.style.display =
+    "block";
+
+  result.textContent =
+    matches.length +
+    " matching line(s) found.";
+
+
+  story.innerHTML = "";
+
+
+  matches.forEach(line=>{
+
+    const p =
+      document.createElement("p");
+
+    p.className =
+      "line";
+
+    p.textContent =
+      line;
+
+    story.appendChild(p);
 
   });
 
 });
 
 
-/* =========================
-   20 SECOND TIMER
-========================= */
+/* =================================
+   TIMER
+================================= */
 
-const count =
-  document.getElementById("count");
-
-const button =
-  document.getElementById("continueBtn");
-
-let started = false;
+let timerStarted = false;
 
 function checkBottom(){
 
-  if(started) return;
+  if(timerStarted) return;
 
-  const bottom =
+
+  const scrollPosition =
     window.scrollY +
     window.innerHeight;
 
+
   const pageHeight =
-    document.documentElement.scrollHeight;
+    document.documentElement
+    .scrollHeight;
 
-  if(bottom >= pageHeight - 30){
 
-    started = true;
+  if(
+    scrollPosition >=
+    pageHeight - 30
+  ){
+
+    timerStarted = true;
+
 
     let remaining =
       WAIT_SECONDS;
 
+
+    const count =
+      document.getElementById(
+        "count"
+      );
+
+
     count.textContent =
       remaining;
+
 
     const timer =
       setInterval(()=>{
@@ -533,16 +830,24 @@ function checkBottom(){
         count.textContent =
           Math.max(remaining,0);
 
+
         if(remaining <= 0){
 
           clearInterval(timer);
 
+
+          const button =
+            document.getElementById(
+              "continueBtn"
+            );
+
+
           button.disabled = false;
 
-          button.classList.add("ready");
+          button.classList.add(
+            "ready"
+          );
 
-          button.textContent =
-            "Continue";
 
         }
 
@@ -552,6 +857,7 @@ function checkBottom(){
 
 }
 
+
 window.addEventListener(
   "scroll",
   checkBottom,
@@ -559,25 +865,83 @@ window.addEventListener(
 );
 
 
-/* =========================
-   BUTTON
-========================= */
+/* =================================
+   CONTINUE
+================================= */
 
-button.addEventListener("click",()=>{
+document
+.getElementById("continueBtn")
+.addEventListener("click",function(){
 
-  if(button.disabled) return;
+  if(this.disabled) return;
+
 
   /*
-    এখানে পরে তোমার
-    পরের Step / Key / File link
-    বসাতে পারবে।
+    Last page
   */
 
-  alert("Next step is ready.");
+  if(currentPage === TOTAL_PAGES){
+
+    document.getElementById(
+      "finalLink"
+    ).href =
+      DESTINATION_URL;
+
+
+    document.getElementById(
+      "story"
+    ).style.display =
+      "none";
+
+
+    document.querySelector(
+      ".bottom"
+    ).style.display =
+      "none";
+
+
+    document.getElementById(
+      "final"
+    ).style.display =
+      "block";
+
+
+    window.scrollTo({
+      top:0,
+      behavior:"smooth"
+    });
+
+    return;
+
+  }
+
+
+  /*
+    Next page
+  */
+
+  currentPage++;
+
+  timerStarted = false;
+
+  renderPage();
+
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
 
 });
+
+
+/* =================================
+   START
+================================= */
+
+renderPage();
 
 </script>
 
 </body>
-</html>
+  </html>
