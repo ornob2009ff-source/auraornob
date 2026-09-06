@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>AURA ORNOB</title>
 
@@ -20,11 +23,27 @@ html{
 
 body{
   background:
-    radial-gradient(circle at top,#10264a 0%,#050a14 38%,#02050a 100%);
+    radial-gradient(
+      circle at top,
+      #10264a 0%,
+      #050a14 38%,
+      #02050a 100%
+    );
+
   color:#dce9f7;
-  font-family:Arial,Helvetica,sans-serif;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
   min-height:100vh;
 }
+
+
+/* =========================
+   HEADER
+========================= */
 
 .header{
   width:100%;
@@ -37,13 +56,21 @@ body{
   font-size:26px;
   font-weight:900;
   letter-spacing:1.6px;
-  text-shadow:0 0 18px rgba(35,170,255,.35);
+
+  text-shadow:
+    0 0 18px rgba(35,170,255,.35);
 }
+
+
+/* =========================
+   PAGE BOX
+========================= */
 
 .page-box{
   width:min(920px,94%);
   margin:8px auto 0;
   padding:13px 18px;
+
   text-align:center;
 
   background:
@@ -54,6 +81,7 @@ body{
     );
 
   border:1px solid rgba(48,166,255,.45);
+
   border-radius:13px;
 
   box-shadow:
@@ -72,17 +100,30 @@ body{
   color:#38b5ff;
 }
 
+
+/* =========================
+   CONTAINER
+========================= */
+
 .container{
   width:min(920px,94%);
   margin:auto;
   padding:18px 0 70px;
 }
 
+
+/* =========================
+   PROGRESS
+========================= */
+
 .progress-box{
   width:100%;
   height:7px;
+
   background:#101b2a;
+
   border-radius:20px;
+
   overflow:hidden;
 }
 
@@ -98,8 +139,58 @@ body{
     );
 
   border-radius:20px;
+
   transition:.4s;
 }
+
+
+/* =========================
+   START AD
+========================= */
+
+.start-ad{
+  margin-top:20px;
+  margin-bottom:20px;
+
+  padding:20px;
+
+  min-height:120px;
+
+  border-radius:14px;
+
+  background:#050e1a;
+
+  border:1px dashed #214765;
+
+  text-align:center;
+}
+
+.ad-title{
+  color:#66849d;
+
+  font-size:11px;
+
+  letter-spacing:1.5px;
+
+  margin-bottom:10px;
+}
+
+.ad-slot{
+  width:100%;
+
+  min-height:60px;
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+}
+
+
+/* =========================
+   SEARCH
+========================= */
 
 .search{
   margin-top:20px;
@@ -107,12 +198,19 @@ body{
 
 .search input{
   width:100%;
+
   padding:14px 17px;
+
   border-radius:12px;
+
   border:1px solid #193858;
+
   outline:none;
+
   background:#07111f;
+
   color:white;
+
   font-size:15px;
 }
 
@@ -122,6 +220,11 @@ body{
   box-shadow:
     0 0 18px rgba(0,136,255,.12);
 }
+
+
+/* =========================
+   STORY CARD
+========================= */
 
 .card{
   margin-top:22px;
@@ -140,15 +243,26 @@ body{
 
 .card-title{
   color:#4ab8ff;
+
   font-size:19px;
+
   margin-bottom:18px;
+
   text-align:center;
 }
 
+
+/* =========================
+   STORY
+========================= */
+
 .story{
   min-height:7000px;
+
   font-size:15px;
+
   line-height:2.05;
+
   letter-spacing:.08px;
 }
 
@@ -166,6 +280,7 @@ body{
 
 .highlight{
   padding:18px;
+
   margin:35px 0;
 
   border-left:3px solid #168dff;
@@ -177,12 +292,48 @@ body{
   color:#b9d9f5;
 }
 
+
+/* =========================
+   BOTTOM SECTION
+========================= */
+
 .bottom-section{
+
   margin-top:35px;
+
   padding-top:24px;
+
   border-top:1px solid rgba(80,145,195,.25);
+
   text-align:center;
 }
+
+
+/* =========================
+   BOTTOM AD
+========================= */
+
+.ad-section{
+
+  margin-bottom:22px;
+
+  padding:20px;
+
+  min-height:120px;
+
+  border-radius:14px;
+
+  background:#050e1a;
+
+  border:1px dashed #214765;
+
+  text-align:center;
+}
+
+
+/* =========================
+   TIMER
+========================= */
 
 .timer-box{
   margin-bottom:14px;
@@ -190,16 +341,26 @@ body{
 
 .lock-icon{
   font-size:25px;
+
   margin-bottom:5px;
 }
 
 .timer{
+
   color:#91aac4;
+
   font-size:14px;
+
   margin-bottom:12px;
 }
 
+
+/* =========================
+   CONTINUE BOX
+========================= */
+
 .continue-box{
+
   padding:17px;
 
   border-radius:14px;
@@ -214,7 +375,13 @@ body{
   border:1px solid #173c5b;
 }
 
+
+/* =========================
+   CONTINUE BUTTON
+========================= */
+
 .continue{
+
   width:100%;
 
   padding:15px;
@@ -244,24 +411,34 @@ body{
 }
 
 .continue.enabled{
+
   opacity:1;
 
   box-shadow:
     0 0 20px rgba(20,151,255,.25);
 }
 
-.lock-in-button{
-  margin-right:8px;
-  font-size:18px;
-}
-
 .continue:disabled{
   cursor:not-allowed;
 }
 
+.lock-in-button{
+  margin-right:8px;
+
+  font-size:18px;
+}
+
+
+/* =========================
+   DIVIDER
+========================= */
+
 .section-line{
+
   width:100%;
+
   height:1px;
+
   margin:25px 0;
 
   background:
@@ -273,7 +450,13 @@ body{
     );
 }
 
+
+/* =========================
+   OWNER ADMIN
+========================= */
+
 .owner-admin{
+
   padding:20px;
 
   border-radius:15px;
@@ -294,30 +477,58 @@ body{
 }
 
 .owner-admin .title{
+
   color:#6d91ae;
+
   font-size:11px;
+
   letter-spacing:1.5px;
+
   margin-bottom:12px;
 }
 
 .owner{
+
   color:white;
+
   font-size:14px;
+
   margin-bottom:7px;
 }
 
 .admin{
+
   color:white;
+
   font-size:14px;
+
+  margin-top:12px;
 }
 
 .owner span,
 .admin span{
+
   color:#36adff;
+
   font-weight:800;
 }
 
+.username{
+
+  color:#9eb8d3;
+
+  font-size:13px;
+
+  margin-top:4px;
+}
+
+
+/* =========================
+   FINAL BOX
+========================= */
+
 .final{
+
   display:none;
 
   margin-top:25px;
@@ -334,6 +545,7 @@ body{
 }
 
 .get-btn{
+
   display:inline-block;
 
   margin-top:18px;
@@ -351,7 +563,13 @@ body{
   font-weight:700;
 }
 
+
+/* =========================
+   FOOTER
+========================= */
+
 .footer{
+
   margin-top:45px;
 
   text-align:center;
@@ -360,6 +578,11 @@ body{
 
   font-size:12px;
 }
+
+
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:600px){
 
@@ -383,9 +606,16 @@ body{
 }
 
 </style>
+
 </head>
 
+
 <body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
 
 <header class="header">
 
@@ -395,15 +625,30 @@ body{
 
 </header>
 
+
+<!-- =========================
+     PAGE
+========================= -->
+
 <div class="page-box">
 
-  <div class="page-number" id="pageTop">
+  <div
+    class="page-number"
+    id="pageTop">
+
     <span>PAGE</span> 1 / 6
+
   </div>
 
 </div>
 
+
 <div class="container">
+
+
+<!-- =========================
+     PROGRESS
+========================= -->
 
 <div class="progress-box">
 
@@ -414,6 +659,86 @@ body{
 
 </div>
 
+
+<!-- =========================
+     FIRST AD
+========================= -->
+
+<div
+  class="start-ad"
+  id="startAd">
+
+  <div class="ad-title">
+    ADVERTISEMENT
+  </div>
+
+  <div class="ad-slot">
+
+    <script>
+      atOptions = {
+        'key' : 'a6cbeee3d69b85f8ad8cc5af9190a4fd',
+        'format' : 'iframe',
+        'height' : 50,
+        'width' : 320,
+        'params' : {}
+      };
+    </script>
+
+    <script
+      src="https://www.highrevenueformat.com/a6cbeee3d69b85f8ad8cc5af9190a4fd/invoke.js">
+    </script>
+
+  </div>
+
+</div>
+
+
+<!-- =========================
+     AD MESSAGE
+========================= -->
+
+<div
+  style="
+    color:#91aac4;
+    font-size:14px;
+    margin-bottom:12px;
+    text-align:center;
+  ">
+
+  Please check the advertisement above.
+
+</div>
+
+
+<!-- =========================
+     TIMER
+========================= -->
+
+<div class="timer-box">
+
+  <div
+    class="lock-icon"
+    id="lockIcon">
+
+    🔒
+
+  </div>
+
+  <div
+    class="timer"
+    id="timer">
+
+    Interact with the advertisement above to start the 12-second timer.
+
+  </div>
+
+</div>
+
+
+<!-- =========================
+     SEARCH
+========================= -->
+
 <div class="search">
 
   <input
@@ -423,13 +748,22 @@ body{
 
 </div>
 
+
+<!-- =========================
+     STORY
+========================= -->
+
 <div class="card">
 
 <div class="card-title">
 The Beginning of Something New
 </div>
 
-<div class="story" id="story">
+
+<div
+  class="story"
+  id="story">
+
 
 <p>
 It was already very late at night. The entire neighborhood was almost silent.
@@ -867,31 +1201,61 @@ But the dream was still awake.
 
 </div>
 
+
+<!-- =========================
+     BOTTOM SECTION
+========================= -->
+
 <div class="bottom-section">
 
-<div style="
-  color:#91aac4;
-  font-size:14px;
-  margin-bottom:12px;
-">
-  Please wait for unlock.
+
+<!-- =========================
+     BOTTOM AD
+========================= -->
+
+<div class="ad-section">
+
+  <div class="ad-title">
+    ADVERTISEMENT
+  </div>
+
+  <script
+    async="async"
+    data-cfasync="false"
+    src="https://pl31204521.profitableratecpmnetwork.com/a85af5854f023b6f4ae564dab04a8ddf/invoke.js">
+  </script>
+
+  <div
+    id="container-a85af5854f023b6f4ae564dab04a8ddf">
+  </div>
+
 </div>
+
+
+<!-- =========================
+     TIMER
+========================= -->
 
 <div class="timer-box">
 
   <div
     class="lock-icon"
-    id="lockIcon">
+    id="bottomLockIcon">
     🔒
   </div>
 
   <div
     class="timer"
-    id="timer">
-    Scroll to the bottom to start the 12-second timer.
+    id="bottomTimer">
+    Please complete the advertisement step above.
   </div>
 
 </div>
+
+
+<!-- =========================
+     CONTINUE
+========================= -->
 
 <div class="continue-box">
 
@@ -912,7 +1276,17 @@ But the dream was still awake.
 
 </div>
 
+
+<!-- =========================
+     DIVIDER
+========================= -->
+
 <div class="section-line"></div>
+
+
+<!-- =========================
+     OWNER ADMIN
+========================= -->
 
 <div class="owner-admin">
 
@@ -924,29 +1298,27 @@ But the dream was still awake.
     <span>OWNER :</span> AURA ORNOB
   </div>
 
-  <div style="
-    color:#9eb8d3;
-    font-size:13px;
-    margin-top:5px;
-  ">
+  <div class="username">
     @Root_Expert_Ornob
   </div>
 
-  <div class="admin" style="margin-top:12px;">
+  <div class="admin">
     <span>ADMIN :</span> AURA RAZU YT
   </div>
 
-  <div style="
-    color:#9eb8d3;
-    font-size:13px;
-    margin-top:5px;
-  ">
+  <div class="username">
     @razuvaiyt69
   </div>
 
 </div>
 
+
 </div>
+
+
+<!-- =========================
+     FINAL BOX
+========================= -->
 
 <div
   class="final"
@@ -978,13 +1350,20 @@ But the dream was still awake.
 
 </div>
 
+
 </div>
+
 
 <div class="footer">
 AURA ORNOB © 2026
 </div>
 
+
 <script>
+
+/* =========================
+   SETTINGS
+========================= */
 
 const TOTAL_PAGES = 6;
 
@@ -998,6 +1377,11 @@ let timerStarted = false;
 
 let countdown = null;
 
+
+/* =========================
+   ELEMENTS
+========================= */
+
 const pageTop =
 document.getElementById("pageTop");
 
@@ -1009,6 +1393,12 @@ document.getElementById("timer");
 
 const lockIcon =
 document.getElementById("lockIcon");
+
+const bottomTimer =
+document.getElementById("bottomTimer");
+
+const bottomLockIcon =
+document.getElementById("bottomLockIcon");
 
 const buttonLock =
 document.getElementById("buttonLock");
@@ -1024,6 +1414,14 @@ document.getElementById("search");
 
 const story =
 document.getElementById("story");
+
+const startAd =
+document.getElementById("startAd");
+
+
+/* =========================
+   UPDATE PAGE
+========================= */
 
 function updatePage(){
 
@@ -1051,13 +1449,24 @@ function updatePage(){
   lockIcon.textContent =
     "🔒";
 
+  bottomLockIcon.textContent =
+    "🔒";
+
   buttonLock.textContent =
     "🔒";
 
   timer.textContent =
-    "Scroll to the bottom to start the 12-second timer.";
+    "Interact with the advertisement above to start the 12-second timer.";
+
+  bottomTimer.textContent =
+    "Please complete the advertisement step above.";
 
 }
+
+
+/* =========================
+   START TIMER
+========================= */
 
 function startTimer(){
 
@@ -1073,10 +1482,16 @@ function startTimer(){
   lockIcon.textContent =
     "🔒";
 
+  bottomLockIcon.textContent =
+    "🔒";
+
   buttonLock.textContent =
     "🔒";
 
   timer.textContent =
+    `Please wait ${timeLeft} seconds...`;
+
+  bottomTimer.textContent =
     `Please wait ${timeLeft} seconds...`;
 
   countdown =
@@ -1089,10 +1504,16 @@ function startTimer(){
         lockIcon.textContent =
           "🔒";
 
+        bottomLockIcon.textContent =
+          "🔒";
+
         buttonLock.textContent =
           "🔒";
 
         timer.textContent =
+          `Please wait ${timeLeft} seconds...`;
+
+        bottomTimer.textContent =
           `Please wait ${timeLeft} seconds...`;
 
       }
@@ -1104,10 +1525,16 @@ function startTimer(){
         lockIcon.textContent =
           "🔓";
 
+        bottomLockIcon.textContent =
+          "🔓";
+
         buttonLock.textContent =
           "🔓";
 
         timer.textContent =
+          "Ready. You can continue.";
+
+        bottomTimer.textContent =
           "Ready. You can continue.";
 
         continueBtn.disabled =
@@ -1123,30 +1550,31 @@ function startTimer(){
 
 }
 
-window.addEventListener(
-  "scroll",
-  function(){
 
-    const currentScroll =
-      window.scrollY;
+/* =========================
+   AD INTERACTION
+========================= */
 
-    const screenHeight =
-      window.innerHeight;
+if(startAd){
 
-    const fullHeight =
-      document.documentElement.scrollHeight;
-
-    if(
-      currentScroll + screenHeight
-      >= fullHeight - 120
-    ){
+  startAd.addEventListener(
+    "pointerdown",
+    function(){
 
       startTimer();
 
+    },
+    {
+      passive:true
     }
+  );
 
-  }
-);
+}
+
+
+/* =========================
+   CONTINUE
+========================= */
 
 continueBtn.addEventListener(
   "click",
@@ -1182,6 +1610,11 @@ continueBtn.addEventListener(
 
   }
 );
+
+
+/* =========================
+   SEARCH
+========================= */
 
 search.addEventListener(
   "input",
@@ -1225,9 +1658,15 @@ search.addEventListener(
   }
 );
 
+
+/* =========================
+   INITIAL PAGE
+========================= */
+
 updatePage();
 
 </script>
+
 
 </body>
 </html>
