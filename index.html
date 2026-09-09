@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,345 +13,82 @@
     padding:0;
 }
 
-html{
-    scroll-behavior:smooth;
-}
-
 body{
-    background:
-        radial-gradient(circle at top,#10264a 0%,#050a14 38%,#02050a 100%);
-    color:#dce9f7;
+    background:#000;
+    color:#fff;
     font-family:Arial,Helvetica,sans-serif;
-    min-height:100vh;
 }
 
 .header{
-    width:100%;
-    text-align:center;
-    padding:25px 15px 13px;
+    padding:25px 18px;
+    border-bottom:1px solid #222;
 }
 
 .logo{
-    color:#39b5ff;
-    font-size:26px;
-    font-weight:900;
-    letter-spacing:1.6px;
-    text-shadow:0 0 18px rgba(35,170,255,.35);
+    font-size:32px;
+    letter-spacing:1px;
 }
 
-.page-box{
-    width:min(920px,94%);
-    margin:8px auto 0;
-    padding:13px 18px;
+.top-image{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    display:block;
+    cursor:pointer;
+}
+
+.click-text{
     text-align:center;
-    background:linear-gradient(
-        135deg,
-        rgba(10,41,75,.95),
-        rgba(5,19,35,.95)
-    );
-    border:1px solid rgba(48,166,255,.45);
-    border-radius:13px;
-    box-shadow:
-        0 0 22px rgba(0,132,255,.12),
-        inset 0 0 18px rgba(0,132,255,.04);
-}
-
-.page-number{
+    font-size:18px;
+    padding:18px 10px;
     color:#fff;
-    font-size:14px;
-    font-weight:800;
-    letter-spacing:1.2px;
 }
 
-.page-number span{
-    color:#38b5ff;
+.content{
+    display:none;
+    padding:25px 18px 50px;
 }
 
-.container{
-    width:min(920px,94%);
-    margin:auto;
-    padding:18px 0 70px;
+.content.show{
+    display:block;
 }
 
-.progress-box{
-    width:100%;
-    height:7px;
-    background:#101b2a;
-    border-radius:20px;
-    overflow:hidden;
+.section{
+    display:none;
 }
 
-.progress{
-    height:100%;
-    width:16.66%;
-    background:linear-gradient(90deg,#087cff,#35c5ff);
-    border-radius:20px;
-    transition:.4s;
+.section.active{
+    display:block;
 }
 
-/* =========================
-   START AD
-========================= */
-
-.start-ad{
-    margin:20px 0;
-    padding:18px;
-    min-height:120px;
-    border-radius:14px;
-    background:#050e1a;
-    border:1px dashed #214765;
-    text-align:center;
+h1{
+    font-size:30px;
+    line-height:1.3;
+    margin-bottom:25px;
 }
 
-.ad-title{
-    color:#66849d;
-    font-size:10px;
-    letter-spacing:1.5px;
-    margin-bottom:8px;
+h2{
+    font-size:27px;
+    line-height:1.35;
+    margin-bottom:22px;
 }
 
-.ad-slot{
-    width:100%;
-    min-height:60px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
-
-.search{
-    margin-top:20px;
-}
-
-.search input{
-    width:100%;
-    padding:14px 17px;
-    border-radius:12px;
-    border:1px solid #193858;
-    outline:none;
-    background:#07111f;
-    color:white;
-    font-size:15px;
-}
-
-.search input:focus{
-    border-color:#168dff;
-    box-shadow:0 0 18px rgba(0,136,255,.12);
-}
-
-.card{
-    margin-top:22px;
-    background:rgba(5,13,25,.76);
-    border:1px solid rgba(48,139,216,.20);
-    border-radius:18px;
-    padding:24px;
-    box-shadow:0 20px 70px rgba(0,0,0,.28);
-}
-
-.card-title{
-    color:#4ab8ff;
+p{
     font-size:19px;
-    margin-bottom:18px;
+    line-height:1.7;
+    margin-bottom:25px;
+}
+
+.ad{
     text-align:center;
-}
-
-.story{
-    min-height:7000px;
-    font-size:15px;
-    line-height:2.05;
-    letter-spacing:.08px;
-}
-
-.story p{
-    margin-bottom:30px;
-}
-
-.space{
-    height:60px;
-}
-
-.bigSpace{
-    height:110px;
-}
-
-.highlight{
-    padding:18px;
-    margin:35px 0;
-    border-left:3px solid #168dff;
-    background:rgba(15,55,95,.20);
-    border-radius:8px;
-    color:#b9d9f5;
-}
-
-.bottom-section{
-    margin-top:35px;
-    padding-top:24px;
-    border-top:1px solid rgba(80,145,195,.25);
-    text-align:center;
-}
-
-.ad-section{
-    margin:18px 0;
-    padding:12px;
-    min-height:90px;
-    border-radius:14px;
-    background:#050e1a;
-    border:1px dashed #214765;
-    text-align:center;
-    overflow:hidden;
-}
-
-.timer-box{
-    margin:18px 0 14px;
-}
-
-.lock-icon{
-    font-size:25px;
-    margin-bottom:5px;
+    color:#999;
+    padding:35px 0;
 }
 
 .timer{
-    color:#91aac4;
-    font-size:14px;
-    margin-bottom:12px;
-}
-
-.continue-box{
-    padding:17px;
-    border-radius:14px;
-    background:linear-gradient(
-        135deg,
-        rgba(7,23,40,.96),
-        rgba(5,15,27,.96)
-    );
-    border:1px solid #173c5b;
-}
-
-.continue{
-    width:100%;
-    padding:15px;
-    border:none;
-    border-radius:12px;
-    background:linear-gradient(90deg,#087cff,#27b9ff);
-    color:white;
-    font-size:16px;
-    font-weight:700;
-    cursor:pointer;
-    opacity:.45;
-    transition:.25s;
-}
-
-.continue.enabled{
-    opacity:1;
-    box-shadow:0 0 20px rgba(20,151,255,.25);
-}
-
-.continue:disabled{
-    cursor:not-allowed;
-}
-
-.lock-in-button{
-    margin-right:8px;
-    font-size:18px;
-}
-
-.section-line{
-    width:100%;
-    height:1px;
-    margin:25px 0;
-    background:linear-gradient(
-        90deg,
-        transparent,
-        #244963,
-        transparent
-    );
-}
-
-.owner-admin{
-    padding:20px;
-    border-radius:15px;
-    background:linear-gradient(135deg,#071321,#081827);
-    border:1px solid #163b5d;
     text-align:center;
-    box-shadow:0 8px 30px rgba(0,0,0,.22);
-}
-
-.owner-admin .title{
-    color:#6d91ae;
-    font-size:11px;
-    letter-spacing:1.5px;
-    margin-bottom:12px;
-}
-
-.owner{
-    color:white;
-    font-size:14px;
-    margin-bottom:5px;
-}
-
-.admin{
-    color:white;
-    font-size:14px;
-    margin-top:14px;
-}
-
-.owner span,
-.admin span{
-    color:#36adff;
-    font-weight:800;
-}
-
-.username{
-    color:#9eb8d3;
-    font-size:13px;
-    margin-top:4px;
-}
-
-.final{
-    display:none;
-    margin-top:25px;
-    padding:25px;
-    text-align:center;
-    border-radius:16px;
-    background:#061323;
-    border:1px solid #155b91;
-}
-
-.get-btn{
-    display:inline-block;
-    margin-top:18px;
-    padding:14px 30px;
-    border-radius:12px;
-    background:#0789ff;
-    color:white;
-    text-decoration:none;
-    font-weight:700;
-}
-
-.footer{
-    margin-top:45px;
-    text-align:center;
-    color:#607b96;
-    font-size:12px;
-}
-
-@media(max-width:600px){
-
-    .logo{
-        font-size:23px;
-    }
-
-    .card{
-        padding:18px;
-    }
-
-    .story{
-        font-size:14px;
-        line-height:2;
-    }
-
-    .page-box{
-        padding:11px;
-    }
+    color:#aaa;
+    margin-top:20px;
 }
 </style>
 </head>
@@ -362,977 +99,351 @@ body{
     <div class="logo">AURA ORNOB</div>
 </header>
 
-<div class="page-box">
-    <div class="page-number" id="pageTop">
-        <span>PAGE</span> 1 / 6
-    </div>
-</div>
+<!-- উপরের IMAGE -->
+<img
+    class="top-image"
+    src="image.jpg"
+    onclick="startContent()"
+>
 
-<div class="container">
-
-<div class="progress-box">
-    <div class="progress" id="progress"></div>
-</div>
-
-
-<!-- =========================
-     START AD
-     AD FIRST
-========================= -->
-
-<div class="start-ad" id="startAd">
-
-    <div class="ad-title">
-        ADVERTISEMENT
-    </div>
-
-    <div class="ad-slot">
-
-        <script src="https://pl31204335.profitableratecpmnetwork.com/d0/b7/72/d0b772489a94f53721a113eb51ad150e.js"></script>
-
-    </div>
-
+<div class="click-text">
+    CLICK THE IMAGE ABOVE
 </div>
 
 
-<!-- SECOND AD -->
+<div id="content" class="content">
 
-<div class="ad-section">
+    <!-- 1 -->
+    <section class="section active">
 
-    <div class="ad-title">
-        ADVERTISEMENT
-    </div>
-
-    <div class="ad-slot">
-
-        <script
-            async="async"
-            data-cfasync="false"
-            src="https://pl31204521.profitableratecpmnetwork.com/a85af5854f023b6f4ae564dab04a8ddf/invoke.js">
-        </script>
-
-        <div id="container-a85af5854f023b6f4ae564dab04a8ddf"></div>
-
-    </div>
-
-</div>
-
-
-<!-- THIRD AD -->
-
-<div class="ad-section">
-
-    <div class="ad-title">
-        ADVERTISEMENT
-    </div>
-
-    <div class="ad-slot">
-
-        <script>
-        atOptions = {
-            'key' : 'a6cbeee3d69b85f8ad8cc5af9190a4fd',
-            'format' : 'iframe',
-            'height' : 50,
-            'width' : 320,
-            'params' : {}
-        };
-        </script>
-
-        <script src="https://www.highrevenueformat.com/a6cbeee3d69b85f8ad8cc5af9190a4fd/invoke.js"></script>
-
-    </div>
-
-</div>
-
-
-<!-- FOURTH AD -->
-
-<div class="ad-section">
-
-    <div class="ad-title">
-        ADVERTISEMENT
-    </div>
-
-    <div class="ad-slot">
-
-        <script src="https://pl31204943.profitableratecpmnetwork.com/53/6b/b2/536bb2632c98f7e95d8c4adfab8c9ea7.js"></script>
-
-    </div>
-
-</div>
-
-
-<!-- FIFTH AD -->
-
-<div class="ad-section">
-
-    <div class="ad-title">
-        ADVERTISEMENT
-    </div>
-
-    <div class="ad-slot">
-
-        <script src="https://pl31204335.profitableratecpmnetwork.com/d0/b7/72/d0b772489a94f53721a113eb51ad150e.js"></script>
-
-    </div>
-
-</div>
-
-
-<div class="search">
-
-    <input
-        type="text"
-        id="search"
-        placeholder="Search inside the story...">
-
-</div>
-
-
-<!-- =========================
-     STORY
-     তোমার আগের সম্পূর্ণ গল্প
-     এখানে আগেরটাই রাখবে
-========================= -->
-
-<div class="card">
-
-    <div class="card-title">
-        The Beginning of Something New
-    </div>
-
-    <div class="story" id="story">
-
-        <!--
-        তোমার আগের index.html-এর সম্পূর্ণ গল্প
-        এই জায়গায় 그대로 থাকবে।
-        -->
+        <h1>
+            Combustíveis do Futuro:
+            Opções Sustentáveis
+            para o Seu Carro
+        </h1>
 
         <p>
-        It was already very late at night. The entire neighborhood was almost silent.
-        A few distant street lights were glowing through the darkness, creating small
-        islands of light along the empty road. A young man was sitting beside his
-        window, thinking about his future.
+            5min 04 de dezembro de 2025 & admin
         </p>
 
         <p>
-        In front of him was a computer. On the screen there was nothing complicated,
-        only a simple empty web page. To someone else it might have looked ordinary
-        and meaningless. But to him, that blank page looked like a door leading toward
-        something much bigger.
+            Pensando em uma alternativa sustentável
+            para abastecer o seu veículo, o gás natural
+            é uma excelente opção a considerar.
+            Além de ser mais limpo que os combustíveis
+            fósseis tradicionais, como a gasolina e o
+            diesel, o gás natural também se destaca
+            por sua economia e menor emissão de
+            poluentes.
+        </p>
+
+    </section>
+
+
+    <!-- 2 -->
+    <section class="section">
+
+        <h2>
+            Gas Natural: Uma Alternativa Sustentável
+            e Econômica
+        </h2>
+
+        <p>
+            Optando pelo gás natural como combustível
+            para o seu carro, você não apenas contribui
+            para a preservação do meio ambiente, mas
+            também pode desfrutar de vantagens
+            econômicas a longo prazo.
         </p>
 
         <p>
-        He did not know where the next few years would take him. He did not know
-        whether his ideas would become successful or disappear quietly. He only knew
-        one thing. He wanted to create something with his own hands.
+            Com a crescente disponibilidade de postos
+            de abastecimento de gás natural, essa
+            alternativa vem ganhando cada vez mais
+            espaço e adeptos no cenário automobilístico
+            atual.
         </p>
 
         <p>
-        He wanted to build something that other people could use. Something they
-        could see on their phones, open on their computers, and remember after they
-        had closed the browser.
-        </p>
-
-        <div class="space"></div>
-
-        <p>
-        The first days were not easy. He wrote a small piece of code and opened it
-        in his browser. Nothing happened. He changed the code and tried again.
-        Sometimes the page was completely empty. Sometimes the design broke.
-        Sometimes a button appeared but refused to work.
+            Diferente da gasolina e do diesel, o gás
+            natural é uma fonte de energia mais limpa,
+            reduzindo significativamente a emissão de
+            gases poluentes na atmosfera.
         </p>
 
         <p>
-        There were moments when he became frustrated. He wondered why something so
-        simple could become so difficult. He watched tutorials, read examples,
-        changed one line, saved the file, refreshed the browser, and waited.
+            Essa característica torna o gás natural uma
+            escolha consciente para quem busca
+            minimizar o impacto ambiental de seu
+            veículo e contribuir para a sustentabilidade
+            do planeta.
         </p>
 
         <p>
-        Again and again, the result was different from what he expected.
-        But he did not stop.
+            Além do mais, a economia proporcionada
+            pelo gás natural é um atrativo adicional
+            para os motoristas que buscam otimizar
+            seus gastos com combustível.
+        </p>
+
+    </section>
+
+
+    <!-- 3 -->
+    <section class="section">
+
+        <h2>
+            Etanol de Cana-de-Açúcar:
+            A Sustentabilidade Que Move
+            Nossos Motores
+        </h2>
+
+        <p>
+            Aqui no Brasil, o etanol é uma verdadeira
+            paixão nacional, e quando falamos em
+            combustíveis alternativos, ele não poderia
+            ficar de fora.
         </p>
 
         <p>
-        Every mistake taught him something new. Slowly he began to understand that
-        code was not simply a collection of strange symbols. Every line had a
-        purpose. Every element had a position. A tiny mistake could change the
-        behavior of an entire page.
+            Produzido a partir da cana-de-açúcar, o
+            etanol é uma fonte de energia renovável e
+            biodegradável, características essenciais
+            para quem está comprometido em reduzir
+            a pegada de carbono de seu veículo.
         </p>
 
-        <div class="highlight">
-        A small mistake in code can become a big lesson in the journey.
+        <p>
+            Optando pelo etanol como combustível,
+            não só estamos contribuindo para a
+            diminuição da emissão de poluentes na
+            atmosfera, como também estamos apoiando
+            a indústria nacional e incentivando práticas
+            sustentáveis de produção de energia.
+        </p>
+
+        <p>
+            A cana-de-açúcar, matéria-prima para a
+            produção desse biocombustível, é abundante
+            em nosso país e sua utilização para a
+            fabricação de etanol representa um ciclo
+            fechado de energia limpa e renovável.
+        </p>
+
+        <p>
+            O etanol apresenta também vantagens
+            econômicas ao consumidor, uma vez que
+            seu preço costuma ser mais estável em
+            relação à gasolina, e seu uso pode contribuir
+            para o aumento da eficiência energética dos
+            veículos.
+        </p>
+
+        <p>
+            Com a tecnologia flex-fuel amplamente
+            difundida em nosso mercado, os motoristas
+            têm a flexibilidade de escolher entre o
+            etanol e a gasolina, de acordo com as
+            condições econômicas e ambientais do
+            momento.
+        </p>
+
+    </section>
+
+
+    <!-- 4 -->
+    <section class="section">
+
+        <h2>
+            Biodiesel e Hidrogênio:
+            Inovação e Sustentabilidade
+            na Mobilidade
+        </h2>
+
+        <p>
+            O biodiesel, produzido a partir de óleos
+            vegetais ou gorduras animais, destaca-se
+            como uma alternativa mais sustentável em
+            comparação ao diesel convencional.
+        </p>
+
+        <p>
+            Sua origem renovável e o menor impacto
+            ambiental que gera tornam o biodiesel
+            uma opção cada vez mais relevante no
+            cenário dos combustíveis alternativos.
+        </p>
+
+        <p>
+            A utilização de biodiesel contribui para a
+            redução da emissão de poluentes prejudiciais
+            à atmosfera, além de fomentar a reciclagem
+            de óleos e gorduras, promovendo assim um
+            ciclo sustentável de produção e consumo
+            de energia.
+        </p>
+
+        <p>
+            Com propriedades semelhantes ao diesel
+            tradicional, o biodiesel se destaca por sua
+            capacidade de reduzir a emissão de gases
+            de efeito estufa e garantir um desempenho
+            eficiente nos motores de veículos.
+        </p>
+
+    </section>
+
+
+    <!-- 5 -->
+    <section class="section">
+
+        <div class="ad">
+            Publicidade
         </div>
 
+        <h2>
+            E quanto ao hidrogênio
+        </h2>
+
         <p>
-        With time, a routine began to form. In the morning he would learn something
-        new. During the day he would test it. At night he would look at his mistakes
-        and try to understand why they happened.
+            E quanto ao hidrogênio, esse combustível
+            do futuro promete revolucionar a indústria
+            automotiva com suas emissões zero de
+            poluentes.
         </p>
 
         <p>
-        Things that once looked impossible slowly became familiar. HTML became
-        easier. CSS started making sense. JavaScript stopped looking like a wall of
-        confusing words and started becoming a tool that could bring ideas to life.
+            Ao ser utilizado em células de combustível,
+            o hidrogênio reage com oxigênio para gerar
+            eletricidade, alimentando motores elétricos
+            de forma limpa e eficiente.
         </p>
 
         <p>
-        He discovered that creating a website was not only about writing code.
-        It was also about patience, design, organization, testing, and understanding
-        the people who would eventually use the website.
+            Essa tecnologia promissora abre portas para
+            um novo paradigma de mobilidade, onde a
+            sustentabilidade e a inovação se unem em
+            prol de um transporte eco-friendly e eficaz.
         </p>
 
-        <div class="bigSpace"></div>
+    </section>
+
+
+    <!-- 6 -->
+    <section class="section">
 
         <p>
-        One evening he made an important decision. He wanted to create his own
-        identity. Not just another random website, but something that could represent
-        his ideas.
-        </p>
-
-        <p>
-        He thought about different names for a long time. Some sounded too simple.
-        Others were difficult to remember. Eventually one name stayed in his mind:
-        AURA ORNOB.
-        </p>
-
-        <p>
-        The name felt different to him. It represented his identity, his dreams,
-        his creativity, and the future he wanted to build.
-        </p>
-
-        <p>
-        He opened a new project and started designing it. He chose a dark theme,
-        deep navy backgrounds, bright blue highlights, clean typography, and simple
-        cards.
+            Tanto o biodiesel e o hidrogênio como
+            potenciais combustíveis para os veículos
+            do futuro, são alternativas que não se
+            limitam apenas a reduzir a poluição
+            atmosférica, mas que também representam
+            um passo significativo em direção a uma
+            mobilidade mais inteligente, amiga do
+            ambiente e alinhada com as necessidades
+            e desafios do nosso tempo.
         </p>
 
         <p>
-        He did not want the design to look complicated. He wanted it to feel modern,
-        clean, fast, and comfortable to use.
+            Vamos seguir adiante, explorando novas
+            possibilidades e adotando práticas
+            sustentáveis que impulsionem a
+            transformação positiva no setor
+            automobilístico.
         </p>
 
         <p>
-        He tested the website on a phone. Then he opened it on a computer.
-        On the smaller screen some text looked too large. A button was too small.
-        Some spacing was uncomfortable. Another section looked perfect on desktop
-        but strange on mobile.
+            Com todas essas opções de combustíveis
+            alternativos disponíveis, o que não faltam
+            são alternativas para quem quer um carro
+            mais sustentável.
         </p>
 
         <p>
-        He fixed each problem one by one. He changed the spacing, adjusted the font,
-        resized the buttons, and tested everything again.
-        </p>
-
-        <div class="space"></div>
-
-        <p>
-        Several days later, he opened the website again. This time he smiled.
-        It was not the biggest website in the world. It was not used by thousands
-        of people. It did not have a huge company behind it.
+            E sejamos sinceros, quem não quer dar sua
+            contribuição para um mundo mais limpo e
+            saudável, não é mesmo?
         </p>
 
         <p>
-        But it was his.
+            Então, meu amigo, fica a dica: conheça
+            essas opções, informe-se, e quem sabe em
+            breve estaremos todos rodando por aí com
+            combustíveis que respeitam a natureza e
+            o nosso futuro.
         </p>
 
         <p>
-        Every line had been written, tested, changed, and improved by him.
-        That feeling was enough to give him the courage to continue.
+            Até a próxima, e lembre-se:
+            o futuro é agora!
         </p>
 
-        <p>
-        Then a new chapter began. Every day brought another idea. Sometimes he
-        wanted to improve the design. Sometimes he wanted to add a new feature.
-        Sometimes he wanted to completely rebuild a section because the first
-        version did not feel right.
-        </p>
+    </section>
 
-        <p>
-        Some days were successful. Other days were full of broken layouts,
-        unexpected errors, and plans that simply did not work.
-        </p>
 
-        <p>
-        But even on the worst days, he learned something.
-        </p>
+    <div class="timer" id="timer"></div>
 
-        <div class="bigSpace"></div>
-
-        <p>
-        He slowly understood that success does not always follow a straight road.
-        Sometimes the road is blocked. Then a new path must be found.
-        </p>
-
-        <p>
-        Sometimes progress takes longer than expected. Then patience becomes more
-        important than speed.
-        </p>
-
-        <p>
-        Sometimes confidence disappears. During those moments, it helps to remember
-        how far you have already come.
-        </p>
-
-        <p>
-        He started keeping his old projects instead of deleting them. Months later,
-        he opened one of his first files and laughed.
-        </p>
-
-        <p>
-        The code was messy. The design was simple. The spacing was strange.
-        Some of the buttons did not even work correctly.
-        </p>
-
-        <p>
-        Yet that old project was special.
-        </p>
-
-        <p>
-        It was the beginning.
-        </p>
-
-        <div class="highlight">
-        Progress is not about making everything perfect on the first attempt.
-        Progress is about making the next attempt better.
-        </div>
-
-        <p>
-        As the months passed, his ideas became larger. He started thinking beyond
-        a single page. He imagined complete systems, useful tools, creative apps,
-        gaming projects, online platforms, and digital products.
-        </p>
-
-        <p>
-        Sometimes the ideas were too ambitious for his current skills. Instead of
-        giving up, he wrote them down.
-        </p>
-
-        <p>
-        He believed that an idea did not have to be possible today to be worth
-        remembering.
-        </p>
-
-        <p>
-        Maybe he could build it next year. Maybe after learning a new language.
-        Maybe after understanding a new technology. Maybe after working with other
-        people.
-        </p>
-
-        <p>
-        The important thing was to keep the idea alive.
-        </p>
-
-        <div class="space"></div>
-
-        <p>
-        One night, while looking at the dark screen, he realized something important.
-        The biggest difference between his first day and now was not the amount of
-        code he knew.
-        </p>
-
-        <p>
-        It was his mindset.
-        </p>
-
-        <p>
-        In the beginning, every error looked like a reason to stop. Later, an error
-        became a question.
-        </p>
-
-        <p>
-        What caused it?
-        </p>
-
-        <p>
-        Which line created the problem?
-        </p>
-
-        <p>
-        What can be changed?
-        </p>
-
-        <p>
-        How can the same mistake be avoided next time?
-        </p>
-
-        <p>
-        That change made learning completely different.
-        </p>
-
-        <p>
-        He stopped expecting everything to work immediately. Instead, he became
-        comfortable with testing, failing, fixing, and trying again.
-        </p>
-
-        <p>
-        He learned that real progress often happens quietly. There may be no
-        applause. No one may know how many times a person failed before something
-        finally worked.
-        </p>
-
-        <div class="bigSpace"></div>
-
-        <p>
-        A year from now, he knew he might look back at this version of AURA ORNOB
-        and find many things he would want to improve.
-        </p>
-
-        <p>
-        He might change the colors. He might rebuild the layout. He might create
-        completely different projects. He might even laugh at the code he was
-        writing today.
-        </p>
-
-        <p>
-        And that would be okay.
-        </p>
-
-        <p>
-        Because learning means changing.
-        </p>
-
-        <p>
-        The goal was never to create something perfect forever. The goal was to
-        create something better than yesterday.
-        </p>
-
-        <p>
-        Outside the window, the night was still quiet. The distant lights were
-        still shining. The city had not changed much.
-        </p>
-
-        <p>
-        But inside that small room, something had changed.
-        </p>
-
-        <p>
-        A blank page was no longer just a blank page.
-        </p>
-
-        <p>
-        It was an opportunity.
-        </p>
-
-        <p>
-        An empty file was no longer empty.
-        </p>
-
-        <p>
-        It was the beginning of a project.
-        </p>
-
-        <p>
-        And a small idea was no longer just an idea.
-        </p>
-
-        <p>
-        It had become the first step toward a much bigger dream.
-        </p>
-
-    </div>
-
-</div>
-
-
-<!-- =========================
-     MIDDLE AD
-========================= -->
-
-<div class="ad-section">
-
-    <div class="ad-title">
-        ADVERTISEMENT
-    </div>
-
-    <div class="ad-slot">
-
-        <script src="https://pl31204943.profitableratecpmnetwork.com/53/6b/b2/536bb2632c98f7e95d8c4adfab8c9ea7.js"></script>
-
-    </div>
-
-</div>
-
-
-<!-- =========================
-     BOTTOM AD 1
-========================= -->
-
-<div class="bottom-section">
-
-<div class="ad-section">
-
-    <div class="ad-title">
-        ADVERTISEMENT
-    </div>
-
-    <div class="ad-slot">
-
-        <script src="https://pl31204335.profitableratecpmnetwork.com/d0/b7/72/d0b772489a94f53721a113eb51ad150e.js"></script>
-
-    </div>
-
-</div>
-
-
-<!-- =========================
-     BOTTOM AD 2
-========================= -->
-
-<div class="ad-section">
-
-    <div class="ad-title">
-        ADVERTISEMENT
-    </div>
-
-    <div class="ad-slot">
-
-        <script
-            async="async"
-            data-cfasync="false"
-            src="https://pl31204521.profitableratecpmnetwork.com/a85af5854f023b6f4ae564dab04a8ddf/invoke.js">
-        </script>
-
-        <div id="container-a85af5854f023b6f4ae564dab04a8ddf-bottom"></div>
-
-    </div>
-
-</div>
-
-
-<!-- =========================
-     TIMER
-========================= -->
-
-<div class="timer-box">
-
-    <div
-        class="lock-icon"
-        id="lockIcon">
-
-        🔒
-
-    </div>
-
-    <div
-        class="timer"
-        id="timer">
-
-        প্রথমে উপরের Ad-এ প্রবেশ করুন।
-
-    </div>
-
-</div>
-
-
-<!-- =========================
-     CONTINUE
-========================= -->
-
-<div class="continue-box">
-
-    <button
-        class="continue"
-        id="continueBtn"
-        disabled>
-
-        <span
-            class="lock-in-button"
-            id="buttonLock">
-
-            🔒
-
-        </span>
-
-        Continue
-
-    </button>
-
-</div>
-
-
-<div class="section-line"></div>
-
-
-<!-- =========================
-     OWNER / ADMIN
-========================= -->
-
-<div class="owner-admin">
-
-    <div class="title">
-        PROJECT INFORMATION
-    </div>
-
-    <div class="owner">
-        <span>OWNER :</span> AURA ORNOB
-    </div>
-
-    <div class="username">
-        @Root_Expert_Ornob
-    </div>
-
-    <div class="admin">
-        <span>ADMIN :</span> AURA RAZU YT
-    </div>
-
-    <div class="username">
-        @razuvaiyt69
-    </div>
-
-</div>
-
-</div>
-
-
-<!-- =========================
-     FINAL
-========================= -->
-
-<div
-    class="final"
-    id="finalBox">
-
-    <h2>
-        Access Unlocked
-    </h2>
-
-    <p style="
-        margin-top:10px;
-        color:#9eb8d3;
-    ">
-
-        You have completed all 6 pages.
-
-    </p>
-
-    <a
-        class="get-btn"
-        href="https://t.me/Root_Expert_Ornob"
-        target="_blank"
-        rel="noopener">
-
-        GET KEY / FILE
-
-    </a>
-
-</div>
-
-
-</div>
-
-
-<div class="footer">
-    AURA ORNOB © 2026
 </div>
 
 
 <script>
 
-/* =========================
-   SETTINGS
-========================= */
+let sections = document.querySelectorAll(".section");
+let current = 0;
+let timer;
+let started = false;
 
-const TOTAL_PAGES = 6;
-const WAIT_SECONDS = 12;
+function startContent(){
 
-let page = 1;
-let timeLeft = WAIT_SECONDS;
-let timerStarted = false;
-let countdown = null;
-let adOpened = false;
+    if(started) return;
 
+    started = true;
 
-/* =========================
-   ELEMENTS
-========================= */
+    document.getElementById("content")
+        .classList.add("show");
 
-const pageTop =
-    document.getElementById("pageTop");
-
-const progress =
-    document.getElementById("progress");
-
-const timer =
-    document.getElementById("timer");
-
-const lockIcon =
-    document.getElementById("lockIcon");
-
-const buttonLock =
-    document.getElementById("buttonLock");
-
-const continueBtn =
-    document.getElementById("continueBtn");
-
-const finalBox =
-    document.getElementById("finalBox");
-
-const search =
-    document.getElementById("search");
-
-const story =
-    document.getElementById("story");
-
-const startAd =
-    document.getElementById("startAd");
-
-
-/* =========================
-   PAGE UPDATE
-========================= */
-
-function updatePage(){
-
-    pageTop.innerHTML =
-        `<span>PAGE</span> ${page} / ${TOTAL_PAGES}`;
-
-    progress.style.width =
-        `${(page / TOTAL_PAGES) * 100}%`;
-
-    timeLeft =
-        WAIT_SECONDS;
-
-    timerStarted =
-        false;
-
-    adOpened =
-        false;
-
-    clearInterval(countdown);
-
-    continueBtn.disabled =
-        true;
-
-    continueBtn.classList.remove("enabled");
-
-    lockIcon.textContent =
-        "🔒";
-
-    buttonLock.textContent =
-        "🔒";
-
-    timer.textContent =
-        "প্রথমে উপরের Ad-এ প্রবেশ করুন।";
+    showSection();
 
 }
 
+function showSection(){
 
-/* =========================
-   12 SECOND TIMER
-========================= */
+    sections.forEach(function(section){
+        section.classList.remove("active");
+    });
 
-function startTimer(){
+    if(current >= sections.length){
+        current = 0;
+    }
 
-    if(timerStarted)
-        return;
+    sections[current].classList.add("active");
 
-    timerStarted =
-        true;
+    let seconds = 15;
 
-    timeLeft =
-        WAIT_SECONDS;
+    document.getElementById("timer").innerText =
+        "Next: " + seconds + "s";
 
-    lockIcon.textContent =
-        "🔒";
+    clearInterval(timer);
 
-    buttonLock.textContent =
-        "🔒";
+    timer = setInterval(function(){
 
-    timer.textContent =
-        `Please wait ${timeLeft} seconds...`;
+        seconds--;
 
-    countdown =
-        setInterval(function(){
+        document.getElementById("timer").innerText =
+            "Next: " + seconds + "s";
 
-            timeLeft--;
+        if(seconds <= 0){
 
-            if(timeLeft > 0){
+            clearInterval(timer);
 
-                timer.textContent =
-                    `Please wait ${timeLeft} seconds...`;
+            current++;
 
-            }
+            showSection();
+        }
 
-            else{
-
-                clearInterval(countdown);
-
-                lockIcon.textContent =
-                    "🔓";
-
-                buttonLock.textContent =
-                    "🔓";
-
-                timer.textContent =
-                    "Ready. You can continue.";
-
-                continueBtn.disabled =
-                    false;
-
-                continueBtn.classList.add(
-                    "enabled"
-                );
-
-            }
-
-        },1000);
+    },1000);
 
 }
-
-
-/* =========================
-   START AD
-========================= */
-
-if(startAd){
-
-    startAd.addEventListener(
-        "pointerdown",
-        function(){
-
-            adOpened = true;
-
-        },
-        {
-            passive:true
-        }
-    );
-
-}
-
-
-/* =========================
-   RETURN FROM AD
-========================= */
-
-document.addEventListener(
-    "visibilitychange",
-    function(){
-
-        if(
-            document.visibilityState === "visible" &&
-            adOpened &&
-            !timerStarted
-        ){
-
-            startTimer();
-
-        }
-
-    }
-);
-
-
-window.addEventListener(
-    "focus",
-    function(){
-
-        if(
-            adOpened &&
-            !timerStarted
-        ){
-
-            startTimer();
-
-        }
-
-    }
-);
-
-
-/* =========================
-   CONTINUE
-========================= */
-
-continueBtn.addEventListener(
-    "click",
-    function(){
-
-        if(continueBtn.disabled)
-            return;
-
-
-        if(page < TOTAL_PAGES){
-
-            page++;
-
-            updatePage();
-
-            window.scrollTo({
-                top:0,
-                behavior:"smooth"
-            });
-
-        }
-
-        else{
-
-            finalBox.style.display =
-                "block";
-
-            finalBox.scrollIntoView({
-                behavior:"smooth"
-            });
-
-        }
-
-    }
-);
-
-
-/* =========================
-   SEARCH
-========================= */
-
-search.addEventListener(
-    "input",
-    function(){
-
-        const query =
-            search.value
-            .toLowerCase()
-            .trim();
-
-        const paragraphs =
-            story.querySelectorAll("p");
-
-
-        paragraphs.forEach(
-            function(p){
-
-                const text =
-                    p.textContent
-                    .toLowerCase();
-
-                if(
-                    !query ||
-                    text.includes(query)
-                ){
-
-                    p.style.display = "";
-
-                }
-
-                else{
-
-                    p.style.display = "none";
-
-                }
-
-            }
-        );
-
-    }
-);
-
-
-/* =========================
-   INITIALIZE
-========================= */
-
-updatePage();
 
 </script>
 
