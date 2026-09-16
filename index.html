@@ -8,7 +8,6 @@
 <title>AURA ORNOB</title>
 
 <style>
-
 *{
   box-sizing:border-box;
   margin:0;
@@ -38,8 +37,6 @@ body::before{
     radial-gradient(circle at 50% 90%,rgba(0,60,150,.10),transparent 35%);
   z-index:-1;
 }
-
-/* HEADER */
 
 .header{
   position:sticky;
@@ -132,8 +129,6 @@ body::before{
   color:#719eff;
 }
 
-/* MAIN */
-
 main{
   width:100%;
   max-width:760px;
@@ -199,15 +194,25 @@ main{
 
 .quote{
   margin:28px 0;
-  padding:18px 18px;
+  padding:18px;
   border-left:3px solid #2878ff;
   background:linear-gradient(90deg,rgba(22,89,190,.12),transparent);
   color:#e8f1ff;
   font-style:italic;
 }
 
+/* AD SPACE */
+
+.ad-code-space-top{
+  min-height:90px;
+  margin:28px 0 8px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
 .ad-box{
-  margin:38px 0 20px;
+  margin:0 0 20px;
   min-height:230px;
   border:1px solid rgba(255,255,255,.09);
   border-radius:14px;
@@ -236,6 +241,8 @@ main{
   letter-spacing:2px;
 }
 
+/* BOTTOM */
+
 .bottom-card{
   margin-top:22px;
   padding:20px;
@@ -258,6 +265,14 @@ main{
   margin-bottom:16px;
 }
 
+.ad-code-space-bottom{
+  min-height:90px;
+  margin:10px 0 5px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
 .unlock{
   width:100%;
   padding:14px;
@@ -276,56 +291,189 @@ main{
   cursor:not-allowed;
 }
 
-/* FINAL */
+.continue-note{
+  color:#7c8798;
+  font-size:11px;
+  line-height:1.6;
+  margin-bottom:16px;
+}
 
-.final-box{
+/* FINAL ACCESS PAGE */
+
+.access-page{
   display:none;
-  margin-top:30px;
-  padding:22px;
-  border:1px solid rgba(60,130,255,.35);
-  border-radius:16px;
-  background:linear-gradient(145deg,#07101e,#020509);
-  box-shadow:0 0 30px rgba(0,70,200,.12);
+  min-height:75vh;
+  animation:fade .45s ease;
 }
 
-.final-title{
-  font-size:12px;
-  color:#4d9bff;
-  letter-spacing:2px;
-  margin-bottom:20px;
-}
-
-.credential{
-  padding:15px;
-  margin-bottom:12px;
-  background:#050505;
-  border:1px solid rgba(255,255,255,.07);
-  border-radius:10px;
-}
-
-.credential small{
+.access-page.active{
   display:block;
-  color:#596271;
+}
+
+.access-wrap{
+  padding-top:20px;
+}
+
+.access-card{
+  position:relative;
+  overflow:hidden;
+  border:1px solid rgba(58,126,255,.35);
+  border-radius:20px;
+  background:
+    radial-gradient(circle at top,rgba(23,87,190,.16),transparent 45%),
+    linear-gradient(145deg,#080d16,#020304);
+  padding:30px 20px;
+  text-align:center;
+  box-shadow:
+    0 0 40px rgba(0,60,180,.12),
+    inset 0 0 30px rgba(0,80,180,.03);
+}
+
+.access-card::before{
+  content:"";
+  position:absolute;
+  top:-100px;
+  left:50%;
+  transform:translateX(-50%);
+  width:220px;
+  height:220px;
+  background:rgba(30,110,255,.08);
+  filter:blur(50px);
+  border-radius:50%;
+}
+
+.access-label{
+  position:relative;
+  color:#559cff;
+  font-size:10px;
+  letter-spacing:3px;
+  margin-bottom:9px;
+}
+
+.access-title{
+  position:relative;
+  color:#fff;
+  font-size:28px;
+  font-weight:900;
+  letter-spacing:1px;
+  margin-bottom:7px;
+}
+
+.access-subtitle{
+  position:relative;
+  color:#707b8d;
+  font-size:11px;
+  margin-bottom:25px;
+}
+
+.timer-box{
+  position:relative;
+  margin:0 auto 25px;
+  width:110px;
+  height:110px;
+  border-radius:50%;
+  border:2px solid rgba(55,139,255,.45);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  background:rgba(0,0,0,.45);
+  box-shadow:0 0 25px rgba(20,100,255,.12);
+}
+
+.timer-number{
+  color:#fff;
+  font-size:30px;
+  font-weight:900;
+  line-height:1;
+}
+
+.timer-text{
+  color:#5e8fd4;
+  font-size:8px;
+  letter-spacing:2px;
+  margin-top:6px;
+}
+
+.access-item{
+  position:relative;
+  text-align:left;
+  padding:17px;
+  margin-top:12px;
+  background:rgba(0,0,0,.55);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:12px;
+}
+
+.access-item small{
+  display:block;
+  color:#596575;
   font-size:9px;
   letter-spacing:2px;
-  margin-bottom:4px;
+  margin-bottom:5px;
 }
 
-.credential span{
+.access-value-row{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.access-value{
+  flex:1;
   color:#fff;
   font-size:15px;
+  font-weight:700;
   word-break:break-all;
 }
 
-.copy{
-  margin-top:8px;
-  padding:8px 12px;
-  border:1px solid rgba(255,255,255,.1);
-  background:#0b0b0b;
-  color:#7eafff;
-  border-radius:7px;
+.copy-btn{
+  flex-shrink:0;
+  border:1px solid rgba(62,137,255,.35);
+  background:#071224;
+  color:#69a8ff;
+  border-radius:8px;
+  padding:9px 11px;
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:.5px;
   cursor:pointer;
-  font-size:10px;
+}
+
+.copy-btn:active{
+  transform:scale(.96);
+}
+
+.access-brand{
+  position:relative;
+  margin-top:20px;
+  color:#586373;
+  font-size:9px;
+  letter-spacing:3px;
+}
+
+.expired{
+  display:none;
+  position:relative;
+  text-align:center;
+  padding:25px 10px 5px;
+}
+
+.expired-title{
+  color:#ff5f67;
+  font-size:16px;
+  font-weight:900;
+  letter-spacing:1px;
+  margin-bottom:8px;
+}
+
+.expired-text{
+  color:#727d8d;
+  font-size:11px;
+}
+
+.access-footer-space{
+  min-height:80px;
 }
 
 /* FOOTER */
@@ -364,8 +512,19 @@ main{
     min-height:210px;
   }
 
-}
+  .access-title{
+    font-size:25px;
+  }
 
+  .access-value{
+    font-size:13px;
+  }
+
+  .copy-btn{
+    padding:9px 8px;
+  }
+
+}
 </style>
 </head>
 
@@ -374,7 +533,10 @@ main{
 <header class="header">
 
   <div class="brand">AURA ORNOB</div>
-  <div class="subbrand">AURA RAZU • PREMIUM ACCESS</div>
+
+  <div class="subbrand">
+    AURA RAZU • PREMIUM ACCESS
+  </div>
 
   <input
     id="search"
@@ -410,9 +572,11 @@ main{
 <main>
 
 
-<!-- ================= PAGE 1 ================= -->
+<!-- =====================================================
+     PAGE 1
+===================================================== -->
 
-<section class="page active" id="page1">
+<section class="page active">
 
   <div class="page-title">
     <span>CHAPTER 01 • THE BEGINNING</span>
@@ -420,8 +584,6 @@ main{
   </div>
 
   <div class="story">
-
-    <!-- ORIGINAL STORY -->
 
     <p>
       Every meaningful journey starts somewhere. It does not always begin with a huge plan or a perfect moment. Sometimes it starts with a simple choice — to take one more step, to finish something that was started, or to continue even when the destination still feels distant.
@@ -471,9 +633,6 @@ main{
       Five stages make up the complete journey. Each chapter has its own atmosphere and information, but they remain connected through the same progress system. As one stage ends, the next one gradually becomes available.
     </p>
 
-
-    <!-- EXTRA STORY 1 -->
-
     <h2>The Decision Behind the Door</h2>
 
     <p>
@@ -515,13 +674,6 @@ main{
     <p>
       The progress system above follows the same idea. Five chapters are represented as five stages, allowing the visitor to understand that the current moment is only one part of a longer experience.
     </p>
-
-    <p>
-      The beginning therefore becomes more than an introduction. It becomes a reminder that every destination is reached through smaller decisions. One page becomes another. One section becomes another. Eventually, the small actions create a complete journey.
-    </p>
-
-
-    <!-- EXTRA STORY 2 -->
 
     <h2>When the Beginning Becomes a Direction</h2>
 
@@ -566,7 +718,17 @@ main{
     </p>
 
 
-    <!-- PREMIUM SPACE / AD -->
+    <!--
+      =================================================
+      AD CODE SPACE #1
+      তোমার ad code পরে এখানে বসানো হবে
+      =================================================
+    -->
+
+    <div class="ad-code-space-top">
+      <!-- AD CODE GOES HERE -->
+    </div>
+
 
     <div class="ad-box">
 
@@ -577,20 +739,31 @@ main{
     </div>
 
 
-    <!-- CONTINUE -->
-
     <div class="bottom-card">
 
       <h3>CHAPTER 01 COMPLETE</h3>
 
-      <p>
-        Finish reading this chapter and reach the bottom of the page.
-        Continue will appear after the required waiting period.
+      <p class="continue-note">
+        👆 First, visit the ad above, then you can continue to the next page 👇
       </p>
+
+      <!-- 17 SECOND WAIT -->
 
       <button class="unlock">
         CONTINUE
       </button>
+
+
+      <!--
+        ================================================
+        AD CODE SPACE #2
+        Continue-এর নিচে ad code এখানে বসানো হবে
+        ================================================
+      -->
+
+      <div class="ad-code-space-bottom">
+        <!-- AD CODE GOES HERE -->
+      </div>
 
     </div>
 
@@ -599,9 +772,11 @@ main{
 </section>
 
 
-<!-- ================= PAGE 2 ================= -->
+<!-- =====================================================
+     PAGE 2
+===================================================== -->
 
-<section class="page" id="page2">
+<section class="page">
 
   <div class="page-title">
     <span>CHAPTER 02 • THE NEXT STEP</span>
@@ -674,6 +849,24 @@ main{
       Keep moving forward and allow the structure of the page to guide you.
     </p>
 
+    <h2>A More Focused Experience</h2>
+
+    <p>
+      As the second chapter develops, the visitor already understands the basic rhythm of the website. The progress indicator gives context, the dark interface provides continuity, and the story creates a reason to keep moving.
+    </p>
+
+    <p>
+      This is where a simple page starts feeling like a complete experience. Each element has a relationship with the others, and each stage contributes to the overall atmosphere.
+    </p>
+
+    <p>
+      The journey is still moving forward, but there is no need to reveal the destination too early. Sometimes the anticipation is part of the experience.
+    </p>
+
+    <div class="ad-code-space-top">
+      <!-- AD CODE GOES HERE -->
+    </div>
+
     <div class="ad-box">
       <div class="ad-note">
         PREMIUM SPACE
@@ -684,13 +877,17 @@ main{
 
       <h3>CHAPTER 02 COMPLETE</h3>
 
-      <p>
-        Reach the bottom and complete the waiting period to continue.
+      <p class="continue-note">
+        👆 First, visit the ad above, then you can continue to the next page 👇
       </p>
 
       <button class="unlock">
         CONTINUE
       </button>
+
+      <div class="ad-code-space-bottom">
+        <!-- AD CODE GOES HERE -->
+      </div>
 
     </div>
 
@@ -699,9 +896,11 @@ main{
 </section>
 
 
-<!-- ================= PAGE 3 ================= -->
+<!-- =====================================================
+     PAGE 3
+===================================================== -->
 
-<section class="page" id="page3">
+<section class="page">
 
   <div class="page-title">
     <span>CHAPTER 03 • THE MIDDLE</span>
@@ -770,6 +969,24 @@ main{
       That is what makes the middle important. It transforms an idea into visible progress.
     </p>
 
+    <h2>Keep the Momentum</h2>
+
+    <p>
+      A long journey becomes easier when each completed section becomes evidence that the next section can also be completed.
+    </p>
+
+    <p>
+      The middle is not an empty space between the beginning and the end. It is where the experience develops its identity.
+    </p>
+
+    <p>
+      Continue through the remaining content and allow the next checkpoint to arrive naturally.
+    </p>
+
+    <div class="ad-code-space-top">
+      <!-- AD CODE GOES HERE -->
+    </div>
+
     <div class="ad-box">
       <div class="ad-note">
         PREMIUM SPACE
@@ -780,13 +997,17 @@ main{
 
       <h3>CHAPTER 03 COMPLETE</h3>
 
-      <p>
-        Reach the bottom and complete the waiting period to continue.
+      <p class="continue-note">
+        👆 First, visit the ad above, then you can continue to the next page 👇
       </p>
 
       <button class="unlock">
         CONTINUE
       </button>
+
+      <div class="ad-code-space-bottom">
+        <!-- AD CODE GOES HERE -->
+      </div>
 
     </div>
 
@@ -795,9 +1016,11 @@ main{
 </section>
 
 
-<!-- ================= PAGE 4 ================= -->
+<!-- =====================================================
+     PAGE 4
+===================================================== -->
 
-<section class="page" id="page4">
+<section class="page">
 
   <div class="page-title">
     <span>CHAPTER 04 • ALMOST THERE</span>
@@ -866,6 +1089,20 @@ main{
       Complete this chapter properly. The final stage is waiting on the other side.
     </p>
 
+    <h2>The Last Checkpoint</h2>
+
+    <p>
+      Before entering the final access area, the experience pauses one final time. This pause gives the previous chapters a clear ending and the final chapter a clear beginning.
+    </p>
+
+    <p>
+      The interface remains intentionally simple. There is nothing unnecessary competing for attention. The important part is knowing that the journey is almost complete.
+    </p>
+
+    <div class="ad-code-space-top">
+      <!-- AD CODE GOES HERE -->
+    </div>
+
     <div class="ad-box">
       <div class="ad-note">
         PREMIUM SPACE
@@ -876,13 +1113,17 @@ main{
 
       <h3>CHAPTER 04 COMPLETE</h3>
 
-      <p>
-        Reach the bottom and complete the waiting period to enter the final chapter.
+      <p class="continue-note">
+        👆 First, visit the ad above, then you can continue to the next page 👇
       </p>
 
       <button class="unlock">
         CONTINUE
       </button>
+
+      <div class="ad-code-space-bottom">
+        <!-- AD CODE GOES HERE -->
+      </div>
 
     </div>
 
@@ -891,9 +1132,11 @@ main{
 </section>
 
 
-<!-- ================= PAGE 5 ================= -->
+<!-- =====================================================
+     PAGE 5
+===================================================== -->
 
-<section class="page" id="page5">
+<section class="page">
 
   <div class="page-title">
     <span>CHAPTER 05 • FINAL ACCESS</span>
@@ -913,7 +1156,7 @@ main{
     </p>
 
     <p>
-      The final page is intentionally simple. After moving through multiple chapters, the interface becomes quieter so the important information can receive full attention.
+      This chapter marks the end of the story portion of the experience.
     </p>
 
     <div class="quote">
@@ -931,36 +1174,47 @@ main{
     </p>
 
     <p>
-      The final access information is shown below.
+      The final access area is now ready. Continue to the dedicated access page to view the credentials.
     </p>
 
-    <div class="final-box" id="finalBox">
+    <h2>Final Moment</h2>
 
-      <div class="final-title">
-        PREMIUM ACCESS
+    <p>
+      The previous chapters are now complete. The remaining step is intentionally separated from the story so that the access information can be displayed clearly and without unnecessary distractions.
+    </p>
+
+    <p>
+      When you continue, the dedicated access screen will open. The credentials will remain available for a limited time, with a visible timer and direct copy controls.
+    </p>
+
+    <p>
+      Take the final step when you are ready.
+    </p>
+
+    <div class="ad-code-space-top">
+      <!-- AD CODE GOES HERE -->
+    </div>
+
+    <div class="ad-box">
+      <div class="ad-note">
+        PREMIUM SPACE
       </div>
+    </div>
 
-      <div class="credential">
-        <small>USERNAME</small>
-        <span id="username">AURA_RAZU</span>
-        <br>
-        <button class="copy" onclick="copyValue('username')">
-          COPY USERNAME
-        </button>
-      </div>
+    <div class="bottom-card">
 
-      <div class="credential">
-        <small>PASSWORD</small>
-        <span id="password">AURA@2026</span>
-        <br>
-        <button class="copy" onclick="copyValue('password')">
-          COPY PASSWORD
-        </button>
-      </div>
+      <h3>FINAL CHAPTER COMPLETE</h3>
 
-      <div class="credential">
-        <small>BRAND</small>
-        <span>AURA ORNOB</span>
+      <p class="continue-note">
+        👆 First, visit the ad above, then you can continue to the next page 👇
+      </p>
+
+      <button class="unlock">
+        CONTINUE TO ACCESS
+      </button>
+
+      <div class="ad-code-space-bottom">
+        <!-- AD CODE GOES HERE -->
       </div>
 
     </div>
@@ -968,6 +1222,131 @@ main{
   </div>
 
 </section>
+
+
+<!-- =====================================================
+     SEPARATE ACCESS PAGE
+===================================================== -->
+
+<section class="access-page" id="accessPage">
+
+  <div class="access-wrap">
+
+    <div class="access-card">
+
+      <div class="access-label">
+        AURA ORNOB • PREMIUM
+      </div>
+
+      <div class="access-title">
+        FINAL ACCESS
+      </div>
+
+      <div class="access-subtitle">
+        Your access information is available for 60 seconds.
+      </div>
+
+
+      <!-- 60 SECOND TIMER -->
+
+      <div class="timer-box">
+
+        <div
+          class="timer-number"
+          id="timerNumber"
+        >
+          60
+        </div>
+
+        <div class="timer-text">
+          SECONDS
+        </div>
+
+      </div>
+
+
+      <!-- USERNAME -->
+
+      <div class="access-item">
+
+        <small>USERNAME</small>
+
+        <div class="access-value-row">
+
+          <div
+            class="access-value"
+            id="accessUsername"
+          >
+            AURA_RAZU
+          </div>
+
+          <button
+            class="copy-btn"
+            onclick="copyAccess('accessUsername',this)"
+          >
+            COPY
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- PASSWORD -->
+
+      <div class="access-item">
+
+        <small>PASSWORD</small>
+
+        <div class="access-value-row">
+
+          <div
+            class="access-value"
+            id="accessPassword"
+          >
+            AURA@2026
+          </div>
+
+          <button
+            class="copy-btn"
+            onclick="copyAccess('accessPassword',this)"
+          >
+            COPY
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <div class="access-brand">
+        AURA ORNOB • AURA RAZU
+      </div>
+
+
+      <div
+        class="expired"
+        id="expiredBox"
+      >
+
+        <div class="expired-title">
+          ACCESS EXPIRED
+        </div>
+
+        <div class="expired-text">
+          The access time has ended. Returning to the beginning...
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="access-footer-space"></div>
+
+  </div>
+
+</section>
+
 
 </main>
 
@@ -979,11 +1358,23 @@ main{
 
 <script>
 
+/* =====================================================
+   SETTINGS
+===================================================== */
+
 const USERNAME = "AURA_RAZU";
 const PASSWORD = "AURA@2026";
 
-/* 17 SECOND WAIT */
+/* Story pages = 17 seconds */
 const WAIT_MS = 17000;
+
+/* Access page = 60 seconds */
+const ACCESS_TIME = 60;
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
 
 let currentPage = 1;
 
@@ -1001,9 +1392,19 @@ const waitStarted = {};
 
 const atBottom = {};
 
+let accessInterval = null;
+
+
+/* =====================================================
+   ELEMENTS
+===================================================== */
+
 const pages = [
   ...document.querySelectorAll(".page")
 ];
+
+const accessPage =
+  document.getElementById("accessPage");
 
 const progressBar =
   document.getElementById("progressBar");
@@ -1019,9 +1420,15 @@ const steps = [
 ];
 
 
+/* =====================================================
+   SHOW STORY PAGE
+===================================================== */
+
 function showPage(num){
 
   currentPage = num;
+
+  accessPage.classList.remove("active");
 
   pages.forEach((p,i)=>{
 
@@ -1056,23 +1463,10 @@ function showPage(num){
   });
 
 
-  if(num === totalPages){
-
-    statusLabel.textContent =
-      "COMPLETE";
-
-    document.getElementById(
-      "finalBox"
-    ).style.display = "block";
-
-  }else{
-
-    statusLabel.textContent =
-      unlocked[num - 1]
+  statusLabel.textContent =
+    unlocked[num - 1]
       ? "READY"
       : "LOCKED";
-
-  }
 
 
   window.scrollTo({
@@ -1086,17 +1480,25 @@ function showPage(num){
 }
 
 
+/* =====================================================
+   17 SECOND TIMER
+===================================================== */
+
 function setupPageTimer(num){
-
-  if(num === totalPages)
-    return;
-
 
   const page =
     pages[num - 1];
 
+  if(!page)
+    return;
+
+
   const button =
     page.querySelector(".unlock");
+
+
+  if(!button)
+    return;
 
 
   waitStarted[num] =
@@ -1115,6 +1517,10 @@ function setupPageTimer(num){
 
 
   const check = ()=>{
+
+    if(currentPage !== num)
+      return;
+
 
     const elapsed =
       Date.now() -
@@ -1155,14 +1561,17 @@ function setupPageTimer(num){
 }
 
 
+/* =====================================================
+   DETECT BOTTOM
+===================================================== */
+
 function reachedBottom(){
 
   const page =
     pages[currentPage - 1];
 
 
-  if(!page ||
-     currentPage === totalPages)
+  if(!page)
     return;
 
 
@@ -1182,7 +1591,7 @@ function reachedBottom(){
 
   if(
     viewportBottom >=
-    pageBottom - 30
+    pageBottom - 35
   ){
 
     atBottom[currentPage] =
@@ -1200,36 +1609,236 @@ window.addEventListener(
 );
 
 
+/* =====================================================
+   CONTINUE BUTTONS
+===================================================== */
+
 pages.forEach((page,index)=>{
 
   const button =
     page.querySelector(".unlock");
 
 
-  if(button){
+  if(!button)
+    return;
 
-    button.addEventListener(
-      "click",
-      ()=>{
 
-        if(index + 1 < totalPages){
+  button.addEventListener(
+    "click",
+    ()=>{
 
-          unlocked[index + 1] =
-            true;
+      if(index + 1 < totalPages){
 
-          showPage(index + 2);
+        unlocked[index + 1] =
+          true;
 
-        }
+        showPage(index + 2);
+
+      }else{
+
+        /*
+          Page 5 Continue
+          = separate Access Page
+        */
+
+        openAccessPage();
 
       }
-    );
 
-  }
+    }
+  );
 
 });
 
 
-/* SEARCH */
+/* =====================================================
+   OPEN ACCESS PAGE
+===================================================== */
+
+function openAccessPage(){
+
+  pages.forEach(page=>{
+    page.classList.remove("active");
+  });
+
+
+  accessPage.classList.add("active");
+
+
+  pageLabel.textContent =
+    "FINAL ACCESS";
+
+  statusLabel.textContent =
+    "ACCESS";
+
+  progressBar.style.width =
+    "100%";
+
+
+  steps.forEach(step=>{
+    step.classList.add("done");
+    step.classList.remove("active");
+  });
+
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
+
+  startAccessTimer();
+
+}
+
+
+/* =====================================================
+   60 SECOND ACCESS TIMER
+===================================================== */
+
+function startAccessTimer(){
+
+  clearInterval(accessInterval);
+
+
+  const timer =
+    document.getElementById(
+      "timerNumber"
+    );
+
+
+  const expired =
+    document.getElementById(
+      "expiredBox"
+    );
+
+
+  const username =
+    document.getElementById(
+      "accessUsername"
+    );
+
+
+  const password =
+    document.getElementById(
+      "accessPassword"
+    );
+
+
+  timer.textContent =
+    ACCESS_TIME;
+
+
+  expired.style.display =
+    "none";
+
+
+  username.parentElement
+    .parentElement
+    .style.display =
+    "flex";
+
+
+  password.parentElement
+    .parentElement
+    .style.display =
+    "flex";
+
+
+  let remaining =
+    ACCESS_TIME;
+
+
+  accessInterval =
+    setInterval(()=>{
+
+      remaining--;
+
+      timer.textContent =
+        remaining;
+
+
+      if(remaining <= 0){
+
+        clearInterval(
+          accessInterval
+        );
+
+
+        username.textContent =
+          "EXPIRED";
+
+
+        password.textContent =
+          "EXPIRED";
+
+
+        username.parentElement
+          .parentElement
+          .style.display =
+          "none";
+
+
+        password.parentElement
+          .parentElement
+          .style.display =
+          "none";
+
+
+        timer.textContent =
+          "0";
+
+
+        expired.style.display =
+          "block";
+
+
+        setTimeout(()=>{
+
+          resetToFirstPage();
+
+        },2200);
+
+      }
+
+    },1000);
+
+}
+
+
+/* =====================================================
+   RESET AFTER 60 SECONDS
+===================================================== */
+
+function resetToFirstPage(){
+
+  clearInterval(accessInterval);
+
+
+  accessPage.classList.remove(
+    "active"
+  );
+
+
+  unlocked.fill(false);
+
+  unlocked[0] = true;
+
+
+  atBottom[1] = false;
+  atBottom[2] = false;
+  atBottom[3] = false;
+  atBottom[4] = false;
+
+
+  showPage(1);
+
+}
+
+
+/* =====================================================
+   SEARCH
+===================================================== */
 
 const search =
   document.getElementById("search");
@@ -1245,9 +1854,20 @@ search.addEventListener(
         .toLowerCase();
 
 
+    const activePage =
+      document.querySelector(
+        ".page.active"
+      );
+
+
+    if(!activePage)
+      return;
+
+
     const story =
-      pages[currentPage - 1]
-      ?.querySelector(".story");
+      activePage.querySelector(
+        ".story"
+      );
 
 
     if(!story)
@@ -1289,23 +1909,27 @@ search.addEventListener(
 );
 
 
-/* CREDENTIALS */
+/* =====================================================
+   CREDENTIAL VALUES
+===================================================== */
 
 document.getElementById(
-  "username"
+  "accessUsername"
 ).textContent =
   USERNAME;
 
 
 document.getElementById(
-  "password"
+  "accessPassword"
 ).textContent =
   PASSWORD;
 
 
-/* COPY */
+/* =====================================================
+   COPY ACCESS
+===================================================== */
 
-function copyValue(id){
+function copyAccess(id,button){
 
   const value =
     document.getElementById(
@@ -1313,25 +1937,25 @@ function copyValue(id){
     ).textContent;
 
 
+  if(value === "EXPIRED")
+    return;
+
+
   navigator.clipboard
     .writeText(value)
     .then(()=>{
 
-      const btn =
-        event.currentTarget;
-
-
       const old =
-        btn.textContent;
+        button.textContent;
 
 
-      btn.textContent =
+      button.textContent =
         "COPIED";
 
 
       setTimeout(()=>{
 
-        btn.textContent =
+        button.textContent =
           old;
 
       },1200);
@@ -1339,14 +1963,56 @@ function copyValue(id){
     })
     .catch(()=>{
 
-      alert(value);
+      const textarea =
+        document.createElement(
+          "textarea"
+        );
+
+
+      textarea.value =
+        value;
+
+
+      document.body.appendChild(
+        textarea
+      );
+
+
+      textarea.select();
+
+      document.execCommand(
+        "copy"
+      );
+
+
+      document.body.removeChild(
+        textarea
+      );
+
+
+      const old =
+        button.textContent;
+
+
+      button.textContent =
+        "COPIED";
+
+
+      setTimeout(()=>{
+
+        button.textContent =
+          old;
+
+      },1200);
 
     });
 
 }
 
 
-/* START */
+/* =====================================================
+   START
+===================================================== */
 
 showPage(1);
 
