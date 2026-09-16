@@ -2,441 +2,281 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <meta name="theme-color" content="#05070b">
 <title>AURA ORNOB — AURA RAZU</title>
 
 <style>
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
 body{
-  background:#000;
-  color:#e9edf5;
+  background:#000;color:#e9edf5;
   font-family:Arial,Helvetica,sans-serif;
-  line-height:1.75;
+  line-height:1.8;
 }
-
 body:before{
-  content:"";
-  position:fixed;
-  inset:0;
-  pointer-events:none;
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;
   background:
-    radial-gradient(circle at 20% 0%,rgba(0,102,255,.08),transparent 28%),
-    radial-gradient(circle at 90% 30%,rgba(0,110,255,.06),transparent 30%);
-  z-index:-1;
+  radial-gradient(circle at 15% 0%,rgba(0,102,255,.09),transparent 30%),
+  radial-gradient(circle at 90% 30%,rgba(0,110,255,.07),transparent 32%);
 }
-
-/* ================= HEADER ================= */
-
 .header{
-  position:sticky;
-  top:0;
-  z-index:50;
-  background:rgba(0,0,0,.90);
+  position:sticky;top:0;z-index:50;
+  background:rgba(0,0,0,.92);
   backdrop-filter:blur(16px);
   border-bottom:1px solid rgba(0,130,255,.22);
   padding:18px 14px 14px;
 }
-
 .brand{
-  text-align:center;
-  font-weight:900;
-  letter-spacing:4px;
-  font-size:24px;
-  color:#1683ff;
+  text-align:center;font-weight:900;letter-spacing:4px;
+  font-size:24px;color:#1683ff;
   text-shadow:0 0 18px rgba(0,110,255,.65);
 }
-
 .subbrand{
-  text-align:center;
-  margin-top:2px;
-  color:#75839a;
-  font-size:10px;
-  letter-spacing:3px;
+  text-align:center;margin-top:2px;color:#75839a;
+  font-size:10px;letter-spacing:3px;
 }
-
-/* ================= SEARCH ================= */
-
 .search{
-  width:100%;
-  max-width:700px;
-  margin:15px auto 0;
-  display:block;
-  border:1px solid #1b2737;
-  background:#080b10;
-  color:white;
-  outline:none;
-  border-radius:12px;
-  padding:13px 15px;
-  font-size:14px;
+  width:100%;max-width:700px;margin:15px auto 0;
+  display:block;border:1px solid #1b2737;
+  background:#080b10;color:white;outline:none;
+  border-radius:12px;padding:13px 15px;font-size:14px;
 }
-
 .search:focus{
   border-color:#0878ff;
   box-shadow:0 0 18px rgba(0,110,255,.14);
 }
-
-/* ================= PROGRESS ================= */
-
-.progress-wrap{
-  max-width:700px;
-  margin:14px auto 0;
-}
-
+.progress-wrap{max-width:700px;margin:14px auto 0}
 .progress-top{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  font-size:11px;
-  color:#8e9aad;
-  letter-spacing:1px;
+  display:flex;justify-content:space-between;
+  font-size:11px;color:#8e9aad;letter-spacing:1px;
   margin-bottom:7px;
 }
-
 .progress{
-  height:5px;
-  background:#111823;
-  border-radius:99px;
-  overflow:hidden;
+  height:5px;background:#111823;
+  border-radius:99px;overflow:hidden;
 }
-
 .progress-bar{
-  height:100%;
-  width:20%;
+  height:100%;width:20%;
   background:linear-gradient(90deg,#006cff,#31a3ff);
   box-shadow:0 0 14px #0878ff;
   transition:width .4s ease;
 }
-
-.steps{
-  display:flex;
-  gap:7px;
-  margin-top:10px;
-}
-
+.steps{display:flex;gap:7px;margin-top:10px}
 .step{
-  flex:1;
-  height:4px;
-  background:#141b25;
+  flex:1;height:4px;background:#141b25;
   border-radius:99px;
 }
-
-.step.active,
-.step.done{
+.step.active,.step.done{
   background:#0878ff;
   box-shadow:0 0 9px rgba(0,120,255,.6);
 }
-
-/* ================= MAIN ================= */
-
 main{
-  width:100%;
-  max-width:760px;
-  margin:0 auto;
-  padding:25px 14px 60px;
+  width:100%;max-width:760px;margin:0 auto;
+  padding:28px 14px 60px;
 }
-
-.page{
-  display:none;
-  animation:fade .35s ease;
-}
-
-.page.active{
-  display:block;
-}
-
+.page{display:none;animation:fade .35s ease}
+.page.active{display:block}
 @keyframes fade{
-  from{
-    opacity:0;
-    transform:translateY(8px);
-  }
-
-  to{
-    opacity:1;
-    transform:none;
-  }
+  from{opacity:0;transform:translateY(8px)}
+  to{opacity:1;transform:none}
 }
-
-/* ================= PAGE TITLE ================= */
-
-.page-title{
-  text-align:center;
-  margin:8px 0 18px;
-}
-
+.page-title{text-align:center;margin:10px 0 20px}
 .page-title .small{
-  color:#5d6a7d;
-  font-size:10px;
-  letter-spacing:3px;
-  text-transform:uppercase;
+  color:#5d6a7d;font-size:10px;
+  letter-spacing:3px;text-transform:uppercase;
 }
-
 .page-title h1{
-  margin-top:5px;
-  color:#f5f8ff;
-  font-size:25px;
-  line-height:1.25;
+  margin-top:6px;color:#f5f8ff;
+  font-size:26px;line-height:1.25;
 }
-
-.page-title h1 span{
-  color:#0878ff;
-}
-
-/* ================= STORY ================= */
-
+.page-title h1 span{color:#0878ff}
 .story{
   background:linear-gradient(180deg,#070a0f,#030405);
-  border:1px solid #151d28;
-  border-radius:17px;
-  padding:21px 18px;
+  border:1px solid #151d28;border-radius:17px;
+  padding:23px 18px;
   box-shadow:0 15px 45px rgba(0,0,0,.35);
 }
-
 .story p{
-  margin-bottom:20px;
-  color:#bfc8d5;
-  font-size:14px;
+  margin-bottom:21px;color:#bfc8d5;font-size:14px;
 }
-
-.story p:last-child{
-  margin-bottom:0;
-}
-
+.story p:last-child{margin-bottom:0}
 .story .quote{
   border-left:3px solid #0878ff;
-  padding:12px 15px;
-  margin:23px 0;
-  background:#07101b;
-  color:#e7edf7;
+  padding:14px 15px;margin:25px 0;
+  background:#07101b;color:#e7edf7;
   border-radius:0 10px 10px 0;
 }
-
 .story h2{
-  color:#fff;
-  font-size:17px;
-  margin:26px 0 10px;
+  color:#fff;font-size:18px;
+  margin:29px 0 11px;
 }
-
-.story strong{
-  color:#fff;
-}
-
-/* ================= AD BOX ================= */
-
+.story strong{color:#fff}
 .ad-box{
-  margin:26px 0 14px;
-  min-height:110px;
-  border:1px dashed #263241;
-  background:#05070a;
-  border-radius:14px;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  text-align:center;
-
-  color:#596576;
-  font-size:10px;
-  letter-spacing:2px;
+  margin:30px 0 14px;min-height:120px;
+  border:1px dashed #263241;background:#05070a;
+  border-radius:14px;display:flex;
+  align-items:center;justify-content:center;
+  text-align:center;color:#596576;
+  font-size:10px;letter-spacing:2px;
   text-transform:uppercase;
 }
-
-.ad-box span{
-  display:block;
-}
-
 .ad-note{
-  text-align:center;
-  color:#667386;
-  font-size:11px;
-  margin:9px 0 18px;
+  text-align:center;color:#667386;
+  font-size:11px;margin:9px 0 20px;
 }
-
-/* ================= BOTTOM CARD ================= */
-
 .bottom-card{
   border:1px solid #162337;
   background:linear-gradient(135deg,#07101c,#030508);
-  border-radius:16px;
-  padding:18px;
-  text-align:center;
-  margin-top:18px;
+  border-radius:16px;padding:19px;
+  text-align:center;margin-top:20px;
   box-shadow:0 0 30px rgba(0,90,220,.07);
 }
-
 .bottom-card .label{
-  color:#1683ff;
-  font-weight:800;
-  font-size:12px;
-  letter-spacing:2px;
+  color:#1683ff;font-weight:800;
+  font-size:12px;letter-spacing:2px;
 }
-
 .bottom-card p{
-  margin-top:5px;
-  color:#7e8a9c;
-  font-size:11px;
+  margin-top:6px;color:#7e8a9c;font-size:11px;
 }
-
-/* ================= UNLOCK BUTTON ================= */
-
 .unlock{
-  width:100%;
-  border:0;
-  border-radius:12px;
-  padding:14px;
-  margin-top:14px;
-
-  background:#0878ff;
-  color:white;
-
-  font-weight:800;
-  letter-spacing:1px;
-
-  cursor:pointer;
-
-  box-shadow:0 0 22px rgba(0,120,255,.25);
-
+  width:100%;border:0;border-radius:12px;
+  padding:14px;margin-top:15px;
+  background:#0878ff;color:white;
+  font-weight:800;letter-spacing:1px;
+  cursor:pointer;box-shadow:0 0 22px rgba(0,120,255,.25);
   display:none;
 }
+.unlock:hover{background:#1686ff}
+.footer{
+  text-align:center;padding:25px 10px 45px;
+  color:#3f4a59;font-size:10px;letter-spacing:2px;
+}
+.hidden-search{display:none!important}
 
-.unlock:hover{
-  background:#1686ff;
+/* LOGIN */
+#loginPage{
+  min-height:calc(100vh - 190px);
+  display:flex;align-items:center;justify-content:center;
+}
+.login-box{
+  width:100%;max-width:430px;
+  background:linear-gradient(180deg,#080d15,#030507);
+  border:1px solid #182536;border-radius:20px;
+  padding:28px 20px;
+  box-shadow:0 20px 70px rgba(0,0,0,.55);
+}
+.login-box h1{
+  text-align:center;color:#1683ff;
+  letter-spacing:3px;font-size:23px;
+}
+.login-box .login-sub{
+  text-align:center;color:#667386;
+  font-size:11px;margin:7px 0 22px;
+}
+.pass-input{
+  width:100%;padding:14px;
+  border-radius:11px;border:1px solid #1c2a3c;
+  background:#020406;color:#fff;outline:none;
+  font-size:14px;text-align:center;
+}
+.pass-input:focus{
+  border-color:#0878ff;
+  box-shadow:0 0 18px rgba(0,120,255,.15);
+}
+.pass-btn{
+  width:100%;margin-top:12px;
+  padding:14px;border:0;border-radius:11px;
+  background:#0878ff;color:#fff;
+  font-weight:800;letter-spacing:1px;
+}
+.error{
+  display:none;text-align:center;
+  color:#ff5d6c;font-size:11px;margin-top:12px;
 }
 
-.unlock:disabled{
-  opacity:.45;
-  cursor:not-allowed;
+/* KEY PAGE */
+#keyPage{display:none}
+.key-screen{
+  min-height:70vh;
+  display:flex;align-items:center;
+  justify-content:center;
 }
-
-/* ================= FINAL BOX ================= */
-
-.final-box{
-  display:none;
-  margin-top:25px;
-
+.key-card{
+  width:100%;max-width:500px;
   border:1px solid #0878ff;
-
   background:linear-gradient(180deg,#071321,#03070c);
-
-  border-radius:18px;
-
-  padding:22px 18px;
-
-  box-shadow:0 0 35px rgba(0,110,255,.16);
-}
-
-.final-box h2{
+  border-radius:20px;padding:27px 19px;
+  box-shadow:0 0 40px rgba(0,110,255,.16);
   text-align:center;
-  color:#1683ff;
-  letter-spacing:2px;
-  margin-bottom:18px;
 }
-
-.credential{
-  margin:10px 0;
-  padding:14px;
-
-  background:#020406;
-
+.key-card .mini{
+  color:#5f6c7e;font-size:10px;
+  letter-spacing:3px;text-transform:uppercase;
+}
+.key-card h1{
+  color:#1683ff;font-size:25px;
+  letter-spacing:2px;margin:8px 0 20px;
+}
+.key-value{
   border:1px solid #162234;
-
-  border-radius:11px;
-}
-
-.credential small{
-  display:block;
-  color:#5f6c7e;
-  font-size:9px;
-  letter-spacing:2px;
-}
-
-.credential b{
-  display:block;
-  color:#fff;
-  margin-top:4px;
-  font-size:15px;
+  background:#020406;border-radius:12px;
+  padding:18px 12px;
+  color:#fff;font-size:20px;
+  font-weight:900;letter-spacing:2px;
   word-break:break-all;
 }
-
-.copy{
-  width:100%;
-  margin-top:8px;
-
+.copy-key{
+  width:100%;margin-top:12px;
   border:1px solid #1b6fd0;
-
-  background:#07111e;
-  color:#65aeff;
-
-  padding:10px;
-
-  border-radius:9px;
-
-  cursor:pointer;
+  background:#07111e;color:#65aeff;
+  padding:13px;border-radius:10px;
+  font-weight:800;cursor:pointer;
+}
+.timer{
+  margin-top:20px;
+  padding:13px;
+  border:1px solid #162234;
+  border-radius:11px;
+  color:#fff;background:#020406;
+}
+.timer-label{
+  display:block;color:#667386;
+  font-size:9px;letter-spacing:2px;
+  margin-bottom:5px;
+}
+#timer{
+  color:#1683ff;font-size:28px;
+  font-weight:900;letter-spacing:2px;
+}
+.timer-warning{
+  color:#ff5968!important;
+}
+.expired{
+  display:none;
+  margin-top:16px;
+  color:#ff5968;font-size:12px;
 }
 
-/* ================= FOOTER ================= */
-
-.footer{
-  text-align:center;
-  padding:25px 10px 45px;
-
-  color:#3f4a59;
-
-  font-size:10px;
-  letter-spacing:2px;
-}
-
-.hidden-search{
-  display:none!important;
-}
-
-/* ================= MOBILE ================= */
-
+/* MOBILE */
 @media(max-width:420px){
-
-  .brand{
-    font-size:21px;
-  }
-
-  .story{
-    padding:18px 15px;
-  }
-
-  .story p{
-    font-size:13.5px;
-  }
-
+  .brand{font-size:21px}
+  .story{padding:19px 15px}
+  .story p{font-size:13.5px}
 }
 </style>
 </head>
 
 <body>
 
-<!-- =========================================================
-     HEADER
-========================================================= -->
-
 <header class="header">
 
-  <div class="brand">
-    AURA ORNOB
-  </div>
+  <div class="brand">AURA ORNOB</div>
 
   <div class="subbrand">
     AURA RAZU • PREMIUM ACCESS
   </div>
 
-  <!-- SEARCH -->
   <input
     id="search"
     class="search"
@@ -445,40 +285,23 @@ main{
     autocomplete="off"
   >
 
-  <!-- PAGE PROGRESS -->
   <div class="progress-wrap">
 
     <div class="progress-top">
-
-      <span id="pageLabel">
-        PAGE 1 OF 5
-      </span>
-
-      <span id="statusLabel">
-        LOCKED
-      </span>
-
+      <span id="pageLabel">LOGIN</span>
+      <span id="statusLabel">LOCKED</span>
     </div>
 
     <div class="progress">
-      <div
-        id="progressBar"
-        class="progress-bar"
-      ></div>
+      <div id="progressBar" class="progress-bar" style="width:0%"></div>
     </div>
 
     <div class="steps">
-
-      <i class="step active"></i>
-
       <i class="step"></i>
-
       <i class="step"></i>
-
       <i class="step"></i>
-
       <i class="step"></i>
-
+      <i class="step"></i>
     </div>
 
   </div>
@@ -486,724 +309,584 @@ main{
 </header>
 
 
-<!-- =========================================================
-     MAIN
-========================================================= -->
-
 <main>
 
+<!-- LOGIN -->
 
-<!-- =========================================================
-     PAGE 1
-========================================================= -->
+<section id="loginPage">
 
-<section
-  class="page active"
-  data-page="1"
->
+  <div class="login-box">
 
-  <div class="page-title">
+    <h1>ACCESS GATE</h1>
 
-    <div class="small">
-      Access Journey
+    <div class="login-sub">
+      ENTER YOUR PREMIUM ACCESS PASS
     </div>
 
-    <h1>
-      The Beginning of
-      <span>AURA</span>
-    </h1>
-
-  </div>
-
-
-  <article class="story">
-
-    <p>
-      Every useful journey begins with a small decision. Sometimes it is a decision to learn something new, sometimes it is a decision to finish what was started, and sometimes it is simply the decision to keep moving when the result is still far away.
-    </p>
-
-    <p>
-      AURA ORNOB was imagined around that simple idea. A clean beginning, a focused destination, and a path where every step has a reason. Nothing needs to happen all at once. Progress becomes easier when a large goal is divided into smaller moments.
-    </p>
-
-    <p>
-      In the first chapter, the most important thing is not speed. It is attention. The page in front of you represents the first part of the journey, and the next part remains hidden until this one is completed.
-    </p>
-
-
-    <div class="quote">
-      “A strong result is usually built from many quiet steps that nobody notices.”
-    </div>
-
-
-    <h2>
-      A Quiet Start
-    </h2>
-
-    <p>
-      Imagine a city after midnight. The streets are quieter, the lights are softer, and the noise of the day has almost disappeared. In that silence, a person opens a notebook and writes one line: “I will finish this.” That line may look ordinary, but it changes the direction of the night.
-    </p>
-
-    <p>
-      The same principle applies here. A page does not need to be complicated to feel premium. Good spacing, clear information, controlled colors, and a consistent experience can make a simple interface feel intentional.
-    </p>
-
-    <p>
-      The blue glow of AURA is not meant to overpower the black background. It is meant to guide the eye. The dark surface creates space, while the blue details show where the important information lives.
-    </p>
-
-    <p>
-      As the story continues, the experience becomes more structured. Each page contains its own section of the journey, while the progress indicator above always shows where you are. That way, five pages feel like one connected experience instead of five unrelated screens.
-    </p>
-
-
-    <h2>
-      The First Lesson
-    </h2>
-
-    <p>
-      The first lesson is patience. A locked section is not an obstacle without purpose. It is a small checkpoint. Reaching the bottom means the current chapter has been viewed, while the waiting period creates a natural pause before the next chapter becomes available.
-    </p>
-
-    <p>
-      There is no visible countdown on this design. The interface stays clean and calm. Once the required waiting period has passed, the next action becomes available without covering the page with numbers or unnecessary controls.
-    </p>
-
-    <p>
-      Keep moving through the page until you reach the final area. The next part of the journey will become available after the required conditions are completed.
-    </p>
-
-
-    <!-- AD AREA -->
-    <div class="ad-box">
-
-      <span>
-        ADVERTISEMENT
-        <br>
-        <small>
-          Premium placement area
-        </small>
-      </span>
-
-    </div>
-
-    <div class="ad-note">
-      Please wait a few moments before the next step becomes available.
-    </div>
-
-
-    <!-- BOTTOM -->
-    <div class="bottom-card">
-
-      <div class="label">
-        AURA RAZU
-      </div>
-
-      <p>
-        Step 1 has been prepared. Complete this section to unlock the next chapter.
-      </p>
-
-      <button class="unlock">
-        UNLOCK NEXT PAGE
-      </button>
-
-    </div>
-
-  </article>
-
-</section>
-
-
-<!-- =========================================================
-     PAGE 2
-========================================================= -->
-
-<section
-  class="page"
-  data-page="2"
->
-
-  <div class="page-title">
-
-    <div class="small">
-      Second Chapter
-    </div>
-
-    <h1>
-      Beyond the
-      <span>First Step</span>
-    </h1>
-
-  </div>
-
-
-  <article class="story">
-
-    <p>
-      The first step creates movement, but movement alone is not enough. A journey becomes meaningful when each new step adds something different. The second chapter is about consistency: doing the same important things carefully enough that they begin to form a pattern.
-    </p>
-
-    <p>
-      There is a special feeling when a difficult task starts becoming familiar. The first attempt feels uncertain. The second feels slightly easier. After several attempts, the process begins to feel natural. That transformation is one of the most useful parts of learning.
-    </p>
-
-    <p>
-      AURA follows the same philosophy. The interface remains familiar, but the story moves forward. The header stays in place, the progress indicator changes, and the content continues inside the same visual language.
-    </p>
-
-
-    <div class="quote">
-      “Consistency turns a collection of attempts into a direction.”
-    </div>
-
-
-    <h2>
-      Building the Pattern
-    </h2>
-
-    <p>
-      Picture a person walking through a long corridor with five doors. The first door has already opened. The second door is directly ahead. There is no need to run. The person simply walks forward, checks each detail, and continues when the path is ready.
-    </p>
-
-    <p>
-      That corridor is a useful metaphor for a multi-page access experience. A visitor should always understand what has been completed and what remains. The page number at the top gives that information instantly.
-    </p>
-
-    <p>
-      The premium feeling comes from restraint. Black backgrounds, thin borders, subtle shadows, and one strong accent color are enough. Instead of filling every empty space with decoration, the design uses empty space to make important elements easier to see.
-    </p>
-
-    <p>
-      The search field at the top is another practical part of the experience. When a page contains a lot of text, visitors should be able to find a word or phrase quickly. The search feature below filters the current chapter without requiring another page.
-    </p>
-
-
-    <h2>
-      A Better Direction
-    </h2>
-
-    <p>
-      Small details matter when a visitor is moving through several stages. The page should not suddenly change its personality. The same typography, spacing, borders, and colors should continue from beginning to end.
-    </p>
-
-    <p>
-      That continuity creates trust in the interface. A visitor knows that the blue line means progress, the dark card contains the main story, and the lower box contains the current step.
-    </p>
-
-    <p>
-      The second chapter therefore has a simple purpose: establish the rhythm. Read, reach the lower section, allow the waiting period to complete, and move forward. The experience remains simple because the system handles the timing in the background.
-    </p>
-
-    <p>
-      There is still more ahead. Three chapters remain after this one, and the final page contains the destination information.
-    </p>
-
-
-    <!-- AD AREA -->
-    <div class="ad-box">
-
-      <span>
-        ADVERTISEMENT
-        <br>
-        <small>
-          Premium placement area
-        </small>
-      </span>
-
-    </div>
-
-    <div class="ad-note">
-      Please wait a few moments before the next step becomes available.
-    </div>
-
-
-    <div class="bottom-card">
-
-      <div class="label">
-        AURA RAZU
-      </div>
-
-      <p>
-        Step 2 is ready. Complete the chapter to continue through the journey.
-      </p>
-
-      <button class="unlock">
-        UNLOCK NEXT PAGE
-      </button>
-
-    </div>
-
-  </article>
-
-</section>
-
-
-<!-- =========================================================
-     PAGE 3
-========================================================= -->
-
-<section
-  class="page"
-  data-page="3"
->
-
-  <div class="page-title">
-
-    <div class="small">
-      Third Chapter
-    </div>
-
-    <h1>
-      The Middle of the
-      <span>Journey</span>
-    </h1>
-
-  </div>
-
-
-  <article class="story">
-
-    <p>
-      The middle of a journey is often where patience becomes more important than excitement. The beginning is new, and the ending is close enough to imagine. The middle is different. It asks you to continue even when the final result is not visible yet.
-    </p>
-
-    <p>
-      This chapter represents that middle. Three of five pages are now part of the experience. The progress bar above has moved forward, but there is still work remaining before the final information appears.
-    </p>
-
-
-    <div class="quote">
-      “The middle is where progress becomes a habit instead of a promise.”
-    </div>
-
-
-    <h2>
-      Why Small Checkpoints Work
-    </h2>
-
-    <p>
-      Breaking a large experience into checkpoints can make it easier to understand. Instead of asking a visitor to complete one enormous page, the interface creates several clear stages. Each stage has a beginning, a body, and a finishing area.
-    </p>
-
-    <p>
-      The finishing area is intentionally separated from the story. It gives the visitor a visual signal that the chapter is reaching its end. The border, glow, and centered text make it different without breaking the overall design.
-    </p>
-
-    <p>
-      On mobile screens, this separation becomes even more useful. A visitor can scroll through a long story and recognize the final section when the premium card appears. There is no need for complicated navigation.
-    </p>
-
-    <p>
-      The search function also remains available at the top. Type a word from the current chapter and matching paragraphs remain visible while unrelated paragraphs are hidden. Clearing the search field restores the complete chapter.
-    </p>
-
-
-    <h2>
-      Keeping the Experience Clean
-    </h2>
-
-    <p>
-      A dark interface can become difficult to read if every element is pure black and every border is too bright. That is why the design uses several dark shades instead of one flat color. The background stays almost black, cards are slightly lighter, and borders are subtle.
-    </p>
-
-    <p>
-      The blue accent is reserved for important information: the AURA ORNOB name, progress, active steps, and the final destination. This creates a visual hierarchy without using many colors.
-    </p>
-
-    <p>
-      The waiting period is also silent. No countdown number is shown. The visitor simply sees the locked state until the required fifteen seconds have passed. After that, the action becomes available.
-    </p>
-
-    <p>
-      One more chapter follows this one. The destination is getting closer, but the journey still has two stages to complete.
-    </p>
-
-
-    <!-- AD AREA -->
-    <div class="ad-box">
-
-      <span>
-        ADVERTISEMENT
-        <br>
-        <small>
-          Premium placement area
-        </small>
-      </span>
-
-    </div>
-
-    <div class="ad-note">
-      Please wait a few moments before the next step becomes available.
-    </div>
-
-
-    <div class="bottom-card">
-
-      <div class="label">
-        AURA RAZU
-      </div>
-
-      <p>
-        Step 3 is complete when the waiting period and page reading requirement are satisfied.
-      </p>
-
-      <button class="unlock">
-        UNLOCK NEXT PAGE
-      </button>
-
-    </div>
-
-  </article>
-
-</section>
-
-
-<!-- =========================================================
-     PAGE 4
-========================================================= -->
-
-<section
-  class="page"
-  data-page="4"
->
-
-  <div class="page-title">
-
-    <div class="small">
-      Fourth Chapter
-    </div>
-
-    <h1>
-      Almost at the
-      <span>Destination</span>
-    </h1>
-
-  </div>
-
-
-  <article class="story">
-
-    <p>
-      Four chapters have now been completed. At this point the progress indicator tells a simple story: most of the path is behind you, while one final stage remains before the access details can be revealed.
-    </p>
-
-    <p>
-      The fourth chapter is about preparation. A destination is easier to appreciate when the previous steps have created context. The final information should feel like the natural result of the journey rather than something that appears without warning.
-    </p>
-
-
-    <div class="quote">
-      “A destination becomes meaningful when the path to it has been completed.”
-    </div>
-
-
-    <h2>
-      The Last Preparation
-    </h2>
-
-    <p>
-      Imagine opening a small box after following a carefully designed trail. The box itself may be simple, but the anticipation came from the steps before it. A good digital experience can create the same feeling through structure, timing, and visual consistency.
-    </p>
-
-    <p>
-      This page keeps the same dark premium style. The blue accent remains focused, the story remains readable, and the progress area makes the current position clear.
-    </p>
-
-    <p>
-      The final stage will contain the access information that has been configured by the owner of this page. In the code, the username and password are stored in one clearly marked section so they can be replaced easily later.
-    </p>
-
-    <p>
-      If you plan to connect an advertisement network, analytics system, external redirect, or another service later, this lower area is also where additional code can be inserted without changing the main story structure.
-    </p>
-
-
-    <h2>
-      One More Step
-    </h2>
-
-    <p>
-      The experience is deliberately designed without a visible timer. A visitor does not need to watch a number counting down. The system quietly measures the waiting period and unlocks the next action after fifteen seconds.
-    </p>
-
-    <p>
-      Reaching the bottom of the chapter is also part of the flow. This means the next stage is not immediately available simply by opening the page. The visitor must move through the chapter first.
-    </p>
-
-    <p>
-      When this chapter is complete, the final page will appear. That page contains the last story section and then the access box.
-    </p>
-
-    <p>
-      Take the final step when the lower card becomes available.
-    </p>
-
-
-    <!-- AD AREA -->
-    <div class="ad-box">
-
-      <span>
-        ADVERTISEMENT
-        <br>
-        <small>
-          Premium placement area
-        </small>
-      </span>
-
-    </div>
-
-    <div class="ad-note">
-      Please wait a few moments before the next step becomes available.
-    </div>
-
-
-    <div class="bottom-card">
-
-      <div class="label">
-        AURA RAZU
-      </div>
-
-      <p>
-        Step 4 is ready. Finish this section to open the final chapter.
-      </p>
-
-      <button class="unlock">
-        UNLOCK FINAL PAGE
-      </button>
-
-    </div>
-
-  </article>
-
-</section>
-
-
-<!-- =========================================================
-     PAGE 5
-========================================================= -->
-
-<section
-  class="page"
-  data-page="5"
->
-
-  <div class="page-title">
-
-    <div class="small">
-      Final Chapter
-    </div>
-
-    <h1>
-      Welcome to the
-      <span>Final Access</span>
-    </h1>
-
-  </div>
-
-
-  <article class="story">
-
-    <p>
-      The final chapter begins with a different feeling. The progress indicator is complete, the previous stages are behind you, and the destination is finally visible.
-    </p>
-
-    <p>
-      AURA ORNOB was designed as a simple premium access journey: dark, clean, focused, and easy to understand. Five pages create the structure, while the story gives each page enough content to feel like a real section instead of an empty checkpoint.
-    </p>
-
-    <p>
-      The final information below is controlled by the owner. Replace the sample username and password in the script with your own credentials before publishing the page.
-    </p>
-
-
-    <div class="quote">
-      “The final step is not the end of the journey. It is the point where preparation becomes access.”
-    </div>
-
-
-    <h2>
-      Final Notes
-    </h2>
-
-    <p>
-      The interface does not display the fifteen-second waiting counter. The waiting process happens silently in the background. This keeps the page visually clean and prevents the lower section from being filled with unnecessary numbers.
-    </p>
-
-    <p>
-      The search field can still be used to locate words inside this final chapter. The page indicator remains visible at the top so the visitor always knows that this is page five of five.
-    </p>
-
-    <p>
-      Below this story is the final premium access card. The credentials shown there come directly from the values configured in the JavaScript section at the bottom of this file.
-    </p>
-
-
-    <!-- AD AREA -->
-    <div class="ad-box">
-
-      <span>
-        ADVERTISEMENT
-        <br>
-        <small>
-          Premium placement area
-        </small>
-      </span>
-
-    </div>
-
-    <div class="ad-note">
-      Final section reached.
-    </div>
-
-
-    <div class="bottom-card">
-
-      <div class="label">
-        AURA RAZU • FINAL ACCESS
-      </div>
-
-      <p>
-        Your five-step journey is complete.
-      </p>
-
-    </div>
-
-
-    <!-- FINAL USERNAME PASSWORD -->
-
-    <div
-      id="finalBox"
-      class="final-box"
+    <input
+      id="passInput"
+      class="pass-input"
+      type="password"
+      placeholder="Enter Pass"
+      autocomplete="off"
     >
 
-      <h2>
-        ACCESS DETAILS
-      </h2>
+    <button
+      class="pass-btn"
+      onclick="checkPass()"
+    >
+      CONTINUE
+    </button>
 
-
-      <div class="credential">
-
-        <small>
-          USERNAME
-        </small>
-
-        <b id="username">
-          AURA_RAZU
-        </b>
-
-        <button
-          class="copy"
-          onclick="copyValue('username')"
-        >
-          COPY USERNAME
-        </button>
-
-      </div>
-
-
-      <div class="credential">
-
-        <small>
-          PASSWORD
-        </small>
-
-        <b id="password">
-          AURA@2026
-        </b>
-
-        <button
-          class="copy"
-          onclick="copyValue('password')"
-        >
-          COPY PASSWORD
-        </button>
-
-      </div>
-
-
-      <div class="credential">
-
-        <small>
-          BRAND
-        </small>
-
-        <b>
-          AURA ORNOB
-        </b>
-
-      </div>
-
+    <div id="passError" class="error">
+      INVALID PASS — PLEASE TRY AGAIN
     </div>
 
-  </article>
+  </div>
 
 </section>
 
 
-<!-- =========================================================
-     FOOTER
-========================================================= -->
+<!-- PAGE 1 -->
+
+<section class="page" data-page="1">
+
+<div class="page-title">
+<div class="small">Access Journey • Chapter 01</div>
+<h1>The Beginning of <span>AURA</span></h1>
+</div>
+
+<article class="story">
+
+<p>
+Every useful journey begins with a small decision. Sometimes that decision is made quietly, without anyone else knowing about it. A person opens a page, looks at the destination, and decides that the next few minutes will be used to complete something properly.
+</p>
+
+<p>
+AURA ORNOB was designed around that idea. The interface does not try to show everything at once. Instead, it creates a sequence of small moments. Each section has its own purpose, and every completed section moves the visitor closer to the final access area.
+</p>
+
+<p>
+The first chapter is intentionally calm. The dark background gives the eyes room to rest, while the blue details identify the important parts of the interface. Nothing needs to flash constantly. A premium interface can feel strong simply by being consistent.
+</p>
+
+<div class="quote">
+“A strong result is usually built from many quiet steps that nobody notices.”
+</div>
+
+<h2>A Quiet Start</h2>
+
+<p>
+Imagine a city after midnight. The streets are almost empty, shop signs have become softer, and the noise of the day has disappeared. Somewhere inside a small room, someone opens a notebook and writes one sentence: “I will finish this.” It is only one sentence, but it creates direction.
+</p>
+
+<p>
+The same principle applies to a digital journey. A visitor does not need ten different buttons or complicated menus. They need to understand where they are, what they have completed, and what remains. The progress indicator at the top exists for exactly that reason.
+</p>
+
+<p>
+The five small progress sections represent five chapters. The first one becomes active when the journey begins. As the visitor continues, completed chapters remain highlighted while the current chapter becomes the focus.
+</p>
+
+<p>
+The design also uses a limited visual language. Black is the foundation, blue is the signal, and light text is reserved for information that deserves attention. This keeps the experience recognizable from the first screen to the final access page.
+</p>
+
+<h2>The First Lesson</h2>
+
+<p>
+The first lesson is patience. A checkpoint is not necessarily an obstacle. It can simply be a way to give each part of an experience enough space. When a visitor reaches the lower section, the system quietly begins checking whether the required waiting period has passed.
+</p>
+
+<p>
+There is no large countdown covering the screen during this stage. The page remains clean. After the required fifteen seconds and the required scroll position are completed, the next button becomes visible.
+</p>
+
+<p>
+This approach also makes the page feel longer and more natural. Instead of opening a short page and immediately reaching a button, the visitor has a full chapter to explore. The content gives the checkpoint a clear purpose.
+</p>
+
+<p>
+As you continue, notice how the same visual language remains present. The borders are thin, the shadows are subtle, and the blue glow is used only around important elements. This consistency will continue through every chapter.
+</p>
+
+<h2>Moving Forward</h2>
+
+<p>
+The beginning is now complete. What comes next is not a completely different experience. It is another part of the same journey. The second chapter will introduce consistency, rhythm, and a stronger sense of progress.
+</p>
+
+<p>
+Take your time moving through this chapter. When you reach the bottom, the system will prepare the next step automatically after the required waiting period.
+</p>
+
+<div class="ad-box">
+ADVERTISEMENT<br><small>Premium placement area</small>
+</div>
+
+<div class="ad-note">
+Continue scrolling through the chapter. The next action appears automatically when the requirements are completed.
+</div>
+
+<div class="bottom-card">
+<div class="label">AURA RAZU</div>
+<p>Chapter 01 is ready. Reach the end and complete the waiting requirement.</p>
+<button class="unlock">UNLOCK NEXT PAGE</button>
+</div>
+
+</article>
+</section>
+
+
+<!-- PAGE 2 -->
+
+<section class="page" data-page="2">
+
+<div class="page-title">
+<div class="small">Access Journey • Chapter 02</div>
+<h1>Beyond the <span>First Step</span></h1>
+</div>
+
+<article class="story">
+
+<p>
+The first step creates movement, but movement alone does not create a finished result. The second chapter is about consistency: returning to the same direction even when the excitement of the beginning has disappeared.
+</p>
+
+<p>
+There is a point in every long task where the process starts becoming familiar. The first attempt feels uncertain. The second attempt feels slightly easier. After several repetitions, the same action can become almost automatic. That transition is one of the most useful forms of progress.
+</p>
+
+<div class="quote">
+“Consistency turns a collection of attempts into a direction.”
+</div>
+
+<h2>Building the Pattern</h2>
+
+<p>
+Imagine a long corridor with five doors. The first door has already opened. The second door is directly ahead. There is no reason to run through the corridor. The person simply walks forward, observes the details, and continues when the next door is ready.
+</p>
+
+<p>
+That corridor is a useful metaphor for this access experience. Every chapter has a beginning, a body, and a finishing area. The visitor always knows where they are because the progress bar remains visible.
+</p>
+
+<p>
+The second chapter also demonstrates why a long page can be useful. When there is enough meaningful content, scrolling becomes part of the experience rather than an inconvenience. The visitor is given something to read while moving toward the next checkpoint.
+</p>
+
+<p>
+A premium design does not need dozens of colors. The strongest interfaces often use a small set of carefully controlled tones. Here, blue is reserved for progress, important labels, active controls, and the AURA identity.
+</p>
+
+<h2>Keeping Things Clear</h2>
+
+<p>
+Clarity matters even more when a visitor is using a mobile phone. Small screens cannot show everything at once, so spacing becomes important. The story card separates the content from the background, while headings break long sections into readable pieces.
+</p>
+
+<p>
+The search field provides another layer of convenience. If the chapter becomes long and the visitor wants to find a particular word, they can type it into the search field. Matching paragraphs remain visible while unrelated paragraphs are hidden.
+</p>
+
+<p>
+This is not intended to replace reading the chapter. It is simply a tool for quickly finding information inside a large section. Clearing the search field restores the complete chapter.
+</p>
+
+<h2>The Rhythm of Progress</h2>
+
+<p>
+Every checkpoint follows the same rhythm. First, the visitor reads and scrolls through the chapter. Then the hidden waiting period completes. Finally, the unlock button appears at the bottom.
+</p>
+
+<p>
+Keeping the same rhythm across five pages makes the experience predictable. Once the visitor understands the first chapter, the next chapters become easier to navigate.
+</p>
+
+<p>
+The second chapter therefore establishes the pattern. There are still three chapters remaining, and the final access information is intentionally separated from the story so that it feels like a destination rather than another ordinary paragraph.
+</p>
+
+<p>
+Continue when the lower control becomes available. The next chapter will take the journey deeper into the middle section.
+</p>
+
+<div class="ad-box">
+ADVERTISEMENT<br><small>Premium placement area</small>
+</div>
+
+<div class="ad-note">
+The next chapter becomes available after the required wait and scroll position.
+</div>
+
+<div class="bottom-card">
+<div class="label">AURA RAZU</div>
+<p>Chapter 02 is ready. Complete the section to continue.</p>
+<button class="unlock">UNLOCK NEXT PAGE</button>
+</div>
+
+</article>
+</section>
+
+
+<!-- PAGE 3 -->
+
+<section class="page" data-page="3">
+
+<div class="page-title">
+<div class="small">Access Journey • Chapter 03</div>
+<h1>The Middle of the <span>Journey</span></h1>
+</div>
+
+<article class="story">
+
+<p>
+The middle of a journey is often where patience becomes more important than excitement. The beginning is new, and the ending is close enough to imagine. The middle asks something different: continue even when the final result is not visible yet.
+</p>
+
+<p>
+This chapter represents that middle. Half of the journey is now behind you, and the remaining chapters are becoming more important. The progress indicator shows movement without needing a complicated navigation system.
+</p>
+
+<div class="quote">
+“The middle is where progress becomes a habit instead of a promise.”
+</div>
+
+<h2>Why Checkpoints Matter</h2>
+
+<p>
+Breaking a large experience into smaller checkpoints can make it easier to understand. Instead of presenting one enormous page, the interface creates five recognizable stages. Each stage contains enough information to feel complete on its own.
+</p>
+
+<p>
+The lower card is intentionally different from the story. Its border and subtle blue glow tell the visitor that the current chapter is approaching its end. When the requirements are completed, the button appears there.
+</p>
+
+<p>
+On a mobile device this separation becomes especially useful. A visitor can scroll through a long chapter and recognize the final area when the premium card appears.
+</p>
+
+<h2>Keeping the Interface Clean</h2>
+
+<p>
+A dark interface can become difficult to read if every element is pure black. That is why this design uses several shades of dark colors. The main background is almost black, story cards are slightly lighter, and borders create separation without becoming distracting.
+</p>
+
+<p>
+The blue accent is also controlled. It identifies the brand and important controls, but it does not cover the entire screen. This gives the accent more meaning whenever it appears.
+</p>
+
+<p>
+The search feature continues to work on this chapter. Long content becomes easier to navigate when a visitor can quickly search for a word without leaving the current page.
+</p>
+
+<h2>A Silent Waiting Period</h2>
+
+<p>
+The waiting process remains hidden during the five story pages. There is no visible countdown and no large timer. The visitor simply continues reading and scrolling. Once the hidden fifteen-second requirement is complete and the bottom of the chapter has been reached, the next action becomes available.
+</p>
+
+<p>
+This makes the story feel like the main experience rather than the timer. The waiting period works quietly in the background while the visitor focuses on the content.
+</p>
+
+<p>
+Two chapters remain after this one. The next section begins the final approach toward the destination.
+</p>
+
+<p>
+Continue through the chapter and complete the lower checkpoint when it becomes available.
+</p>
+
+<div class="ad-box">
+ADVERTISEMENT<br><small>Premium placement area</small>
+</div>
+
+<div class="ad-note">
+The next action will appear after the chapter requirements are completed.
+</div>
+
+<div class="bottom-card">
+<div class="label">AURA RAZU</div>
+<p>Chapter 03 is complete when the hidden wait and scroll requirement are satisfied.</p>
+<button class="unlock">UNLOCK NEXT PAGE</button>
+</div>
+
+</article>
+</section>
+
+
+<!-- PAGE 4 -->
+
+<section class="page" data-page="4">
+
+<div class="page-title">
+<div class="small">Access Journey • Chapter 04</div>
+<h1>Almost at the <span>Destination</span></h1>
+</div>
+
+<article class="story">
+
+<p>
+Four chapters have now become part of the journey. Most of the path is behind you, and the final stage is getting closer. The fourth chapter is about preparation before the destination.
+</p>
+
+<p>
+A destination often feels more meaningful when the previous steps have created context. Instead of revealing everything immediately, the experience allows the visitor to move through several stages before reaching the final access area.
+</p>
+
+<div class="quote">
+“A destination becomes meaningful when the path to it has been completed.”
+</div>
+
+<h2>The Last Preparation</h2>
+
+<p>
+Imagine opening a small box after following a carefully designed trail. The box itself may be simple, but the anticipation came from the steps before it. A digital interface can create a similar feeling through structure, timing, and consistency.
+</p>
+
+<p>
+This chapter keeps the same visual identity as the previous three. The background remains dark, the blue accent remains focused, and the progress indicator continues to show the current position.
+</p>
+
+<p>
+The final access information is deliberately separated from these story chapters. This makes the final Key Page feel like a distinct destination rather than simply another section of the same article.
+</p>
+
+<h2>Preparing for the Final Stage</h2>
+
+<p>
+The next stage is different from the previous ones. Instead of another long story page, the visitor will reach a dedicated Key Page. That page is designed to contain only the access Key and its copy control.
+</p>
+
+<p>
+The Key itself will come from the value configured in the JavaScript section for this test version. Later, when the database system is connected, the same location can receive a Key dynamically based on the Pass that was entered.
+</p>
+
+<p>
+This means the visual experience can remain the same while the underlying Key system becomes more flexible. The visitor does not need to know how the Key was selected.
+</p>
+
+<h2>One More Chapter</h2>
+
+<p>
+The final story chapter will complete the five-page journey. After that, the dedicated Key Page will appear.
+</p>
+
+<p>
+The hidden waiting period remains the same. There is no visible timer here. The visitor simply continues through the chapter until the lower control becomes available.
+</p>
+
+<p>
+Once the final chapter opens, the experience will move toward the access destination.
+</p>
+
+<div class="ad-box">
+ADVERTISEMENT<br><small>Premium placement area</small>
+</div>
+
+<div class="ad-note">
+Finish this chapter to open the final story.
+</div>
+
+<div class="bottom-card">
+<div class="label">AURA RAZU</div>
+<p>Chapter 04 is ready. Complete the final checkpoint before the last chapter.</p>
+<button class="unlock">UNLOCK FINAL PAGE</button>
+</div>
+
+</article>
+</section>
+
+
+<!-- PAGE 5 -->
+
+<section class="page" data-page="5">
+
+<div class="page-title">
+<div class="small">Access Journey • Chapter 05</div>
+<h1>The Final <span>Chapter</span></h1>
+</div>
+
+<article class="story">
+
+<p>
+The fifth chapter is the final part of the story journey. The progress indicator is almost complete, and the destination is now directly ahead.
+</p>
+
+<p>
+AURA ORNOB was designed as a structured premium access experience. Five chapters create the path, while the final Key Page remains separate so the access information receives its own dedicated screen.
+</p>
+
+<div class="quote">
+“The final step is where preparation becomes access.”
+</div>
+
+<h2>The Destination</h2>
+
+<p>
+A good final stage should feel different from the stages that came before it. The visitor has already completed the reading journey, reached every checkpoint, and followed the same rhythm through five chapters.
+</p>
+
+<p>
+The Key Page therefore removes unnecessary story content. It focuses on one important piece of information: the Key. A single copy button makes the action clear.
+</p>
+
+<p>
+When the Key Page opens, a visible one-minute timer begins immediately. The timer shows the remaining time available for copying the Key.
+</p>
+
+<p>
+If the Key is copied within that one-minute period, the visitor can continue using it normally. If the one-minute period expires before the Key is copied, the current session is cleared and the visitor is returned to the beginning.
+</p>
+
+<p>
+Returning to the beginning means the Pass must be entered again and the five-page journey must be completed again. This keeps the Key Page as a temporary final stage.
+</p>
+
+<h2>Final Preparation</h2>
+
+<p>
+There is no username or password on the final screen. The destination is intentionally focused only on the Key.
+</p>
+
+<p>
+The Key shown in this test version will be the value configured in the JavaScript section. For the current test, the Pass is <strong>ok1234</strong> and the test Key can be changed later.
+</p>
+
+<p>
+When Firebase is connected, this same system can be changed so that each Pass has its own Key. The visitor will enter a Pass, and the correct Key associated with that Pass will be loaded automatically.
+</p>
+
+<p>
+That is the final structure: Pass at the beginning, five chapters in the middle, and a separate temporary Key Page at the end.
+</p>
+
+<div class="ad-box">
+ADVERTISEMENT<br><small>Premium placement area</small>
+</div>
+
+<div class="ad-note">
+Final chapter reached. Complete the hidden wait and scroll requirement.
+</div>
+
+<div class="bottom-card">
+<div class="label">AURA RAZU • FINAL ACCESS</div>
+<p>The final chapter is complete when the hidden wait and scroll requirement are satisfied.</p>
+<button class="unlock">GET ACCESS KEY</button>
+</div>
+
+</article>
+</section>
+
+
+<!-- KEY PAGE -->
+
+<section id="keyPage">
+
+<div class="key-screen">
+
+<div class="key-card">
+
+<div class="mini">AURA ORNOB • FINAL ACCESS</div>
+
+<h1>YOUR ACCESS KEY</h1>
+
+<div id="keyValue" class="key-value">
+AURA-KEY-2026
+</div>
+
+<button
+  id="copyKeyBtn"
+  class="copy-key"
+  onclick="copyKey()"
+>
+COPY KEY
+</button>
+
+<div class="timer">
+
+<span class="timer-label">
+KEY COPY TIME REMAINING
+</span>
+
+<span id="timer">
+01:00
+</span>
+
+</div>
+
+<div id="expired" class="expired">
+TIME EXPIRED — RETURNING TO START...
+</div>
+
+</div>
+
+</div>
+
+</section>
+
 
 <div class="footer">
-  AURA ORNOB • AURA RAZU
+AURA ORNOB • AURA RAZU
 </div>
 
 </main>
 
 
-<!-- =========================================================
-     JAVASCRIPT
-========================================================= -->
-
 <script>
 
 /* =========================================================
-   USERNAME & PASSWORD
-   এখানে নিজের USERNAME এবং PASSWORD বসাবে
-========================================================= */
+   TEST ACCESS
+   ========================================================= */
 
-const USERNAME = "AURA_RAZU";
+const VALID_PASS = "ok1234";
 
-const PASSWORD = "AURA@2026";
+/*
+   TEST KEY
+   পরে এখানে তোমার Key বসাতে পারবে।
+   Firebase যুক্ত করার সময় এটাকে database থেকে নেওয়া হবে।
+*/
+const TEST_KEY = "AURA-KEY-2026";
 
 
 /* =========================================================
-   WAIT TIME
-   15000 = 15 seconds
-   কোনো countdown দেখানো হবে না
-========================================================= */
+   SETTINGS
+   ========================================================= */
 
 const WAIT_MS = 15000;
+const KEY_TIME = 60;
 
 
 /* =========================================================
    SYSTEM
-========================================================= */
+   ========================================================= */
 
 let currentPage = 1;
-
-const totalPages = 5;
-
-const unlocked = [
-  true,
-  false,
-  false,
-  false,
-  false
-];
-
-const waitStarted = {};
-
-const atBottom = {};
+let waitStarted = {};
+let atBottom = {};
+let timerInterval = null;
+let keyCopied = false;
 
 
 /* =========================================================
    ELEMENTS
-========================================================= */
+   ========================================================= */
 
-const pages = [
-  ...document.querySelectorAll(".page")
-];
+const loginPage =
+  document.getElementById("loginPage");
+
+const keyPage =
+  document.getElementById("keyPage");
+
+const passInput =
+  document.getElementById("passInput");
+
+const passError =
+  document.getElementById("passError");
+
+const pages =
+  [...document.querySelectorAll(".page")];
 
 const progressBar =
   document.getElementById("progressBar");
@@ -1217,6 +900,46 @@ const statusLabel =
 const steps =
   [...document.querySelectorAll(".step")];
 
+const search =
+  document.getElementById("search");
+
+
+/* =========================================================
+   LOGIN
+========================================================= */
+
+function checkPass(){
+
+  const value =
+    passInput.value.trim();
+
+  if(value === VALID_PASS){
+
+    passError.style.display = "none";
+
+    loginPage.style.display = "none";
+
+    showPage(1);
+
+  }else{
+
+    passError.style.display = "block";
+
+  }
+
+}
+
+
+/* ENTER KEY SUPPORT */
+
+passInput.addEventListener("keydown",function(e){
+
+  if(e.key === "Enter"){
+    checkPass();
+  }
+
+});
+
 
 /* =========================================================
    SHOW PAGE
@@ -1226,6 +949,7 @@ function showPage(num){
 
   currentPage = num;
 
+  keyPage.style.display = "none";
 
   pages.forEach((p,i)=>{
 
@@ -1236,14 +960,14 @@ function showPage(num){
 
   });
 
-
   pageLabel.textContent =
-    `PAGE ${num} OF ${totalPages}`;
+    `PAGE ${num} OF 5`;
 
+  statusLabel.textContent =
+    "LOCKED";
 
   progressBar.style.width =
-    `${(num / totalPages) * 100}%`;
-
+    `${(num / 5) * 100}%`;
 
   steps.forEach((s,i)=>{
 
@@ -1259,31 +983,12 @@ function showPage(num){
 
   });
 
-
-  if(num === totalPages){
-
-    statusLabel.textContent =
-      "COMPLETE";
-
-    document.getElementById(
-      "finalBox"
-    ).style.display = "block";
-
-  }else{
-
-    statusLabel.textContent =
-      unlocked[num - 1]
-      ? "READY"
-      : "LOCKED";
-
-  }
-
+  search.value = "";
 
   window.scrollTo({
     top:0,
     behavior:"smooth"
   });
-
 
   setupPageTimer(num);
 
@@ -1291,49 +996,47 @@ function showPage(num){
 
 
 /* =========================================================
-   15 SECOND HIDDEN WAIT
+   HIDDEN 15 SECOND WAIT
 ========================================================= */
 
 function setupPageTimer(num){
 
-  if(num === totalPages){
-    return;
-  }
+  if(num === 5){
 
+    startBottomCheck(num);
+
+    return;
+
+  }
 
   const page =
     pages[num - 1];
 
-
   const button =
     page.querySelector(".unlock");
 
+  if(!button){
+    return;
+  }
+
+  button.style.display = "none";
+  button.disabled = true;
 
   waitStarted[num] =
     Date.now();
 
+  atBottom[num] = false;
 
-  button.style.display =
-    "none";
-
-
-  button.disabled =
-    true;
-
-
-  const check = ()=>{
+  function check(){
 
     const elapsed =
       Date.now() - waitStarted[num];
 
-
     const timeDone =
       elapsed >= WAIT_MS;
 
-
     const bottomDone =
       atBottom[num] === true;
-
 
     if(timeDone && bottomDone){
 
@@ -1350,11 +1053,9 @@ function setupPageTimer(num){
 
     }
 
-
     requestAnimationFrame(check);
 
-  };
-
+  }
 
   requestAnimationFrame(check);
 
@@ -1362,58 +1063,92 @@ function setupPageTimer(num){
 
 
 /* =========================================================
-   CHECK IF USER REACHED BOTTOM
+   BOTTOM CHECK
 ========================================================= */
 
-function reachedBottom(){
+function startBottomCheck(num){
 
-  const page =
-    pages[currentPage - 1];
+  atBottom[num] = false;
 
+  function checkBottom(){
 
-  if(
-    !page ||
-    currentPage === totalPages
-  ){
-    return;
+    if(currentPage !== num){
+      return;
+    }
+
+    const page =
+      pages[num - 1];
+
+    if(!page){
+      return;
+    }
+
+    const rect =
+      page.getBoundingClientRect();
+
+    const pageBottom =
+      rect.bottom + window.scrollY;
+
+    const viewportBottom =
+      window.scrollY +
+      window.innerHeight;
+
+    if(viewportBottom >= pageBottom - 30){
+
+      atBottom[num] = true;
+
+    }
+
+    requestAnimationFrame(checkBottom);
+
   }
 
-
-  const rect =
-    page.getBoundingClientRect();
-
-
-  const pageBottom =
-    rect.bottom + window.scrollY;
-
-
-  const viewportBottom =
-    window.scrollY +
-    window.innerHeight;
-
-
-  if(
-    viewportBottom >=
-    pageBottom - 30
-  ){
-
-    atBottom[currentPage] =
-      true;
-
-  }
+  requestAnimationFrame(checkBottom);
 
 }
 
 
 window.addEventListener(
   "scroll",
-  reachedBottom,
+  ()=>{
+    if(currentPage >= 1 && currentPage <= 5){
+      checkCurrentBottom();
+    }
+  },
   {passive:true}
 );
 
 
+function checkCurrentBottom(){
+
+  const page =
+    pages[currentPage - 1];
+
+  if(!page){
+    return;
+  }
+
+  const rect =
+    page.getBoundingClientRect();
+
+  const bottom =
+    rect.bottom + window.scrollY;
+
+  const viewport =
+    window.scrollY +
+    window.innerHeight;
+
+  if(viewport >= bottom - 30){
+
+    atBottom[currentPage] = true;
+
+  }
+
+}
+
+
 /* =========================================================
-   NEXT PAGE BUTTONS
+   PAGE BUTTONS
 ========================================================= */
 
 pages.forEach((page,index)=>{
@@ -1421,27 +1156,23 @@ pages.forEach((page,index)=>{
   const button =
     page.querySelector(".unlock");
 
-
-  if(button){
-
-    button.addEventListener(
-      "click",
-      ()=>{
-
-        if(index + 1 < totalPages){
-
-          unlocked[index + 1] =
-            true;
-
-
-          showPage(index + 2);
-
-        }
-
-      }
-    );
-
+  if(!button){
+    return;
   }
+
+  button.addEventListener("click",()=>{
+
+    if(index < 4){
+
+      showPage(index + 2);
+
+    }else{
+
+      openKeyPage();
+
+    }
+
+  });
 
 });
 
@@ -1450,122 +1181,273 @@ pages.forEach((page,index)=>{
    SEARCH
 ========================================================= */
 
-const search =
-  document.getElementById("search");
+search.addEventListener("input",()=>{
 
+  const term =
+    search.value.trim().toLowerCase();
 
-search.addEventListener(
-  "input",
-  ()=>{
+  const story =
+    pages[currentPage - 1]
+    ?.querySelector(".story");
 
-    const term =
-      search.value
-      .trim()
-      .toLowerCase();
+  if(!story){
+    return;
+  }
 
+  const elements =
+    story.querySelectorAll("p,h2,.quote");
 
-    const story =
-      pages[currentPage - 1]
-      ?.querySelector(".story");
+  elements.forEach(el=>{
 
+    if(!term){
 
-    if(!story){
-      return;
-    }
-
-
-    const elements =
-      story.querySelectorAll(
-        "p,h2,.quote"
+      el.classList.remove(
+        "hidden-search"
       );
 
+      return;
 
-    elements.forEach(el=>{
+    }
 
-      if(!term){
+    const text =
+      el.textContent.toLowerCase();
 
-        el.classList.remove(
-          "hidden-search"
+    el.classList.toggle(
+      "hidden-search",
+      !text.includes(term)
+    );
+
+  });
+
+});
+
+
+/* =========================================================
+   OPEN KEY PAGE
+========================================================= */
+
+function openKeyPage(){
+
+  pages.forEach(p=>{
+    p.classList.remove("active");
+  });
+
+  keyPage.style.display = "block";
+
+  search.style.display = "none";
+
+  pageLabel.textContent =
+    "FINAL KEY";
+
+  statusLabel.textContent =
+    "KEY READY";
+
+  progressBar.style.width =
+    "100%";
+
+  steps.forEach(s=>{
+    s.classList.add("done");
+    s.classList.remove("active");
+  });
+
+  document.getElementById(
+    "keyValue"
+  ).textContent = TEST_KEY;
+
+  keyCopied = false;
+
+  startKeyTimer();
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
+}
+
+
+/* =========================================================
+   ONE MINUTE KEY TIMER
+========================================================= */
+
+function startKeyTimer(){
+
+  clearInterval(timerInterval);
+
+  let remaining =
+    KEY_TIME;
+
+  const timer =
+    document.getElementById("timer");
+
+  const expired =
+    document.getElementById("expired");
+
+  const copyButton =
+    document.getElementById("copyKeyBtn");
+
+  expired.style.display = "none";
+
+  copyButton.disabled = false;
+
+  timer.textContent =
+    "01:00";
+
+  timer.classList.remove(
+    "timer-warning"
+  );
+
+  timerInterval =
+    setInterval(()=>{
+
+      remaining--;
+
+      const minutes =
+        Math.floor(remaining / 60);
+
+      const seconds =
+        remaining % 60;
+
+      timer.textContent =
+        String(minutes).padStart(2,"0")
+        + ":" +
+        String(seconds).padStart(2,"0");
+
+      if(remaining <= 10){
+
+        timer.classList.add(
+          "timer-warning"
         );
-
-        return;
 
       }
 
+      if(remaining <= 0){
 
-      const text =
-        el.textContent.toLowerCase();
+        clearInterval(timerInterval);
 
+        if(!keyCopied){
 
-      el.classList.toggle(
-        "hidden-search",
-        !text.includes(term)
-      );
+          copyButton.disabled = true;
 
-    });
+          expired.style.display =
+            "block";
 
-  }
-);
+          setTimeout(
+            resetToStart,
+            1200
+          );
 
+        }
 
-/* =========================================================
-   FINAL USERNAME / PASSWORD
-========================================================= */
+      }
 
-document.getElementById(
-  "username"
-).textContent =
-  USERNAME;
+    },1000);
 
-
-document.getElementById(
-  "password"
-).textContent =
-  PASSWORD;
+}
 
 
 /* =========================================================
-   COPY BUTTON
+   COPY KEY
 ========================================================= */
 
-function copyValue(id){
+function copyKey(){
 
-  const value =
-    document.getElementById(id)
-    .textContent;
-
+  const key =
+    document.getElementById(
+      "keyValue"
+    ).textContent;
 
   navigator.clipboard
-    .writeText(value)
-
+    .writeText(key)
     .then(()=>{
 
-      const btn =
-        event.currentTarget;
+      keyCopied = true;
 
+      const button =
+        document.getElementById(
+          "copyKeyBtn"
+        );
 
-      const old =
-        btn.textContent;
-
-
-      btn.textContent =
-        "COPIED";
-
+      button.textContent =
+        "KEY COPIED ✓";
 
       setTimeout(()=>{
 
-        btn.textContent =
-          old;
+        button.textContent =
+          "COPY KEY";
 
-      },1200);
+      },1500);
 
     })
-
     .catch(()=>{
 
-      alert(value);
+      const area =
+        document.createElement("textarea");
+
+      area.value = key;
+
+      document.body.appendChild(area);
+
+      area.select();
+
+      document.execCommand("copy");
+
+      area.remove();
+
+      keyCopied = true;
+
+      document.getElementById(
+        "copyKeyBtn"
+      ).textContent =
+        "KEY COPIED ✓";
 
     });
+
+}
+
+
+/* =========================================================
+   RESET TO START
+========================================================= */
+
+function resetToStart(){
+
+  clearInterval(timerInterval);
+
+  keyPage.style.display = "none";
+
+  search.style.display = "block";
+
+  passInput.value = "";
+
+  passError.style.display = "none";
+
+  pages.forEach(p=>{
+    p.classList.remove("active");
+  });
+
+  loginPage.style.display = "flex";
+
+  pageLabel.textContent =
+    "LOGIN";
+
+  statusLabel.textContent =
+    "LOCKED";
+
+  progressBar.style.width =
+    "0%";
+
+  steps.forEach(s=>{
+    s.classList.remove(
+      "active",
+      "done"
+    );
+  });
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
 
 }
 
@@ -1574,9 +1456,9 @@ function copyValue(id){
    START
 ========================================================= */
 
-showPage(1);
+loginPage.style.display = "flex";
 
 </script>
 
 </body>
-      </html>
+  </html>
